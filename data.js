@@ -208,8 +208,21 @@ const portfolioData = [
         lon: 51.6080,
         status: "built",
         title: "Qatar Duty Free",
+        subtitle: "Retail Masterplan, Hamad International Airport, Doha",
         airport: "Hamad International Airport, Doha",
         content: [
+            {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    "Full retail masterplan across multiple terminal zones at Hamad International Airport",
+                    "Over a year of design development in the lead-up to the Qatar 2022 FIFA World Cup",
+                    "Spaces designed for beauty, fragrance, alcohol, chocolate, food gifts and fashion",
+                    "Golden Eagle installation as centrepiece of the Great Hall alcohol tower",
+                    "Sustainable flooring: recycled stone composite achieving the look of marble at reduced cost and environmental impact",
+                    "Cultural pattern work developed in collaboration with local Qatari artists"
+                ]
+            },
             {
                 type: "gallery",
                 images: [
@@ -219,16 +232,70 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A flagship duty-free retail environment at one of the Gulf's most ambitious aviation hubs. The design challenge was achieving opulence at volume — creating a premium sensory experience capable of handling tens of thousands of daily transactions across multiple category zones."
+                body: "Hamad International Airport sits at a crossroads of the world. Passengers from dozens of cultures pass through its terminals daily, and Qatar Duty Free needed to meet every one of them with something worthy of the occasion. Working as part of the team at Wanda Creative, this project represented over a year of sustained design effort, some of the greatest creative freedom I have experienced on a project, and a genuinely exceptional budget that demanded exceptional ideas in return."
+            },
+            {
+                type: "text",
+                body: "The scale of the masterplanning work was significant. Our team was responsible for designing the passenger journey from arrival gates through to the main retail concourse and food court areas, using high-contrast floor plans to guide travellers across vast terminal spaces and connect the retail zones to one another. This kind of spatial thinking at terminal scale taught me more about user experience and wayfinding than almost anything else in my career."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /QDF Sketch Travel Retail (1).webp",
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /QDF Sketch Travel Retail (2).webp",
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /QDF Sketch Travel Retail (3).webp",
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /QDF Sketch Travel Retail (4).webp"
+                ]
+            },
+            {
+                type: "text",
+                body: "One of the moments I am most proud of on this project was a materials decision. The client had specified real marble for the flooring throughout. We researched and presented an alternative: a high-quality recycled stone composite tile, sourced from a supplier closer to the region, that achieved the same visual effect as marble at a substantially reduced cost and with a significantly lower environmental footprint. They agreed. Seeing those floors installed and knowing the reasoning behind them still feels meaningful."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /Qatar Doha Retail Design Render (1).webp",
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /Qatar Doha Retail Design Render (2).webp",
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /Qatar Doha Retail Design Render (3).webp",
+                    "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /Qatar Doha Retail Design Render (4).webp"
+                ]
+            },
+            {
+                type: "text",
+                body: "The beauty and fragrance hall was a central focus of the project. The cultural importance of perfume across the Gulf region meant this space needed to be exceptional, generous, and deeply considered. Alongside it, the Great Hall featured a Golden Eagle installation rising above a tower display for spirits and alcohol, a piece of theatre that anchored the space and gave travellers a genuine landmark moment within the terminal."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/QDF SN1000/VR Images/VRX0001.webp",
+                    "Portfolio-images_webp/QDF SN1000/VR Images/VRX0002.webp",
+                    "Portfolio-images_webp/QDF SN1000/VR Images/VRX0003.webp",
+                    "Portfolio-images_webp/QDF SN1000/VR Images/VRX0004.webp"
+                ]
+            },
+            {
+                type: "text",
+                body: "Throughout the project, the Qatari family who owned the airport were careful to involve local artists and cultural consultants in the decorative programme. I was fortunate to work with some of those patterns and installations directly, learning about the historical trade routes and ancient geometric traditions that informed them. That process of learning, listening, and implementing with care is something I have carried into every subsequent project that asked me to work within a culture other than my own."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/QDF SN1000/QDF Fashion 1.webp",
+                    "Portfolio-images_webp/QDF SN1000/QDF Fashion 2.webp",
+                    "Portfolio-images_webp/QDF SN1000/QDF Fashion 3.webp",
+                    "Portfolio-images_webp/QDF SN1000/QDF Fashion 4.webp"
+                ]
             },
             {
                 type: "bullets",
-                heading: "Project Highlights",
+                heading: "Skills Developed",
                 items: [
-                    "Retail masterplan across multiple terminal zones",
-                    "High-end material specification at aviation scale",
-                    "Integrated digital display and wayfinding strategy",
-                    "Compliance with Qatar Civil Aviation Authority standards"
+                    "Large-scale retail masterplanning and passenger flow strategy",
+                    "Sustainable material research, specification and client advocacy",
+                    "Spatial design across multiple retail categories simultaneously",
+                    "Cultural sensitivity and collaboration with local artists and consultants",
+                    "VR walkthrough production for client presentation and approval",
+                    "Managing design delivery under major event deadlines"
                 ]
             }
         ]
