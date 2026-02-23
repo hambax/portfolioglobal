@@ -405,8 +405,21 @@ const portfolioData = [
         lon: 101.6869,
         status: "built",
         title: "Dufry Malaysia",
-        airport: "Kuala Lumpur International Airport",
+        subtitle: "Travel Retail Store, Genting Highlands, Malaysia",
+        airport: "Genting Highlands, Malaysia",
         content: [
+            {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    "New store for Dufry in the Genting Highlands resort destination, Malaysia",
+                    "Cyberpunk-influenced design language: dark ceilings, neon lighting, futuristic synthetic materials",
+                    "Hand-drawn zigzag ceiling plan translated into a 3D molded fascia",
+                    "Laser-focused product spotlighting creating pools of light within a blacked-out ceiling",
+                    "Navigation clarity of international airport retail embedded within an adventurous, exploratory atmosphere",
+                    "Remarkably fast build turnaround from 2D drawings to completed retail space"
+                ]
+            },
             {
                 type: "gallery",
                 images: [
@@ -418,7 +431,11 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A travel retail store environment for Dufry — the world's largest travel retailer — within one of Southeast Asia's premier aviation gateways. The design had to operate at global brand standard while responding to the local cultural context of Kuala Lumpur International."
+                body: "Genting Highlands is not an airport. People arrive there to celebrate, to spend, to be somewhere extraordinary. That distinction shaped everything about this project. Working with the team at Wanda Creative for Dufry — the world's largest travel retailer — we were asked to create a new store that carried the navigational clarity and retail expertise of international airport design, but expressed itself in a design language suited to a destination where the rules could be pushed further."
+            },
+            {
+                type: "text",
+                body: "The direction we landed on was somewhere between cyberpunk and jungle. Dark, stimulating, synthetic, and alive. The ceiling was blacked out entirely, with a hand-drawn zigzag lighting plan I developed on paper — lines of blue and pink light cutting across the void above. That drawing was taken directly into production and molded into a three-dimensional fascia. Seeing a hand sketch become an architectural element in that way, without losing any of its energy in translation, was one of the more satisfying moments of this project."
             },
             {
                 type: "gallery",
@@ -430,19 +447,17 @@ const portfolioData = [
                 ]
             },
             {
-                type: "image",
-                src: "Portfolio-images_webp/Dufry Malaysia/CIMG2466.webp",
-                caption: "On-site photography during construction phase"
+                type: "text",
+                body: "Lighting was the real instrument of the design. Rather than flooding the space with even, global illumination, I specified laser-focused spotlights trained directly on the retail displays. The effect was of moving through a space with texture and rhythm — bright pools of product light surrounded by deeper shadow, then another burst of colour and interest around the next corner. It felt a little like a jungle in that sense: areas of intensity and areas of quiet, with something worth discovering in each. The space rewarded exploration without ever making navigation feel difficult."
             },
             {
-                type: "bullets",
-                heading: "Scope of Work",
-                items: [
-                    "Store interior architecture and fitout design",
-                    "Gondola and fixture layout optimised for conversion",
-                    "Wayfinding and category zoning strategy",
-                    "Coordination with Dufry global brand standards"
-                ]
+                type: "image",
+                src: "Portfolio-images_webp/Dufry Malaysia/CIMG2466.webp",
+                caption: "On-site during construction — Genting Highlands"
+            },
+            {
+                type: "text",
+                body: "Culturally, designing for an Asian market allowed for a bolder, more inorganic design language than would have felt appropriate in London or Zurich. Synthetic materials, neon accents, clean geometric lines — the aesthetic of a futuristic city that never quite sleeps. And yet underneath all of that visual energy, the bones of the store were built on the same principles of good retail navigation we had refined across years of airport work. Customers could find their way through clearly and efficiently, but they could also wander, pause, and discover."
             },
             {
                 type: "gallery",
@@ -451,6 +466,31 @@ const portfolioData = [
                     "Portfolio-images_webp/Dufry Malaysia/Dufry Malaysia Travel Retail Store  (11).webp",
                     "Portfolio-images_webp/Dufry Malaysia/Dufry Malaysia Travel Retail Store  (12).webp",
                     "Portfolio-images_webp/Dufry Malaysia/Dufry Malaysia Travel Retail Store  (13).webp"
+                ]
+            },
+            {
+                type: "text",
+                body: "The build teams on this project were extraordinary. The speed at which they moved from flat 2D drawings to a fully completed three-dimensional retail environment was genuinely impressive, and their ability to interpret and execute the more unusual design details with precision and care made the whole experience a pleasure. Good design depends on good makers, and this project had exceptional ones."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/Dufry Malaysia/CIMG2467.webp",
+                    "Portfolio-images_webp/Dufry Malaysia/CIMG2469.webp",
+                    "Portfolio-images_webp/Dufry Malaysia/CIMG2470.webp",
+                    "Portfolio-images_webp/Dufry Malaysia/CIMG2474.webp"
+                ]
+            },
+            {
+                type: "bullets",
+                heading: "Skills Developed",
+                items: [
+                    "Atmospheric lighting design with laser-focused product specification",
+                    "Hand-drawn ceiling and fascia design translated directly to 3D manufacture",
+                    "Culturally responsive design language for an Asian resort market",
+                    "Retail navigation and category zoning within an exploratory spatial concept",
+                    "Collaboration with fast-moving international build teams",
+                    "Synthetic material specification for a futuristic, high-energy retail environment"
                 ]
             }
         ]
@@ -503,8 +543,21 @@ const portfolioData = [
         lon: -0.1281,
         status: "built",
         title: "WHSmith",
-        airport: "Heathrow, Gatwick & Paddington, UK",
+        subtitle: "Retail Design Programme, UK & International Airports",
+        airport: "Heathrow, Gatwick, Paddington & Sydney Airport",
         content: [
+            {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    "Series of separate retail design projects across airports, train stations and high street stores",
+                    "New design language and material system created from scratch for the brand",
+                    "Flagship locations at Heathrow T3, T4, Gatwick South, Paddington Station and Sydney Airport",
+                    "Environmentally certified suppliers specified throughout",
+                    "Custom shelving, display stands and engineering details developed in-house",
+                    "Measurable commercial growth recorded at every completed store"
+                ]
+            },
             {
                 type: "gallery",
                 images: [
@@ -516,7 +569,11 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A multi-site retail design programme for one of the UK's most established travel retail brands — bringing clarity, warmth, and commercial efficiency to formats spanning Heathrow T3, T4, Gatwick South, and Paddington Station."
+                body: "WHSmith is one of those rare brands that sits inside the daily lives of millions of people without ever quite demanding their attention. The challenge the team at Wanda Creative was given was not just to refresh individual stores, but to build an entirely new design language for the brand across some of the world's busiest travel environments — one that could work as well in a compact train station kiosk as in a flagship airport terminal."
+            },
+            {
+                type: "text",
+                body: "We kept their signature blue prominent throughout, but built an entirely new material world around it. Earthy stone tile textures at floor level, warm timber shelving, and carefully considered warm lighting in every location. Lighting in particular mattered enormously. WHSmith sells books, magazines and stationery alongside food and travel essentials, and a customer browsing a novel in an airport deserves the same quality of reading light as they would find at home. Every feature display included dedicated reading spotlights as a result."
             },
             {
                 type: "gallery",
@@ -528,6 +585,14 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                body: "My contribution spanned the full range of the design process. I produced 3D models and rendered visuals for client presentations, and I was also responsible for a significant body of technical drawing work: engineering details for the custom shelving displays and product stands that the shopfitting trades would eventually build. I have a deep respect for the craftspeople and tradespeople who execute this kind of work, and seeing skilled shopfitters bring those details to life across multiple sites was genuinely satisfying."
+            },
+            {
+                type: "text",
+                body: "Sustainability mattered to us on this programme. We specified suppliers with credible environmental credentials and certifications throughout, a standard I pushed for and one the client was receptive to. These kinds of decisions are easier to make when a client moves quickly and trusts your thinking — and WHSmith were exactly that kind of partner."
+            },
+            {
                 type: "gallery",
                 images: [
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith Travel Retail Design Gatwick South (2).webp",
@@ -535,6 +600,10 @@ const portfolioData = [
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith Travel Retail Design Gatwick South (4).webp",
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith Travel Retail Design Gatwick South (5).webp"
                 ]
+            },
+            {
+                type: "text",
+                body: "The stores we completed are genuinely hybrid spaces. A traveller in a hurry can grab food and navigate to their gate in under two minutes. A traveller with time can find a quiet corner, browse the books, and feel comfortable doing so. That dual functionality does not happen by accident. It is the result of careful category zoning, clear graphic navigation, and a material palette warm enough to slow people down without making them feel like they are wasting time."
             },
             {
                 type: "gallery",
@@ -546,13 +615,28 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                body: "Every store we completed saw measurable commercial growth. That outcome, across flagship locations at Heathrow T3 and T4, Gatwick South, Paddington Station, and Sydney Airport, is the clearest evidence that good design and good business results are not in competition with each other."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (1).webp",
+                    "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (2).webp",
+                    "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (3).webp",
+                    "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (4).webp"
+                ]
+            },
+            {
                 type: "bullets",
-                heading: "Key Outcomes",
+                heading: "Skills Developed",
                 items: [
-                    "Modernised fixture system adaptable across store formats",
-                    "Improved category legibility and product discoverability",
-                    "Rollout-ready design documentation across 4 sites",
-                    "Heathrow T3, T4, Gatwick South, and Paddington Station"
+                    "Full retail design language creation from brief to built environment",
+                    "Technical drawing and engineering detail for custom fixtures and shelving",
+                    "Lighting design with specialist reading-focused specifications",
+                    "Environmentally certified material and supplier specification",
+                    "Design system scalable across multiple formats and locations",
+                    "Client collaboration in a fast-moving, high-trust design relationship"
                 ]
             }
         ]
@@ -655,8 +739,21 @@ const portfolioData = [
         lon: -0.1571,
         status: "built",
         title: "COOP London",
+        subtitle: "Convenience Retail, Baker Street Underground Station",
         airport: "Baker Street, London Underground",
         content: [
+            {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    "Convenience grocery store within a complex, multi-exit Baker Street Underground space",
+                    "Full bomb and fire rating compliance — same engineering rigour as airport retail",
+                    "Passenger through-flow, evacuation planning and retail navigation designed as a unified system",
+                    "Natural material palette: warm timber, stone-effect floor tiles, carefully tuned neutral lighting",
+                    "Coffee kiosk, chiller placement and product zoning planned for high-speed transit customers",
+                    "Interior designed to feel light and fresh despite a deep underground environment"
+                ]
+            },
             {
                 type: "gallery",
                 images: [
@@ -668,7 +765,11 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A convenience retail environment for the Co-op within London's underground transit estate — demonstrating that community-minded grocery retail can hold its own in premium concourse environments through smart spatial design and honest material use."
+                body: "Baker Street Underground Station is an ancient space. Its bones predate most of the city built above it, and designing within it means working around constraints that have no equivalent in new-build retail: irregular geometry, multiple exits pulling passengers in competing directions, strict bomb and fire rating requirements, and the particular challenge of a location that exists entirely below ground — cut off from natural light, fresh air, and the visual cues that help people orient themselves in the world above."
+            },
+            {
+                type: "text",
+                body: "The Co-op brief asked us to make this space work for everyone passing through. Commuters in a hurry needed to move through efficiently, picking up a coffee or a cold drink without breaking stride. Others needed the space and encouragement to slow down, browse the food offer, pick up a newspaper or a meal for the evening. Both groups needed to feel welcome at the same time, in the same space, without the design favouring one at the expense of the other."
             },
             {
                 type: "gallery",
@@ -680,6 +781,10 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                body: "The security and evacuation requirements that come with a tube station shaped the spatial plan from the very beginning. Designing for rapid passenger evacuation and designing for clear retail navigation turn out to demand almost exactly the same things: wide, unobstructed sightlines, clear category zoning, multiple entry and exit points that read intuitively. Constraints that initially felt limiting ended up producing a better store. That tends to happen more often than you might expect."
+            },
+            {
                 type: "gallery",
                 images: [
                     "Portfolio-images_webp/COOP London/COOP-London-food-retail-interior-design-cgi-render (1).webp",
@@ -689,13 +794,40 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                body: "The material palette was chosen specifically to counteract the environment outside the store. Baker Street station is yellow and worn in the way that only very old underground spaces can be. We wanted stepping into the Co-op to feel like a breath of fresh air. Warm timber shelving, stone-effect floor tiles, and lighting calibrated to sit just slightly warm of neutral — warm enough to make food look fresh and appetising, cool enough to avoid the heaviness that can make underground spaces feel oppressive. It was a careful tuning exercise, and one I found genuinely satisfying to get right."
+            },
+            {
+                type: "text",
+                body: "Chiller placement for cold drinks was given serious attention. Drinks are one of the highest-impulse purchases in transit retail, and making them easy to access without creating bottlenecks in the main passenger through-flow was a spatial puzzle worth solving carefully. The coffee kiosk — a compact hole-in-the-wall format — was positioned to catch passengers on their way in without disrupting the natural movement through the space."
+            },
+            {
+                type: "text",
+                body: "One material decision I am particularly proud of was the choice to expose the original Victorian brickwork of the tube building rather than cover it over. It was a gesture that grounded the store in its own history and gave it an authenticity that no applied finish could replicate. That decision, along with the warm timber shelving and natural material palette, survived into the final completed store — which opened a couple of years after I had left Wanda Creative, with a reported investment of £2.1 million. Seeing the design language we developed retained and built is one of the quiet satisfactions of this work."
+            },
+            {
+                type: "text",
+                body: "You can read about the completed store at <a href=\"https://www.conveniencestore.co.uk/store-development/co-op-invests-21m-in-on-the-go-concept-store-in-london/657776.article\" target=\"_blank\" class=\"inline-link\">The Grocer — Co-op invests £2.1m in on-the-go concept store in London</a>."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/COOP London/COOP-London-food-retail-interior-design-cgi-render (7).webp",
+                    "Portfolio-images_webp/COOP London/COOP-London-food-retail-interior-design-cgi-render (8).webp",
+                    "Portfolio-images_webp/COOP London/14.2 Coop_Baker Street Render Shopfront night View.webp",
+                    "Portfolio-images_webp/COOP London/14 Coop_Baker Street Render Shopfront View.webp"
+                ]
+            },
+            {
                 type: "bullets",
-                heading: "Scope",
+                heading: "Skills Developed",
                 items: [
-                    "Store layout and fixture strategy for underground footprint",
-                    "Brand environment integration",
-                    "Bakery and coffee counter design",
-                    "Night-mode and entrance threshold treatments"
+                    "Retail design within complex, historically constrained underground architecture",
+                    "Bomb and fire rating compliance in a live transit environment",
+                    "Unified passenger flow, evacuation and navigation planning",
+                    "Food retail lighting specification and colour temperature tuning",
+                    "Chiller and impulse category placement for high-volume transit customers",
+                    "CGI rendering of underground environments with natural material warmth"
                 ]
             }
         ]
@@ -819,8 +951,21 @@ const portfolioData = [
         lon: 8.5550,
         status: "built",
         title: "Timebox — Dufry Zurich",
+        subtitle: "Watch and Jewellery Retail Concept, Zurich Airport",
         airport: "Zurich Airport, Switzerland",
         content: [
+            {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    "Brand new retail concept — a first of its kind for this client within the Dufry group",
+                    "Solo concept lead role: colour palette, materials, and design language originated here",
+                    "Signature fingerprint ceiling installation in LED strip lighting",
+                    "Teal colour palette chosen for its rarity, visual distinctiveness and subtle maritime resonance",
+                    "Topographic and fingerprint line graphics printed on feature walls",
+                    "Technical manufacturing drawings used the designer's actual fingerprint — unaltered"
+                ]
+            },
             {
                 type: "gallery",
                 images: [
@@ -832,7 +977,41 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A specialist watch and timepiece retail environment in Zurich — Europe's horological capital. The design had to honour Swiss precision culture while creating an accessible, contemporary retail experience for international travellers encountering the category for the first time."
+                body: "Timebox at Zurich Airport was a genuinely personal project. While it was very much a team effort — and I am grateful for every person at Wanda Creative who shaped and improved it — this was the first concept where I took a leading role as the originating designer. The colour palette, the material choices, and the central idea behind the store all came from me, developed in close collaboration with an exceptional team who helped bring it to life."
+            },
+            {
+                type: "text",
+                body: "The brief had a specific audience in mind: younger people. Not the traditional watch buyer browsing heavy, gold-trimmed cabinets in a darkened boutique, but a traveller in their twenties or thirties discovering that a well-made timepiece could be both attainable and aspirational. Watches as part of an active, mobile, curious lifestyle rather than as inherited jewellery. That distinction shaped every decision made in the store."
+            },
+            {
+                type: "text",
+                body: "Traditional high-end watch retail tends toward weight and enclosure: dark timbers, polished bronze, low light, hushed atmosphere. All of it signals exclusivity to a generation that already knows it belongs there. This store was designed for a generation that is still forming its relationship with quality and craft. The response was the opposite: bright, open, full of glass and clear display cases, light flooding every surface. The message was one of welcome and accessibility rather than gatekeeping."
+            },
+            {
+                type: "text",
+                body: "The concept started with a simple observation about watches. They are mass produced objects that become deeply personal. A metal timepiece ages with its owner, develops a patina, accumulates scratches and memories. The watch you have worn for ten years is not the same object it was when you bought it. It has become yours in a way that almost nothing else you own does. The store needed to speak to that idea of personal uniqueness — quietly, without ever stating it."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 1.webp",
+                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 4.webp",
+                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 5.webp",
+                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Internal preliminary view.webp"
+                ]
+            },
+            {
+                type: "text",
+                body: "The answer was a fingerprint. A ceiling installation of LED strip lighting traced in the pattern of a fingerprint — a subtle, abstract gesture that most customers would read as an interesting lighting feature without ever consciously registering its meaning. The word unique does not appear anywhere in the store. The idea simply exists in the space, quietly doing its work."
+            },
+            {
+                type: "image",
+                src: "Portfolio-images_webp/Timebox Zurich/Dufry Zurich Timebox Watch Store Travel Retail Design Plan GA.webp",
+                caption: "General arrangement plan — Timebox Zurich"
+            },
+            {
+                type: "text",
+                body: "For the colour palette I chose teal — a colour that at the time was genuinely rare in retail environments. It was distinctive without being aggressive, and it carried a secondary resonance that felt right for the category. Many of the world's most celebrated watches are built for water: diving, sailing, maritime exploration. Combined with topographic and fingerprint line graphics printed across the feature walls, the teal gave the whole space a quality of depth, as though you were looking at something through water. None of this was labelled or explained. It was simply present."
             },
             {
                 type: "gallery",
@@ -844,18 +1023,12 @@ const portfolioData = [
                 ]
             },
             {
-                type: "image",
-                src: "Portfolio-images_webp/Timebox Zurich/Dufry Zurich Timebox Watch Store Travel Retail Design Plan GA.webp",
-                caption: "General arrangement plan — Timebox Zurich"
+                type: "text",
+                body: "Looking back, I think there was something quietly wise in the decision to give this particular brief to a young designer. The brand team and the company were investing in a concept aimed at a younger audience, and they chose to back a younger design sensibility to match. I was grateful for that trust at the time, and I appreciate it even more now. It produced something that an older, more experienced hand might not have arrived at — and I think the space is better for it."
             },
             {
-                type: "gallery",
-                images: [
-                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 1.webp",
-                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 4.webp",
-                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 5.webp",
-                    "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Internal preliminary view.webp"
-                ]
+                type: "text",
+                body: "There is one detail about this project that I have never spoken about publicly. When I produced the technical drawings for the fingerprint ceiling installation and the wall graphics, I traced my own finger to generate the pattern. I expected the manufacturers to substitute a generic print or simplify the geometry. They did not. My actual fingerprint went into the manufacturing drawings, unaltered, and was built exactly as drawn. Somewhere in Zurich Airport, in the ceiling of that store, is something that is literally mine. I find that quietly wonderful."
             },
             {
                 type: "gallery",
@@ -868,12 +1041,14 @@ const portfolioData = [
             },
             {
                 type: "bullets",
-                heading: "Design Principles",
+                heading: "Skills Developed",
                 items: [
-                    "Display architecture for high-security product showcase",
-                    "Lighting calibrated for watch and jewellery appeal",
-                    "Premium material palette reflecting Swiss craft heritage",
-                    "Customer journey from browse to consultation"
+                    "Concept origination and design language development as lead designer",
+                    "Colour theory and material specification for premium jewellery retail",
+                    "Custom lighting installation design and technical drawing",
+                    "Wall graphic and pattern development for manufacture",
+                    "High-security display architecture for watches and jewellery",
+                    "Working within a large retail conglomerate on a first-of-kind brief"
                 ]
             }
         ]
@@ -981,7 +1156,7 @@ const portfolioData = [
         type: "architecture",
         lat: -36.8485,
         lon: 174.7633,
-        status: "built",
+        status: "concept",
         title: "Superyacht & Boat Design",
         airport: "New Zealand & Australia",
         content: [
@@ -1074,7 +1249,7 @@ const portfolioData = [
         type: "digital",
         lat: 0,
         lon: 0,
-        status: "built",
+        status: "concept",
         title: "Polhill App",
         airport: "Wellington, New Zealand",
         content: [
@@ -1153,7 +1328,7 @@ const portfolioData = [
         type: "digital",
         lat: 0,
         lon: 0,
-        status: "concept",
+        status: "built",
         title: "Fuelmizas",
         airport: "Digital / Web",
         content: [
@@ -1221,84 +1396,6 @@ const portfolioData = [
             }
         ]
     },
-
-    {
-        id: 106,
-        type: "digital",
-        lat: 0,
-        lon: 0,
-        status: "built",
-        title: "Tarquin Design — Brand Assets",
-        airport: "New Zealand",
-        content: [
-            {
-                type: "gallery",
-                images: [
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/Tarquin logo stamp.webp",
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/Tarquin Square.webp",
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/ocean waves  tarquin design cover.webp",
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/Tarquin over water.webp"
-                ]
-            },
-            {
-                type: "text",
-                body: "Brand identity and asset development for Tarquin Design — establishing a visual language at the intersection of spatial and digital design disciplines. The brand needed to feel both architectural in its rigour and dynamic in its digital application."
-            },
-            {
-                type: "gallery",
-                images: [
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/IMG_20200216_145552_192.webp",
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/IMG_20200216_150056_877.webp",
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/IMG_20200216_150218_476.webp",
-                    "Portfolio-images_webp/Tarquin Design Brand Assets/IMG_20200216_150556_648.webp"
-                ]
-            },
-            {
-                type: "bullets",
-                heading: "Deliverables",
-                items: [
-                    "Logo design, brand mark and stamp variants",
-                    "Colour system and typographic hierarchy",
-                    "Digital and print asset suite",
-                    "Brand guidelines documentation"
-                ]
-            }
-        ]
-    },
-
-    {
-        id: 107,
-        type: "digital",
-        lat: 0,
-        lon: 0,
-        status: "built",
-        title: "Datacom",
-        airport: "Auckland, New Zealand",
-        content: [
-            {
-                type: "gallery",
-                images: [
-                    "Portfolio-images_webp/Datacom/Datacom Primary Logo - Datacom Blue.webp",
-                    "Portfolio-images_webp/Datacom/Datacom Greyscale Logo - For print use - CMYK Datacom Black.webp",
-                    "Portfolio-images_webp/Datacom/Datacom Reversed Logo - For digital use - RBG White.webp"
-                ]
-            },
-            {
-                type: "text",
-                body: "Design engagement for Datacom — one of Australasia's largest technology services companies. The project focused on translating complex enterprise service offerings into accessible, human-centred digital experiences for both B2B and B2C audiences."
-            },
-            {
-                type: "bullets",
-                heading: "Deliverables",
-                items: [
-                    "Brand asset and logo system refinement",
-                    "Digital design system and component library",
-                    "Interface design for enterprise platform",
-                    "Responsive web experience design"
-                ]
-            }
-        ]
-    }
 
 ];
 
