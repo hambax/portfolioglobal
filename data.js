@@ -126,7 +126,21 @@ const portfolioData = [
         airport: "Knightsbridge & London Heathrow T3, T4 & T5",
         content: [
             {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    { label: "Knightsbridge flagship concepts and LHR T3, T4 and T5 airport retail", anchor: "the-brief" },
+                    { label: "Aviation-grade engineering: fire, security and durability compliance", anchor: "airport-engineering" },
+                    { label: "3D modelling, rendering and early machine learning visualisation tools", anchor: "the-craft" },
+                    { label: "Hand sketching under founding director Roger Cook", anchor: "the-team" },
+                    { label: "International material sourcing and supplier coordination", anchor: "the-craft" },
+                    { label: "UX design foundation learned through moving people through physical space", anchor: "what-i-took-away" }
+                ]
+            },
+            {
                 type: "gallery",
+                id: "the-brief",
+                heading: "The Brief",
                 images: [
                     "Portfolio-images_webp/Harrods/Harrods/192722-002©Greshoff(H).webp",
                     "Portfolio-images_webp/Harrods/Harrods/192722-008©Greshoff(H).webp",
@@ -140,6 +154,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "airport-engineering",
+                heading: "Airport Engineering",
                 body: "Airport retail operates under constraints that high street design never faces. Every material we specified had to meet stringent fire resistance, commercial durability, and security standards — bomb-proof glazing, commercial-grade fixings, internationally sourced finishes that could survive the relentless footfall of one of the world's busiest transit hubs. The extraordinary thing is that none of this shows. The finished spaces feel precisely as they should: effortlessly luxurious, quietly exceptional."
             },
             {
@@ -153,6 +169,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "the-craft",
+                heading: "The Craft",
                 body: "My contribution spanned both the creative and the technical. I drew floor plans, developed lighting specifications, built 3D models in Cinema 4D, and produced renders and presentation visuals — including early experiments with machine learning tools to accelerate the visualisation process. I worked closely with manufacturers and international suppliers, developing an understanding of materials science and global procurement that has stayed with me ever since."
             },
             {
@@ -162,6 +180,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "the-team",
+                heading: "The Team",
                 body: "Some of the most formative moments happened around the large angled drafting table at Wanda Creative, working alongside <span class='highlight'>Roger Cook</span> — one of the founding directors and a master of hand-drawn architectural interior renders. Watching Roger work, and learning to use those tools myself, gave me a discipline and spatial intuition that no software can replicate. I was also fortunate to learn under <span class='highlight'>Michael Foley</span>, co-founder and CEO, and <span class='highlight'>Lisa Brown</span>, General Manager — people whose standards, generosity, and belief in young designers shaped everything I do."
             },
             {
@@ -175,6 +195,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "what-i-took-away",
+                heading: "What I Took Away",
                 body: "One of the deepest lessons this project gave me was one I didn't expect: a foundation in user experience design. Thinking about how a traveller — tired, time-conscious, carrying luggage — moves through a luxury retail space, remains aware of their departure gate, and still finds the space and calm to browse and discover, is fundamentally a UX problem. The physical and digital design challenges are the same. I've carried that insight into every digital product I've worked on since."
             },
             {
@@ -185,19 +207,8 @@ const portfolioData = [
                     "Portfolio-images_webp/Harrods/Harrods T3/192722-059©Greshoff(H).webp",
                     "Portfolio-images_webp/Harrods/Harrods T3/192722-071©Greshoff(H).webp"
                 ]
-            },
-            {
-                type: "bullets",
-                heading: "Skills & Scope",
-                items: [
-                    "Architectural floor plans, technical drawings and lighting specification",
-                    "3D modelling in Cinema 4D and 3ds Max; rendering and visualisation",
-                    "Hand sketching and Photoshop compositing on large-format drawings",
-                    "International material sourcing and supplier coordination",
-                    "Aviation-grade technical specification — fire, security and durability compliance",
-                    "Early machine learning tools for visual development and ideation"
-                ]
             }
+
         ]
     },
 
@@ -215,16 +226,18 @@ const portfolioData = [
                 type: "bullets",
                 heading: "At a Glance",
                 items: [
-                    "Full retail masterplan across multiple terminal zones at Hamad International Airport",
-                    "Over a year of design development in the lead-up to the Qatar 2022 FIFA World Cup",
-                    "Spaces designed for beauty, fragrance, alcohol, chocolate, food gifts and fashion",
-                    "Golden Eagle installation as centrepiece of the Great Hall alcohol tower",
-                    "Sustainable flooring: recycled stone composite achieving the look of marble at reduced cost and environmental impact",
-                    "Cultural pattern work developed in collaboration with local Qatari artists"
+                    { label: "Full retail masterplan across multiple terminal zones", anchor: "the-scale" },
+                    { label: "Over a year of work in the lead-up to the Qatar 2022 FIFA World Cup", anchor: "masterplanning" },
+                    { label: "Golden Eagle installation in the Great Hall above the alcohol tower", anchor: "the-great-hall" },
+                    { label: "Sustainable recycled stone composite flooring — sourced regionally", anchor: "materials-sustainability" },
+                    { label: "Cultural pattern work with local Qatari artists and consultants", anchor: "culture-collaboration" },
+                    { label: "Beauty, fragrance, chocolate, food gifts and fashion zones", anchor: "the-great-hall" }
                 ]
             },
             {
                 type: "gallery",
+                id: "the-scale",
+                heading: "The Scale",
                 images: [
                     "Portfolio-images_webp/Qatar Duty Free/Almotahajiba View.webp",
                     "Portfolio-images_webp/Qatar Duty Free/BRAND Shopfront View.webp"
@@ -236,6 +249,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "masterplanning",
+                heading: "Masterplanning",
                 body: "The scale of the masterplanning work was significant. Our team was responsible for designing the passenger journey from arrival gates through to the main retail concourse and food court areas, using high-contrast floor plans to guide travellers across vast terminal spaces and connect the retail zones to one another. This kind of spatial thinking at terminal scale taught me more about user experience and wayfinding than almost anything else in my career."
             },
             {
@@ -249,6 +264,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "materials-sustainability",
+                heading: "Materials & Sustainability",
                 body: "One of the moments I am most proud of on this project was a materials decision. The client had specified real marble for the flooring throughout. We researched and presented an alternative: a high-quality recycled stone composite tile, sourced from a supplier closer to the region, that achieved the same visual effect as marble at a substantially reduced cost and with a significantly lower environmental footprint. They agreed. Seeing those floors installed and knowing the reasoning behind them still feels meaningful."
             },
             {
@@ -262,6 +279,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "the-great-hall",
+                heading: "The Great Hall",
                 body: "The beauty and fragrance hall was a central focus of the project. The cultural importance of perfume across the Gulf region meant this space needed to be exceptional, generous, and deeply considered. Alongside it, the Great Hall featured a Golden Eagle installation rising above a tower display for spirits and alcohol, a piece of theatre that anchored the space and gave travellers a genuine landmark moment within the terminal."
             },
             {
@@ -275,6 +294,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "culture-collaboration",
+                heading: "Culture & Collaboration",
                 body: "Throughout the project, the Qatari family who owned the airport were careful to involve local artists and cultural consultants in the decorative programme. I was fortunate to work with some of those patterns and installations directly, learning about the historical trade routes and ancient geometric traditions that informed them. That process of learning, listening, and implementing with care is something I have carried into every subsequent project that asked me to work within a culture other than my own."
             },
             {
@@ -285,19 +306,8 @@ const portfolioData = [
                     "Portfolio-images_webp/QDF SN1000/QDF Fashion 3.webp",
                     "Portfolio-images_webp/QDF SN1000/QDF Fashion 4.webp"
                 ]
-            },
-            {
-                type: "bullets",
-                heading: "Skills Developed",
-                items: [
-                    "Large-scale retail masterplanning and passenger flow strategy",
-                    "Sustainable material research, specification and client advocacy",
-                    "Spatial design across multiple retail categories simultaneously",
-                    "Cultural sensitivity and collaboration with local artists and consultants",
-                    "VR walkthrough production for client presentation and approval",
-                    "Managing design delivery under major event deadlines"
-                ]
             }
+
         ]
     },
 
@@ -412,16 +422,18 @@ const portfolioData = [
                 type: "bullets",
                 heading: "At a Glance",
                 items: [
-                    "New store for Dufry in the Genting Highlands resort destination, Malaysia",
-                    "Cyberpunk-influenced design language: dark ceilings, neon lighting, futuristic synthetic materials",
-                    "Hand-drawn zigzag ceiling plan translated into a 3D molded fascia",
-                    "Laser-focused product spotlighting creating pools of light within a blacked-out ceiling",
-                    "Navigation clarity of international airport retail embedded within an adventurous, exploratory atmosphere",
-                    "Remarkably fast build turnaround from 2D drawings to completed retail space"
+                    { label: "New Dufry store in the Genting Highlands resort destination, Malaysia", anchor: "the-location" },
+                    { label: "Cyberpunk-influenced design: dark ceilings, neon lighting, synthetic materials", anchor: "the-design-language" },
+                    { label: "Hand-drawn zigzag ceiling plan translated into a 3D molded fascia", anchor: "the-design-language" },
+                    { label: "Laser-focused product spotlighting creating dramatic pools of light", anchor: "lighting" },
+                    { label: "Airport-standard navigation clarity within an exploratory, adventurous atmosphere", anchor: "culture-navigation" },
+                    { label: "Remarkably fast build turnaround from 2D drawings to completed retail space", anchor: "the-build-team" }
                 ]
             },
             {
                 type: "gallery",
+                id: "the-location",
+                heading: "The Location",
                 images: [
                     "Portfolio-images_webp/Dufry Malaysia/Dufry Malaysia Travel Retail Store  (1).webp",
                     "Portfolio-images_webp/Dufry Malaysia/Dufry Malaysia Travel Retail Store  (2).webp",
@@ -435,6 +447,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "the-design-language",
+                heading: "The Design Language",
                 body: "The direction we landed on was somewhere between cyberpunk and jungle. Dark, stimulating, synthetic, and alive. The ceiling was blacked out entirely, with a hand-drawn zigzag lighting plan I developed on paper — lines of blue and pink light cutting across the void above. That drawing was taken directly into production and molded into a three-dimensional fascia. Seeing a hand sketch become an architectural element in that way, without losing any of its energy in translation, was one of the more satisfying moments of this project."
             },
             {
@@ -448,7 +462,9 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Lighting was the real instrument of the design. Rather than flooding the space with even, global illumination, I specified laser-focused spotlights trained directly on the retail displays. The effect was of moving through a space with texture and rhythm — bright pools of product light surrounded by deeper shadow, then another burst of colour and interest around the next corner. It felt a little like a jungle in that sense: areas of intensity and areas of quiet, with something worth discovering in each. The space rewarded exploration without ever making navigation feel difficult."
+                id: "lighting",
+                heading: "Lighting",
+                body: "Lighting was the real instrument of the design. Rather than flooding the space with even, global illumination, I specified laser-focused spotlights trained directly on the retail displays. The effect was of moving through a space with texture and rhythm — bright pools of product light surrounded by deeper shadow, then another burst of colour and interest around the next corner. It felt a little like a jungle in that sense: areas of intensity and areas of quiet, with something worth discovering in each."
             },
             {
                 type: "image",
@@ -457,6 +473,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "culture-navigation",
+                heading: "Culture & Navigation",
                 body: "Culturally, designing for an Asian market allowed for a bolder, more inorganic design language than would have felt appropriate in London or Zurich. Synthetic materials, neon accents, clean geometric lines — the aesthetic of a futuristic city that never quite sleeps. And yet underneath all of that visual energy, the bones of the store were built on the same principles of good retail navigation we had refined across years of airport work. Customers could find their way through clearly and efficiently, but they could also wander, pause, and discover."
             },
             {
@@ -470,6 +488,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "the-build-team",
+                heading: "The Build Team",
                 body: "The build teams on this project were extraordinary. The speed at which they moved from flat 2D drawings to a fully completed three-dimensional retail environment was genuinely impressive, and their ability to interpret and execute the more unusual design details with precision and care made the whole experience a pleasure. Good design depends on good makers, and this project had exceptional ones."
             },
             {
@@ -480,19 +500,8 @@ const portfolioData = [
                     "Portfolio-images_webp/Dufry Malaysia/CIMG2470.webp",
                     "Portfolio-images_webp/Dufry Malaysia/CIMG2474.webp"
                 ]
-            },
-            {
-                type: "bullets",
-                heading: "Skills Developed",
-                items: [
-                    "Atmospheric lighting design with laser-focused product specification",
-                    "Hand-drawn ceiling and fascia design translated directly to 3D manufacture",
-                    "Culturally responsive design language for an Asian resort market",
-                    "Retail navigation and category zoning within an exploratory spatial concept",
-                    "Collaboration with fast-moving international build teams",
-                    "Synthetic material specification for a futuristic, high-energy retail environment"
-                ]
             }
+
         ]
     },
 
@@ -550,16 +559,18 @@ const portfolioData = [
                 type: "bullets",
                 heading: "At a Glance",
                 items: [
-                    "Series of separate retail design projects across airports, train stations and high street stores",
-                    "New design language and material system created from scratch for the brand",
-                    "Flagship locations at Heathrow T3, T4, Gatwick South, Paddington Station and Sydney Airport",
-                    "Environmentally certified suppliers specified throughout",
-                    "Custom shelving, display stands and engineering details developed in-house",
-                    "Measurable commercial growth recorded at every completed store"
+                    { label: "New design language and material system created from scratch", anchor: "a-new-design-language" },
+                    { label: "Flagship locations: Heathrow T3, T4, Gatwick South, Paddington, Sydney Airport", anchor: "the-programme" },
+                    { label: "Warm timber, stone tiles and reading-focused spotlight lighting", anchor: "materials-lighting" },
+                    { label: "Environmentally certified suppliers specified throughout", anchor: "sustainability" },
+                    { label: "Custom shelving and display engineering details developed in-house", anchor: "technical-work" },
+                    { label: "Measurable commercial growth at every completed store", anchor: "the-outcome" }
                 ]
             },
             {
                 type: "gallery",
+                id: "the-programme",
+                heading: "The Programme",
                 images: [
                     "Portfolio-images_webp/WHSmith/Web Optimised/Render WHS T4SWC.webp",
                     "Portfolio-images_webp/WHSmith/Web Optimised/Render WHS T4SWC (1).webp",
@@ -573,10 +584,14 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "a-new-design-language",
+                heading: "A New Design Language",
                 body: "We kept their signature blue prominent throughout, but built an entirely new material world around it. Earthy stone tile textures at floor level, warm timber shelving, and carefully considered warm lighting in every location. Lighting in particular mattered enormously. WHSmith sells books, magazines and stationery alongside food and travel essentials, and a customer browsing a novel in an airport deserves the same quality of reading light as they would find at home. Every feature display included dedicated reading spotlights as a result."
             },
             {
                 type: "gallery",
+                id: "materials-lighting",
+                heading: "Materials & Lighting",
                 images: [
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith LHR T3 Design Concept (1).webp",
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith LHR T3 Design Concept (2).webp",
@@ -586,10 +601,14 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "technical-work",
+                heading: "Technical Work",
                 body: "My contribution spanned the full range of the design process. I produced 3D models and rendered visuals for client presentations, and I was also responsible for a significant body of technical drawing work: engineering details for the custom shelving displays and product stands that the shopfitting trades would eventually build. I have a deep respect for the craftspeople and tradespeople who execute this kind of work, and seeing skilled shopfitters bring those details to life across multiple sites was genuinely satisfying."
             },
             {
                 type: "text",
+                id: "sustainability",
+                heading: "Sustainability",
                 body: "Sustainability mattered to us on this programme. We specified suppliers with credible environmental credentials and certifications throughout, a standard I pushed for and one the client was receptive to. These kinds of decisions are easier to make when a client moves quickly and trusts your thinking — and WHSmith were exactly that kind of partner."
             },
             {
@@ -603,7 +622,9 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "The stores we completed are genuinely hybrid spaces. A traveller in a hurry can grab food and navigate to their gate in under two minutes. A traveller with time can find a quiet corner, browse the books, and feel comfortable doing so. That dual functionality does not happen by accident. It is the result of careful category zoning, clear graphic navigation, and a material palette warm enough to slow people down without making them feel like they are wasting time."
+                id: "the-outcome",
+                heading: "The Outcome",
+                body: "The stores we completed are genuinely hybrid spaces. A traveller in a hurry can grab food and navigate to their gate in under two minutes. A traveller with time can find a quiet corner, browse the books, and feel comfortable doing so. That dual functionality does not happen by accident. It is the result of careful category zoning, clear graphic navigation, and a material palette warm enough to slow people down without making them feel like they are wasting time. Every store we completed saw measurable commercial growth."
             },
             {
                 type: "gallery",
@@ -615,10 +636,6 @@ const portfolioData = [
                 ]
             },
             {
-                type: "text",
-                body: "Every store we completed saw measurable commercial growth. That outcome, across flagship locations at Heathrow T3 and T4, Gatwick South, Paddington Station, and Sydney Airport, is the clearest evidence that good design and good business results are not in competition with each other."
-            },
-            {
                 type: "gallery",
                 images: [
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (1).webp",
@@ -626,19 +643,8 @@ const portfolioData = [
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (3).webp",
                     "Portfolio-images_webp/WHSmith/Web Optimised/WHSmith_Heathrow-T4_Design Concept (4).webp"
                 ]
-            },
-            {
-                type: "bullets",
-                heading: "Skills Developed",
-                items: [
-                    "Full retail design language creation from brief to built environment",
-                    "Technical drawing and engineering detail for custom fixtures and shelving",
-                    "Lighting design with specialist reading-focused specifications",
-                    "Environmentally certified material and supplier specification",
-                    "Design system scalable across multiple formats and locations",
-                    "Client collaboration in a fast-moving, high-trust design relationship"
-                ]
             }
+
         ]
     },
 
@@ -746,16 +752,18 @@ const portfolioData = [
                 type: "bullets",
                 heading: "At a Glance",
                 items: [
-                    "Convenience grocery store within a complex, multi-exit Baker Street Underground space",
-                    "Full bomb and fire rating compliance — same engineering rigour as airport retail",
-                    "Passenger through-flow, evacuation planning and retail navigation designed as a unified system",
-                    "Natural material palette: warm timber, stone-effect floor tiles, carefully tuned neutral lighting",
-                    "Coffee kiosk, chiller placement and product zoning planned for high-speed transit customers",
-                    "Interior designed to feel light and fresh despite a deep underground environment"
+                    { label: "Multi-exit convenience store within Baker Street Underground", anchor: "the-space" },
+                    { label: "Bomb and fire rating compliance — same rigour as airport retail", anchor: "security-as-design-tool" },
+                    { label: "Evacuation planning and retail navigation designed as a unified system", anchor: "security-as-design-tool" },
+                    { label: "Warm timber, exposed Victorian brick and stone-effect tiles", anchor: "materials-atmosphere" },
+                    { label: "Lighting tuned for food freshness and underground comfort", anchor: "materials-atmosphere" },
+                    { label: "Design language retained in the completed £2.1m store", anchor: "the-completed-store" }
                 ]
             },
             {
                 type: "gallery",
+                id: "the-space",
+                heading: "The Space",
                 images: [
                     "Portfolio-images_webp/COOP London/13 Coop_Baker Street Render Entrance View.webp",
                     "Portfolio-images_webp/COOP London/14 Coop_Baker Street Render Shopfront View.webp",
@@ -769,6 +777,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "two-kinds-of-customer",
+                heading: "Two Kinds of Customer",
                 body: "The Co-op brief asked us to make this space work for everyone passing through. Commuters in a hurry needed to move through efficiently, picking up a coffee or a cold drink without breaking stride. Others needed the space and encouragement to slow down, browse the food offer, pick up a newspaper or a meal for the evening. Both groups needed to feel welcome at the same time, in the same space, without the design favouring one at the expense of the other."
             },
             {
@@ -782,6 +792,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "security-as-design-tool",
+                heading: "Security as Design Tool",
                 body: "The security and evacuation requirements that come with a tube station shaped the spatial plan from the very beginning. Designing for rapid passenger evacuation and designing for clear retail navigation turn out to demand almost exactly the same things: wide, unobstructed sightlines, clear category zoning, multiple entry and exit points that read intuitively. Constraints that initially felt limiting ended up producing a better store. That tends to happen more often than you might expect."
             },
             {
@@ -795,19 +807,15 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "The material palette was chosen specifically to counteract the environment outside the store. Baker Street station is yellow and worn in the way that only very old underground spaces can be. We wanted stepping into the Co-op to feel like a breath of fresh air. Warm timber shelving, stone-effect floor tiles, and lighting calibrated to sit just slightly warm of neutral — warm enough to make food look fresh and appetising, cool enough to avoid the heaviness that can make underground spaces feel oppressive. It was a careful tuning exercise, and one I found genuinely satisfying to get right."
+                id: "materials-atmosphere",
+                heading: "Materials & Atmosphere",
+                body: "The material palette was chosen specifically to counteract the environment outside the store. Baker Street station is yellow and worn in the way that only very old underground spaces can be. We wanted stepping into the Co-op to feel like a breath of fresh air. Warm timber shelving, stone-effect floor tiles, and lighting calibrated to sit just slightly warm of neutral — warm enough to make food look fresh and appetising, cool enough to avoid the heaviness that can make underground spaces feel oppressive."
             },
             {
                 type: "text",
+                id: "the-details",
+                heading: "The Details",
                 body: "Chiller placement for cold drinks was given serious attention. Drinks are one of the highest-impulse purchases in transit retail, and making them easy to access without creating bottlenecks in the main passenger through-flow was a spatial puzzle worth solving carefully. The coffee kiosk — a compact hole-in-the-wall format — was positioned to catch passengers on their way in without disrupting the natural movement through the space."
-            },
-            {
-                type: "text",
-                body: "One material decision I am particularly proud of was the choice to expose the original Victorian brickwork of the tube building rather than cover it over. It was a gesture that grounded the store in its own history and gave it an authenticity that no applied finish could replicate. That decision, along with the warm timber shelving and natural material palette, survived into the final completed store — which opened a couple of years after I had left Wanda Creative, with a reported investment of £2.1 million. Seeing the design language we developed retained and built is one of the quiet satisfactions of this work."
-            },
-            {
-                type: "text",
-                body: "You can read about the completed store at <a href=\"https://www.conveniencestore.co.uk/store-development/co-op-invests-21m-in-on-the-go-concept-store-in-london/657776.article\" target=\"_blank\" class=\"inline-link\">The Grocer — Co-op invests £2.1m in on-the-go concept store in London</a>."
             },
             {
                 type: "gallery",
@@ -819,17 +827,16 @@ const portfolioData = [
                 ]
             },
             {
-                type: "bullets",
-                heading: "Skills Developed",
-                items: [
-                    "Retail design within complex, historically constrained underground architecture",
-                    "Bomb and fire rating compliance in a live transit environment",
-                    "Unified passenger flow, evacuation and navigation planning",
-                    "Food retail lighting specification and colour temperature tuning",
-                    "Chiller and impulse category placement for high-volume transit customers",
-                    "CGI rendering of underground environments with natural material warmth"
-                ]
+                type: "text",
+                id: "the-completed-store",
+                heading: "The Completed Store",
+                body: "One material decision I am particularly proud of was the choice to expose the original Victorian brickwork of the tube building rather than cover it over. It was a gesture that grounded the store in its own history and gave it an authenticity that no applied finish could replicate. That decision, along with the warm timber shelving and natural material palette, survived into the final completed store — which opened a couple of years after I had left Wanda Creative, with a reported investment of £2.1 million. Seeing the design language we developed retained and built is one of the quiet satisfactions of this work."
+            },
+            {
+                type: "text",
+                body: "You can read about the completed store at <a href=\"https://www.conveniencestore.co.uk/store-development/co-op-invests-21m-in-on-the-go-concept-store-in-london/657776.article\" target=\"_blank\" class=\"inline-link\">The Grocer — Co-op invests £2.1m in on-the-go concept store in London</a>."
             }
+
         ]
     },
 
@@ -958,16 +965,18 @@ const portfolioData = [
                 type: "bullets",
                 heading: "At a Glance",
                 items: [
-                    "Brand new retail concept — a first of its kind for this client within the Dufry group",
-                    "Solo concept lead role: colour palette, materials, and design language originated here",
-                    "Signature fingerprint ceiling installation in LED strip lighting",
-                    "Teal colour palette chosen for its rarity, visual distinctiveness and subtle maritime resonance",
-                    "Topographic and fingerprint line graphics printed on feature walls",
-                    "Technical manufacturing drawings used the designer's actual fingerprint — unaltered"
+                    { label: "First-of-kind retail concept for Dufry — solo concept lead role", anchor: "the-opportunity" },
+                    { label: "Designed specifically for a younger, aspirational watch audience", anchor: "designing-for-a-new-audience" },
+                    { label: "Teal colour palette: distinctive, rare and subtly maritime", anchor: "colour-materials" },
+                    { label: "Fingerprint ceiling in LED strip lighting — the concept of uniqueness, quietly expressed", anchor: "the-concept" },
+                    { label: "Topographic and fingerprint line graphics printed on feature walls", anchor: "colour-materials" },
+                    { label: "Manufacturing drawings used the designer's actual fingerprint, unaltered", anchor: "the-fingerprint" }
                 ]
             },
             {
                 type: "gallery",
+                id: "the-opportunity",
+                heading: "The Opportunity",
                 images: [
                     "Portfolio-images_webp/Timebox Zurich/Dufry Timebox Travel Retail Watch Store Interior Design Render 1.webp",
                     "Portfolio-images_webp/Timebox Zurich/Dufry Timebox Travel Retail Watch Store Interior Design Render 2.webp",
@@ -981,6 +990,8 @@ const portfolioData = [
             },
             {
                 type: "text",
+                id: "designing-for-a-new-audience",
+                heading: "Designing for a New Audience",
                 body: "The brief had a specific audience in mind: younger people. Not the traditional watch buyer browsing heavy, gold-trimmed cabinets in a darkened boutique, but a traveller in their twenties or thirties discovering that a well-made timepiece could be both attainable and aspirational. Watches as part of an active, mobile, curious lifestyle rather than as inherited jewellery. That distinction shaped every decision made in the store."
             },
             {
@@ -988,11 +999,9 @@ const portfolioData = [
                 body: "Traditional high-end watch retail tends toward weight and enclosure: dark timbers, polished bronze, low light, hushed atmosphere. All of it signals exclusivity to a generation that already knows it belongs there. This store was designed for a generation that is still forming its relationship with quality and craft. The response was the opposite: bright, open, full of glass and clear display cases, light flooding every surface. The message was one of welcome and accessibility rather than gatekeeping."
             },
             {
-                type: "text",
-                body: "The concept started with a simple observation about watches. They are mass produced objects that become deeply personal. A metal timepiece ages with its owner, develops a patina, accumulates scratches and memories. The watch you have worn for ten years is not the same object it was when you bought it. It has become yours in a way that almost nothing else you own does. The store needed to speak to that idea of personal uniqueness — quietly, without ever stating it."
-            },
-            {
                 type: "gallery",
+                id: "the-concept",
+                heading: "The Concept",
                 images: [
                     "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 1.webp",
                     "Portfolio-images_webp/Timebox Zurich/Dufry Watch & Jewellery Collection - Sketch Wallbay 4.webp",
@@ -1002,7 +1011,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "The answer was a fingerprint. A ceiling installation of LED strip lighting traced in the pattern of a fingerprint — a subtle, abstract gesture that most customers would read as an interesting lighting feature without ever consciously registering its meaning. The word unique does not appear anywhere in the store. The idea simply exists in the space, quietly doing its work."
+                body: "The concept started with a simple observation about watches. They are mass produced objects that become deeply personal. A metal timepiece ages with its owner, develops a patina, accumulates scratches and memories. The watch you have worn for ten years is not the same object it was when you bought it. It has become yours in a way that almost nothing else you own does. The store needed to speak to that idea of personal uniqueness — quietly, without ever stating it. The answer was a fingerprint. A ceiling installation of LED strip lighting traced in the pattern of a fingerprint — a subtle, abstract gesture that most customers would read as an interesting lighting feature without ever consciously registering its meaning."
             },
             {
                 type: "image",
@@ -1011,7 +1020,9 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "For the colour palette I chose teal — a colour that at the time was genuinely rare in retail environments. It was distinctive without being aggressive, and it carried a secondary resonance that felt right for the category. Many of the world's most celebrated watches are built for water: diving, sailing, maritime exploration. Combined with topographic and fingerprint line graphics printed across the feature walls, the teal gave the whole space a quality of depth, as though you were looking at something through water. None of this was labelled or explained. It was simply present."
+                id: "colour-materials",
+                heading: "Colour & Materials",
+                body: "For the colour palette I chose teal — a colour that at the time was genuinely rare in retail environments. It was distinctive without being aggressive, and it carried a secondary resonance that felt right for the category. Many of the world's most celebrated watches are built for water: diving, sailing, maritime exploration. Combined with topographic and fingerprint line graphics printed across the feature walls, the teal gave the whole space a quality of depth, as though you were looking at something through water."
             },
             {
                 type: "gallery",
@@ -1024,11 +1035,15 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Looking back, I think there was something quietly wise in the decision to give this particular brief to a young designer. The brand team and the company were investing in a concept aimed at a younger audience, and they chose to back a younger design sensibility to match. I was grateful for that trust at the time, and I appreciate it even more now. It produced something that an older, more experienced hand might not have arrived at — and I think the space is better for it."
+                id: "the-fingerprint",
+                heading: "The Fingerprint",
+                body: "There is one detail about this project that I have never spoken about publicly. When I produced the technical drawings for the fingerprint ceiling installation and the wall graphics, I traced my own finger to generate the pattern. I expected the manufacturers to substitute a generic print or simplify the geometry. They did not. My actual fingerprint went into the manufacturing drawings, unaltered, and was built exactly as drawn. Somewhere in Zurich Airport, in the ceiling of that store, is something that is literally mine. I find that quietly wonderful."
             },
             {
                 type: "text",
-                body: "There is one detail about this project that I have never spoken about publicly. When I produced the technical drawings for the fingerprint ceiling installation and the wall graphics, I traced my own finger to generate the pattern. I expected the manufacturers to substitute a generic print or simplify the geometry. They did not. My actual fingerprint went into the manufacturing drawings, unaltered, and was built exactly as drawn. Somewhere in Zurich Airport, in the ceiling of that store, is something that is literally mine. I find that quietly wonderful."
+                id: "the-build",
+                heading: "The Build",
+                body: "Looking back, I think there was something quietly wise in the decision to give this particular brief to a young designer. The brand team and the company were investing in a concept aimed at a younger audience, and they chose to back a younger design sensibility to match. I was grateful for that trust at the time, and I appreciate it even more now. It produced something that an older, more experienced hand might not have arrived at — and I think the space is better for it."
             },
             {
                 type: "gallery",
@@ -1038,19 +1053,8 @@ const portfolioData = [
                     "Portfolio-images_webp/Timebox Zurich/timeboxzurichairporttaxfree23.webp",
                     "Portfolio-images_webp/Timebox Zurich/timeboxzurichairporttaxfree26.webp"
                 ]
-            },
-            {
-                type: "bullets",
-                heading: "Skills Developed",
-                items: [
-                    "Concept origination and design language development as lead designer",
-                    "Colour theory and material specification for premium jewellery retail",
-                    "Custom lighting installation design and technical drawing",
-                    "Wall graphic and pattern development for manufacture",
-                    "High-security display architecture for watches and jewellery",
-                    "Working within a large retail conglomerate on a first-of-kind brief"
-                ]
             }
+
         ]
     },
 
