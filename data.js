@@ -900,10 +900,25 @@ const portfolioData = [
         lon: -2.0943,
         status: "built",
         title: "World Duty Free",
+        subtitle: "Travel Retail Fitouts, UK Airports",
         airport: "Heathrow, Belfast & Aberdeen, UK",
         content: [
             {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    { label: "Long-term client relationship across multiple UK airport sites", anchor: "the-brief" },
+                    { label: "High-contrast black, white and bright lighting design language rolled out across formats", anchor: "the-design-language" },
+                    { label: "Masterplanning of passenger flow: wide walkways, clear sightlines, no overcrowding", anchor: "masterplanning" },
+                    { label: "World of Whiskey and Gin Lounge — warm bespoke environments within the broader retail estate", anchor: "bespoke-spaces" },
+                    { label: "Modular brand environments that gave personality without overwhelming the overall store", anchor: "bespoke-spaces" },
+                    { label: "New store fits built in the late 2010s and early 2020s — still open today", anchor: "the-brief" }
+                ]
+            },
+            {
                 type: "gallery",
+                id: "the-brief",
+                heading: "The Brief",
                 images: [
                     "Portfolio-images_webp/World Duty Free/WDF London with psd people/View 1.webp",
                     "Portfolio-images_webp/World Duty Free/WDF London with psd people/View 2.webp",
@@ -913,7 +928,13 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A multi-site retail design programme for World Duty Free across UK airports — bringing international retail standards to gateway environments where the traveller profile demands sophisticated, culturally attuned design. Projects spanned Heathrow, Belfast International, and Aberdeen."
+                body: "World Duty Free was one of Wanda Creative's most significant ongoing client relationships, and I was fortunate to work across many of the projects that came through. These were full new store fits — the old interiors stripped out and rebuilt from scratch — across airports in Heathrow, Belfast and Aberdeen, completed in the late 2010s and early 2020s. You can still visit them today."
+            },
+            {
+                type: "text",
+                id: "the-design-language",
+                heading: "The Design Language",
+                body: "World Duty Free had an established design language: high-contrast black and white floor tiles, crisp bright lighting, stark white surfaces, a modern and sharp retail aesthetic. My role was not to reinvent it but to help roll it out intelligently across spaces that were each different in shape, scale, and configuration. That kind of work — adapting a fixed design system to endlessly variable real-world conditions — teaches you a great deal about what makes a concept truly robust."
             },
             {
                 type: "gallery",
@@ -925,6 +946,12 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                id: "masterplanning",
+                heading: "Masterplanning",
+                body: "A large part of my contribution was spatial masterplanning — working out how passengers should move through each store given its unique geometry and position within the terminal. The guiding principle was clarity without sterility. Walkways were kept wide and unobstructed, the high-contrast floor pattern giving travellers an intuitive read of where to go even in a hurry. We used pattern interrupts and product moments to create interest and encourage dwell, but we never placed anything that blocked sightlines or made the exit feel uncertain. A passenger who needed to catch a flight could always see their way through. A passenger with time could explore and discover."
+            },
+            {
                 type: "gallery",
                 images: [
                     "Portfolio-images_webp/World Duty Free/WDF Aberdeen/World Dutry Free Travel Retail Design Aberdeen (1).webp",
@@ -934,20 +961,31 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                id: "bespoke-spaces",
+                heading: "Bespoke Spaces",
+                body: "Within the broader retail environment, certain categories earned something more considered. The World of Whiskey concept — developed by my predecessors at Wanda Creative and already standing the test of time — brought warm natural timbers and rich, tactile materials into sharp contrast with the crisp white retail world surrounding it. The effect was powerful precisely because of that contrast. The Gin Lounge carried a similar sensibility. These spaces worked because they felt genuinely different without breaking the coherence of the overall store."
+            },
+            {
                 type: "image",
                 src: "Portfolio-images_webp/World Duty Free/WDF HEathrow Christian Dior/World Duty Free Christian Dior Heathrow Design Concept.webp",
                 caption: "World Duty Free x Christian Dior — Heathrow concept"
             },
             {
-                type: "bullets",
-                heading: "Project Scope",
-                items: [
-                    "Retail interior architecture across 3 airports",
-                    "Category merchandising and display strategy",
-                    "Premium brand partnership environments (incl. Christian Dior)",
-                    "Concourse integration and threshold design"
+                type: "text",
+                heading: "A Stage for Brands",
+                body: "One of the things I am most proud of from this body of work is a design philosophy rather than a single decision. The World Duty Free stores were deliberately restrained — confident in their own aesthetic without trying to compete with the brands they housed. That neutrality was a considered choice. When the environment itself is calm and clear, brands can express their own personality through packaging, displays and graphics without the whole thing becoming overwhelming. I saw it encourage better packaging design and more thoughtful visual merchandising from the brands themselves. The space created the conditions for others to do their best work."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/World Duty Free/WDF London with psd people/View 6.webp",
+                    "Portfolio-images_webp/World Duty Free/WDF London with psd people/View 7.webp",
+                    "Portfolio-images_webp/World Duty Free/WDF London with psd people/View 9.webp",
+                    "Portfolio-images_webp/World Duty Free/WDF London with psd people/View 10.webp"
                 ]
             }
+
         ]
     },
 
