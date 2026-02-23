@@ -139,6 +139,46 @@
         .inline-link   { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; opacity: 0.8; transition: opacity 0.2s; }
         .inline-link:hover { opacity: 1; }
 
+        /* ── AT A GLANCE CARD ── */
+        .glance-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin-bottom: 28px;
+        }
+        .glance-card-heading {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--text-muted);
+            margin: 0 0 14px 0;
+        }
+        .glance-card ul {
+            margin: 0; padding: 0; list-style: none;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .glance-card ul li a {
+            font-size: 0.9rem; color: rgba(255,255,255,0.75);
+            text-decoration: none; line-height: 1.5;
+            display: flex; align-items: flex-start; gap: 10px;
+            transition: color 0.2s;
+        }
+        .glance-card ul li a:before {
+            content: ''; display: block; width: 5px; height: 5px;
+            border-radius: 50%; background: rgba(255,255,255,0.3);
+            flex-shrink: 0; margin-top: 7px;
+        }
+        .glance-card ul li a:hover { color: #ffffff; }
+        .glance-card ul li a:hover:before { background: #ffffff; }
+
+        /* ── BLOCK SECTION HEADING ── */
+        .block-section-heading {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--text-muted);
+            margin: 28px 0 10px 0; padding-top: 4px;
+        }
+        .block-gallery .block-section-heading,
+        .block-image-wrap .block-section-heading { margin-top: 24px; }
+
         /* ── DIGITAL SPLIT PANEL ── */
         #page-uxui {
             width: 85vw; max-width: 1300px; padding: 0; display: none; overflow: hidden;
@@ -513,10 +553,19 @@
             switch(block.type) {
 
                 case 'text': {
+                    const textWrap = document.createElement('div');
+                    if (block.id) textWrap.id = block.id;
+                    if (block.heading) {
+                        const sh = document.createElement('p');
+                        sh.className = 'block-section-heading';
+                        sh.textContent = block.heading;
+                        textWrap.appendChild(sh);
+                    }
                     const el = document.createElement('p');
                     el.className = 'block-text';
                     el.innerHTML = block.body;
-                    containerEl.appendChild(el);
+                    textWrap.appendChild(el);
+                    containerEl.appendChild(textWrap);
                     break;
                 }
 
@@ -542,6 +591,13 @@
                 case 'gallery': {
                     const wrap = document.createElement('div');
                     wrap.className = 'block-gallery';
+                    if (block.id) wrap.id = block.id;
+                    if (block.heading) {
+                        const sh = document.createElement('p');
+                        sh.className = 'block-section-heading';
+                        sh.textContent = block.heading;
+                        wrap.appendChild(sh);
+                    }
                     const gallery = document.createElement('div');
                     gallery.className = 'gallery-container';
                     (block.images || []).slice(0, 6).forEach((src, i) => {
@@ -557,18 +613,37 @@
                 }
 
                 case 'bullets': {
+                    const isGlance = block.heading === 'At a Glance';
                     const wrap = document.createElement('div');
-                    wrap.className = 'block-bullets';
+                    wrap.className = isGlance ? 'glance-card' : 'block-bullets';
                     if (block.heading) {
                         const h = document.createElement('p');
-                        h.className = 'block-bullets-heading';
+                        h.className = isGlance ? 'glance-card-heading' : 'block-bullets-heading';
                         h.textContent = block.heading;
                         wrap.appendChild(h);
                     }
                     const ul = document.createElement('ul');
                     (block.items || []).forEach(item => {
                         const li = document.createElement('li');
-                        li.innerHTML = item;
+                        // Support both plain strings and {label, anchor} objects
+                        if (typeof item === 'object' && item.anchor) {
+                            const a = document.createElement('a');
+                            a.textContent = item.label;
+                            a.href = '#' + item.anchor;
+                            a.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                // Find the scroll container (modal or digital-main)
+                                const scrollEl = containerEl.closest('#modal-scroll-area') || containerEl.closest('.digital-main');
+                                const target = containerEl.querySelector('#' + item.anchor);
+                                if (scrollEl && target) {
+                                    const offset = target.offsetTop - scrollEl.offsetTop - 20;
+                                    scrollEl.scrollTo({ top: offset, behavior: 'smooth' });
+                                }
+                            });
+                            li.appendChild(a);
+                        } else {
+                            li.innerHTML = typeof item === 'string' ? item : item.label;
+                        }
                         ul.appendChild(li);
                     });
                     wrap.appendChild(ul);
