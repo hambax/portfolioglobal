@@ -73,7 +73,10 @@
         }
         header { pointer-events: auto; }
         h1 { margin: 0; font-family: var(--font-display); font-size: 2rem; font-weight: 400; letter-spacing: 1px; }
-        p.subtitle { margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+        p.subtitle { margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; line-height: 1.9; }
+        .nav-subtitle-link { cursor: pointer; transition: color 0.2s; }
+        .nav-subtitle-link:hover { color: #ffffff; }
+        .subtitle-sep { margin: 0 6px; opacity: 0.4; }
 
         /* ── NAV: vertical pill on the left, expands on hover ── */
         #dynamic-nav {
@@ -290,8 +293,9 @@
         .badge-digital { background: rgba(77,218,140,0.15); color: #6bf3a4; border: 1px solid rgba(77,218,140,0.3); }
 
         /* ── PROJECT CONTENT BLOCKS ── */
-        .modal-title    { font-family: var(--font-display); margin: 0 0 8px 0; font-size: 2.2rem; font-weight: 400; line-height: 1.1; }
-        .modal-subtitle { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; margin: 0 0 18px 0; }
+        .modal-title    { font-family: var(--font-display); margin: 0 0 8px 0; font-size: 3rem; font-weight: 400; line-height: 1.1; }
+        .modal-subtitle { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; margin: 0 0 14px 0; }
+        .modal-header-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
         .modal-location { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; font-weight: 500; }
         .project-divider { border: 0; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%); margin: 0 0 25px 0; }
         .modal-desc { font-size: 1.05rem; line-height: 1.8; color: #d4d4d4; margin-bottom: 30px; font-weight: 300; }
@@ -494,7 +498,13 @@
     <div id="ui-layer">
         <header>
             <h1>Hamish Baxter</h1>
-            <p class="subtitle">Design Leadership · Spatial & Digital Architecture</p>
+            <p class="subtitle">
+                <span class="nav-subtitle-link" onclick="showPage('about')">Design Leadership</span>
+                <span class="subtitle-sep">·</span>
+                <span class="nav-subtitle-link" onclick="showPage('about')">Architectural Design</span>
+                <span class="subtitle-sep">·</span>
+                <span class="nav-subtitle-link" onclick="showPage('about')">Digital Experience Design</span>
+            </p>
         </header>
 
         <!-- Architecture Modal -->
@@ -667,13 +677,16 @@
             ? `<p class="modal-subtitle">${data.subtitle}</p>`
             : '';
         const header = document.createElement('div');
+        header.className = 'project-header';
         header.innerHTML = `
-            <div class="status-badge ${badgeClass}">${badgeText}</div>
             <h1 class="modal-title">${data.title}</h1>
             ${subtitleHtml}
-            <div class="modal-location">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
-                ${data.airport}
+            <div class="modal-header-meta">
+                <div class="status-badge ${badgeClass}">${badgeText}</div>
+                <div class="modal-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+                    ${data.airport}
+                </div>
             </div>
             <hr class="project-divider">
         `;
