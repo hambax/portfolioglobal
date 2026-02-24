@@ -763,7 +763,8 @@
         // H1 title
         const titleEl = document.createElement('h1');
         titleEl.className = 'modal-title';
-        titleEl.textContent = data.title;
+        titleEl.textContent = data.title || 'TITLE MISSING';
+        titleEl.style.cssText = 'color:#ff0000 !important;font-size:3rem !important;display:block !important;background:rgba(255,0,0,0.1);padding:10px;margin-bottom:10px;';
         header.appendChild(titleEl);
 
         // Subtitle
@@ -887,6 +888,7 @@
         modal.classList.remove('hidden-state');
         modal.classList.add('active');
         scrollEl.scrollTop = 0;
+        scrollEl.style.overflow = 'hidden';
 
         // Show skeleton
         zone.innerHTML = `
@@ -901,13 +903,16 @@
 
         // Render real content after brief delay (feels snappy, not instant)
         setTimeout(() => {
-            zone.innerHTML = '';
+            // Re-query to ensure live DOM reference
+            const liveZone = document.getElementById('modal-content-zone');
+            const liveScroll = document.getElementById('modal-scroll-area');
+            liveZone.innerHTML = '';
             const badgeClass = data.status === 'built' ? 'badge-built' : 'badge-concept';
             const badgeText  = data.status === 'built' ? 'Built' : 'Concept';
-            renderProjectHeader(data, zone, badgeClass, badgeText);
-            renderBlocks(data.content, zone);
-            scrollEl.scrollTop = 0;
-            setTimeout(() => { scrollEl.scrollTop = 0; }, 50);
+            renderProjectHeader(data, liveZone, badgeClass, badgeText);
+            renderBlocks(data.content, liveZone);
+            liveScroll.scrollTop = 0;
+            liveScroll.style.overflow = 'auto';
         }, 280);
     }
 
