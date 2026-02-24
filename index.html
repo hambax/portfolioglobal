@@ -189,6 +189,7 @@
         /* ── AT A GLANCE CARD ── */
         .glance-card {
             background: rgba(255,255,255,0.06);
+            margin-top: 4px;
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border-radius: 14px;
             padding: 22px 26px;
@@ -277,7 +278,9 @@
 
         #modal-scroll-area { flex: 1; overflow-y: auto; padding-right: 15px; scroll-behavior: smooth; }
         #modal-content-zone { padding-top: 16px; }
-        .project-header { margin-bottom: 24px; }
+        #modal-content-zone .project-header { display: block !important; visibility: visible !important; opacity: 1 !important; }
+        #modal-content-zone h1.modal-title { display: block !important; color: #ffffff !important; font-size: 3rem !important; margin-bottom: 8px !important; }
+        .project-header { margin-bottom: 24px; padding-top: 4px; }
         #modal-scroll-area::-webkit-scrollbar { width: 4px; }
         #modal-scroll-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
 
@@ -903,8 +906,8 @@
             const badgeText  = data.status === 'built' ? 'Built' : 'Concept';
             renderProjectHeader(data, zone, badgeClass, badgeText);
             renderBlocks(data.content, zone);
-            // Reset scroll after content paint
-            requestAnimationFrame(() => { scrollEl.scrollTop = 0; });
+            scrollEl.scrollTop = 0;
+            setTimeout(() => { scrollEl.scrollTop = 0; }, 50);
         }, 280);
     }
 
