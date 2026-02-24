@@ -1,5 +1,5 @@
 // =============================================================
-// PORTFOLIO DATA — Hamish Baxter
+// PORTFOLIO DATA: Hamish Baxter
 // =============================================================
 // CONTENT BLOCK TYPES:
 //   { type: "text",    body: "..." }
@@ -40,7 +40,7 @@ const portfolioData = [
             {
                 type: "image",
                 src: "Portfolio-images_webp/Watercolour Images/Images-bio-leadership/Hamish Baxter Spirit of NZ Leadership.webp",
-                caption: "Spirit of New Zealand — Leadership at sea"
+                caption: "Spirit of New Zealand: Leadership at sea"
             },
             {
                 type: "text",
@@ -57,7 +57,7 @@ const portfolioData = [
         content: [
             {
                 type: "text",
-                body: "I do not view Artificial Intelligence merely as a rendering tool — I view it as a <span class='highlight'>computational partner</span>. By integrating AI-driven generative tools into the early phases of spatial strategy, my teams can iterate through hundreds of conceptual retail footprints in the time it previously took to draft three."
+                body: "I do not view Artificial Intelligence merely as a rendering tool: I view it as a <span class='highlight'>computational partner</span>. By integrating AI-driven generative tools into the early phases of spatial strategy, my teams can iterate through hundreds of conceptual retail footprints in the time it previously took to draft three."
             },
             {
                 type: "text",
@@ -81,7 +81,7 @@ const portfolioData = [
     },
 
     // ─────────────────────────────────────────────────────────
-    // ARCHITECTURE PROJECTS — Globe Pins
+    // ARCHITECTURE PROJECTS: Globe Pins
     // ─────────────────────────────────────────────────────────
 
     {
@@ -150,13 +150,13 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Few briefs carry the weight of Harrods. Working on the Knightsbridge flagship concepts and the London Heathrow T3, T4, and T5 airport retail environments as part of the team at <span class='highlight'>Wanda Creative</span> in London was one of the most demanding and rewarding experiences of my early career — a masterclass in what happens when luxury, engineering, and genuine artistry are asked to coexist."
+                body: "Few briefs carry the weight of Harrods. Working on the Knightsbridge flagship concepts and the London Heathrow T3, T4, and T5 airport retail environments as part of the team at <span class='highlight'>Wanda Creative</span> in London was one of the most demanding and rewarding experiences of my early career: a masterclass in what happens when luxury, engineering, and genuine artistry are asked to coexist."
             },
             {
                 type: "text",
                 id: "airport-engineering",
                 heading: "Airport Engineering",
-                body: "Airport retail operates under constraints that high street design never faces. Every material we specified had to meet stringent fire resistance, commercial durability, and security standards — bomb-proof glazing, commercial-grade fixings, internationally sourced finishes that could survive the relentless footfall of one of the world's busiest transit hubs. The extraordinary thing is that none of this shows. The finished spaces feel precisely as they should: effortlessly luxurious, quietly exceptional."
+                body: "Airport retail operates under constraints that high street design never faces. Every material we specified had to meet stringent fire resistance, commercial durability, and security standards: bomb-proof glazing, commercial-grade fixings, internationally sourced finishes that could survive the relentless footfall of one of the world's busiest transit hubs. The extraordinary thing is that none of this shows. The finished spaces feel precisely as they should: effortlessly luxurious, quietly exceptional."
             },
             {
                 type: "gallery",
@@ -171,18 +171,18 @@ const portfolioData = [
                 type: "text",
                 id: "the-craft",
                 heading: "The Craft",
-                body: "My contribution spanned both the creative and the technical. I drew floor plans, developed lighting specifications, built 3D models in Cinema 4D, and produced renders and presentation visuals — including early experiments with machine learning tools to accelerate the visualisation process. I worked closely with manufacturers and international suppliers, developing an understanding of materials science and global procurement that has stayed with me ever since."
+                body: "My contribution spanned both the creative and the technical. I drew floor plans, developed lighting specifications, built 3D models in Cinema 4D, and produced renders and presentation visuals: including early experiments with machine learning tools to accelerate the visualisation process. I worked closely with manufacturers and international suppliers, developing an understanding of materials science and global procurement that has stayed with me ever since."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/Harrods/Harrods/Harrods LHR T3 Concept Design (1).webp",
-                caption: "Harrods LHR T3 — concept design development"
+                caption: "Harrods LHR T3: concept design development"
             },
             {
                 type: "text",
                 id: "the-team",
                 heading: "The Team",
-                body: "Some of the most formative moments happened around the large angled drafting table at Wanda Creative, working alongside <span class='highlight'>Roger Cook</span> — one of the founding directors and a master of hand-drawn architectural interior renders. Watching Roger work, and learning to use those tools myself, gave me a discipline and spatial intuition that no software can replicate. I was also fortunate to learn under <span class='highlight'>Michael Foley</span>, co-founder and CEO, and <span class='highlight'>Lisa Brown</span>, General Manager — people whose standards, generosity, and belief in young designers shaped everything I do."
+                body: "Some of the most formative moments happened around the large angled drafting table at Wanda Creative, working alongside <span class='highlight'>Roger Cook</span>: one of the founding directors and a master of hand-drawn architectural interior renders. Watching Roger work, and learning to use those tools myself, gave me a discipline and spatial intuition that no software can replicate. I was also fortunate to learn under <span class='highlight'>Michael Foley</span>, co-founder and CEO, and <span class='highlight'>Lisa Brown</span>, General Manager: people whose standards, generosity, and belief in young designers shaped everything I do."
             },
             {
                 type: "gallery",
@@ -197,7 +197,7 @@ const portfolioData = [
                 type: "text",
                 id: "what-i-took-away",
                 heading: "What I Took Away",
-                body: "One of the deepest lessons this project gave me was one I didn't expect: a foundation in user experience design. Thinking about how a traveller — tired, time-conscious, carrying luggage — moves through a luxury retail space, remains aware of their departure gate, and still finds the space and calm to browse and discover, is fundamentally a UX problem. The physical and digital design challenges are the same. I've carried that insight into every digital product I've worked on since."
+                body: "One of the deepest lessons this project gave me was one I didn't expect: a foundation in user experience design. Thinking about how a traveller: tired, time-conscious, carrying luggage: moves through a luxury retail space, remains aware of their departure gate, and still finds the space and calm to browse and discover, is fundamentally a UX problem. The physical and digital design challenges are the same. I've carried that insight into every digital product I've worked on since."
             },
             {
                 type: "gallery",
@@ -229,7 +229,7 @@ const portfolioData = [
                     { label: "Full retail masterplan across multiple terminal zones", anchor: "the-scale" },
                     { label: "Over a year of work in the lead-up to the Qatar 2022 FIFA World Cup", anchor: "masterplanning" },
                     { label: "Golden Eagle installation in the Great Hall above the alcohol tower", anchor: "the-great-hall" },
-                    { label: "Sustainable recycled stone composite flooring — sourced regionally", anchor: "materials-sustainability" },
+                    { label: "Sustainable recycled stone composite flooring: sourced regionally", anchor: "materials-sustainability" },
                     { label: "Cultural pattern work with local Qatari artists and consultants", anchor: "culture-collaboration" },
                     { label: "Beauty, fragrance, chocolate, food gifts and fashion zones", anchor: "the-great-hall" }
                 ]
@@ -317,7 +317,7 @@ const portfolioData = [
         lat: 25.2632,
         lon: 51.6150,
         status: "built",
-        title: "Qatar Duty Free — Car Podium",
+        title: "Qatar Duty Free: Car Podium",
         airport: "Hamad International Airport, Doha",
         content: [
             {
@@ -330,12 +330,12 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A specialist podium installation for high-value automotive display within the Qatar Duty Free estate. The brief required a theatrical, gallery-quality setting that positions luxury vehicles as objets d'art rather than commercial inventory — a true statement moment within the terminal."
+                body: "A specialist podium installation for high-value automotive display within the Qatar Duty Free estate. The brief required a theatrical, gallery-quality setting that positions luxury vehicles as objets d'art rather than commercial inventory: a true statement moment within the terminal."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/Qatar Duty Free  Car Podium/Podiumm Developed  Camera 2 No Background.webp",
-                caption: "Podium structure — isolated camera 2 view"
+                caption: "Podium structure: isolated camera 2 view"
             },
             {
                 type: "bullets",
@@ -370,7 +370,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "The SN1000 project is a landmark retail installation within the Qatar Duty Free estate — a flagship space designed to anchor the concourse and create a defining moment of brand identity for international travellers. The project spanned from concept sketches through to VR walkthroughs and construction documentation."
+                body: "The SN1000 project is a landmark retail installation within the Qatar Duty Free estate: a flagship space designed to anchor the concourse and create a defining moment of brand identity for international travellers. The project spanned from concept sketches through to VR walkthroughs and construction documentation."
             },
             {
                 type: "gallery",
@@ -384,7 +384,7 @@ const portfolioData = [
             {
                 type: "image",
                 src: "Portfolio-images_webp/QDF SN1000/Concept Renders Qatar Duty Free /Qatar Doha Retail Design Render (1).webp",
-                caption: "SN1000 — developed concept render"
+                caption: "SN1000: developed concept render"
             },
             {
                 type: "gallery",
@@ -443,13 +443,13 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Genting Highlands is not an airport. People arrive there to celebrate, to spend, to be somewhere extraordinary. That distinction shaped everything about this project. Working with the team at Wanda Creative for Dufry — the world's largest travel retailer — we were asked to create a new store that carried the navigational clarity and retail expertise of international airport design, but expressed itself in a design language suited to a destination where the rules could be pushed further."
+                body: "Genting Highlands is not an airport. People arrive there to celebrate, to spend, to be somewhere extraordinary. That distinction shaped everything about this project. Working with the team at Wanda Creative for Dufry: the world's largest travel retailer: we were asked to create a new store that carried the navigational clarity and retail expertise of international airport design, but expressed itself in a design language suited to a destination where the rules could be pushed further."
             },
             {
                 type: "text",
                 id: "the-design-language",
                 heading: "The Design Language",
-                body: "The direction we landed on was somewhere between cyberpunk and jungle. Dark, stimulating, synthetic, and alive. The ceiling was blacked out entirely, with a hand-drawn zigzag lighting plan I developed on paper — lines of blue and pink light cutting across the void above. That drawing was taken directly into production and molded into a three-dimensional fascia. Seeing a hand sketch become an architectural element in that way, without losing any of its energy in translation, was one of the more satisfying moments of this project."
+                body: "The direction we landed on was somewhere between cyberpunk and jungle. Dark, stimulating, synthetic, and alive. The ceiling was blacked out entirely, with a hand-drawn zigzag lighting plan I developed on paper: lines of blue and pink light cutting across the void above. That drawing was taken directly into production and molded into a three-dimensional fascia. Seeing a hand sketch become an architectural element in that way, without losing any of its energy in translation, was one of the more satisfying moments of this project."
             },
             {
                 type: "gallery",
@@ -464,18 +464,18 @@ const portfolioData = [
                 type: "text",
                 id: "lighting",
                 heading: "Lighting",
-                body: "Lighting was the real instrument of the design. Rather than flooding the space with even, global illumination, I specified laser-focused spotlights trained directly on the retail displays. The effect was of moving through a space with texture and rhythm — bright pools of product light surrounded by deeper shadow, then another burst of colour and interest around the next corner. It felt a little like a jungle in that sense: areas of intensity and areas of quiet, with something worth discovering in each."
+                body: "Lighting was the real instrument of the design. Rather than flooding the space with even, global illumination, I specified laser-focused spotlights trained directly on the retail displays. The effect was of moving through a space with texture and rhythm: bright pools of product light surrounded by deeper shadow, then another burst of colour and interest around the next corner. It felt a little like a jungle in that sense: areas of intensity and areas of quiet, with something worth discovering in each."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/Dufry Malaysia/CIMG2466.webp",
-                caption: "On-site during construction — Genting Highlands"
+                caption: "On-site during construction: Genting Highlands"
             },
             {
                 type: "text",
                 id: "culture-navigation",
                 heading: "Culture & Navigation",
-                body: "Culturally, designing for an Asian market allowed for a bolder, more inorganic design language than would have felt appropriate in London or Zurich. Synthetic materials, neon accents, clean geometric lines — the aesthetic of a futuristic city that never quite sleeps. And yet underneath all of that visual energy, the bones of the store were built on the same principles of good retail navigation we had refined across years of airport work. Customers could find their way through clearly and efficiently, but they could also wander, pause, and discover."
+                body: "Culturally, designing for an Asian market allowed for a bolder, more inorganic design language than would have felt appropriate in London or Zurich. Synthetic materials, neon accents, clean geometric lines: the aesthetic of a futuristic city that never quite sleeps. And yet underneath all of that visual energy, the bones of the store were built on the same principles of good retail navigation we had refined across years of airport work. Customers could find their way through clearly and efficiently, but they could also wander, pause, and discover."
             },
             {
                 type: "gallery",
@@ -530,7 +530,7 @@ const portfolioData = [
             {
                 type: "image",
                 src: "Portfolio-images_webp/Hamleys/Hamleys Design concept (5).webp",
-                caption: "Developed concept — experiential zone detail"
+                caption: "Developed concept: experiential zone detail"
             },
             {
                 type: "bullets",
@@ -580,7 +580,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "WHSmith is one of those rare brands that sits inside the daily lives of millions of people without ever quite demanding their attention. The challenge the team at Wanda Creative was given was not just to refresh individual stores, but to build an entirely new design language for the brand across some of the world's busiest travel environments — one that could work as well in a compact train station kiosk as in a flagship airport terminal."
+                body: "WHSmith is one of those rare brands that sits inside the daily lives of millions of people without ever quite demanding their attention. The challenge the team at Wanda Creative was given was not just to refresh individual stores, but to build an entirely new design language for the brand across some of the world's busiest travel environments: one that could work as well in a compact train station kiosk as in a flagship airport terminal."
             },
             {
                 type: "text",
@@ -609,7 +609,7 @@ const portfolioData = [
                 type: "text",
                 id: "sustainability",
                 heading: "Sustainability",
-                body: "Sustainability mattered to us on this programme. We specified suppliers with credible environmental credentials and certifications throughout, a standard I pushed for and one the client was receptive to. These kinds of decisions are easier to make when a client moves quickly and trusts your thinking — and WHSmith were exactly that kind of partner."
+                body: "Sustainability mattered to us on this programme. We specified suppliers with credible environmental credentials and certifications throughout, a standard I pushed for and one the client was receptive to. These kinds of decisions are easier to make when a client moves quickly and trusts your thinking: and WHSmith were exactly that kind of partner."
             },
             {
                 type: "gallery",
@@ -710,12 +710,12 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A kiosk and concession redesign for the Millies Cookies brand — bringing warmth, appetite appeal, and operational clarity to one of the UK's most recognisable baked goods brands. The project included both built outcomes and concept design options for the counter display system."
+                body: "A kiosk and concession redesign for the Millies Cookies brand: bringing warmth, appetite appeal, and operational clarity to one of the UK's most recognisable baked goods brands. The project included both built outcomes and concept design options for the counter display system."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/Millies Cookies/counter display Opt3.webp",
-                caption: "Counter display system — Option 3"
+                caption: "Counter display system: Option 3"
             },
             {
                 type: "gallery",
@@ -753,7 +753,7 @@ const portfolioData = [
                 heading: "At a Glance",
                 items: [
                     { label: "Multi-exit convenience store within Baker Street Underground", anchor: "the-space" },
-                    { label: "Bomb and fire rating compliance — same rigour as airport retail", anchor: "security-as-design-tool" },
+                    { label: "Bomb and fire rating compliance: same rigour as airport retail", anchor: "security-as-design-tool" },
                     { label: "Evacuation planning and retail navigation designed as a unified system", anchor: "security-as-design-tool" },
                     { label: "Warm timber, exposed Victorian brick and stone-effect tiles", anchor: "materials-atmosphere" },
                     { label: "Lighting tuned for food freshness and underground comfort", anchor: "materials-atmosphere" },
@@ -773,7 +773,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Baker Street Underground Station is an ancient space. Its bones predate most of the city built above it, and designing within it means working around constraints that have no equivalent in new-build retail: irregular geometry, multiple exits pulling passengers in competing directions, strict bomb and fire rating requirements, and the particular challenge of a location that exists entirely below ground — cut off from natural light, fresh air, and the visual cues that help people orient themselves in the world above."
+                body: "Baker Street Underground Station is an ancient space. Its bones predate most of the city built above it, and designing within it means working around constraints that have no equivalent in new-build retail: irregular geometry, multiple exits pulling passengers in competing directions, strict bomb and fire rating requirements, and the particular challenge of a location that exists entirely below ground: cut off from natural light, fresh air, and the visual cues that help people orient themselves in the world above."
             },
             {
                 type: "text",
@@ -809,13 +809,13 @@ const portfolioData = [
                 type: "text",
                 id: "materials-atmosphere",
                 heading: "Materials & Atmosphere",
-                body: "The material palette was chosen specifically to counteract the environment outside the store. Baker Street station is yellow and worn in the way that only very old underground spaces can be. We wanted stepping into the Co-op to feel like a breath of fresh air. Warm timber shelving, stone-effect floor tiles, and lighting calibrated to sit just slightly warm of neutral — warm enough to make food look fresh and appetising, cool enough to avoid the heaviness that can make underground spaces feel oppressive."
+                body: "The material palette was chosen specifically to counteract the environment outside the store. Baker Street station is yellow and worn in the way that only very old underground spaces can be. We wanted stepping into the Co-op to feel like a breath of fresh air. Warm timber shelving, stone-effect floor tiles, and lighting calibrated to sit just slightly warm of neutral: warm enough to make food look fresh and appetising, cool enough to avoid the heaviness that can make underground spaces feel oppressive."
             },
             {
                 type: "text",
                 id: "the-details",
                 heading: "The Details",
-                body: "Chiller placement for cold drinks was given serious attention. Drinks are one of the highest-impulse purchases in transit retail, and making them easy to access without creating bottlenecks in the main passenger through-flow was a spatial puzzle worth solving carefully. The coffee kiosk — a compact hole-in-the-wall format — was positioned to catch passengers on their way in without disrupting the natural movement through the space."
+                body: "Chiller placement for cold drinks was given serious attention. Drinks are one of the highest-impulse purchases in transit retail, and making them easy to access without creating bottlenecks in the main passenger through-flow was a spatial puzzle worth solving carefully. The coffee kiosk: a compact hole-in-the-wall format: was positioned to catch passengers on their way in without disrupting the natural movement through the space."
             },
             {
                 type: "gallery",
@@ -830,11 +830,11 @@ const portfolioData = [
                 type: "text",
                 id: "the-completed-store",
                 heading: "The Completed Store",
-                body: "One material decision I am particularly proud of was the choice to expose the original Victorian brickwork of the tube building rather than cover it over. It was a gesture that grounded the store in its own history and gave it an authenticity that no applied finish could replicate. That decision, along with the warm timber shelving and natural material palette, survived into the final completed store — which opened a couple of years after I had left Wanda Creative, with a reported investment of £2.1 million. Seeing the design language we developed retained and built is one of the quiet satisfactions of this work."
+                body: "One material decision I am particularly proud of was the choice to expose the original Victorian brickwork of the tube building rather than cover it over. It was a gesture that grounded the store in its own history and gave it an authenticity that no applied finish could replicate. That decision, along with the warm timber shelving and natural material palette, survived into the final completed store: which opened a couple of years after I had left Wanda Creative, with a reported investment of £2.1 million. Seeing the design language we developed retained and built is one of the quiet satisfactions of this work."
             },
             {
                 type: "text",
-                body: "You can read about the completed store at <a href=\"https://www.conveniencestore.co.uk/store-development/co-op-invests-21m-in-on-the-go-concept-store-in-london/657776.article\" target=\"_blank\" class=\"inline-link\">The Grocer — Co-op invests £2.1m in on-the-go concept store in London</a>."
+                body: "You can read about the completed store at <a href=\"https://www.conveniencestore.co.uk/store-development/co-op-invests-21m-in-on-the-go-concept-store-in-london/657776.article\" target=\"_blank\" class=\"inline-link\">The Grocer: Co-op invests £2.1m in on-the-go concept store in London</a>."
             }
 
         ]
@@ -847,10 +847,25 @@ const portfolioData = [
         lon: 10.7522,
         status: "concept",
         title: "Norwegian Cruise Lines",
-        airport: "North Atlantic & Norwegian Fjords",
+        subtitle: "Onboard Retail Concept, NCL Fleet",
+        airport: "Norwegian Cruise Lines Fleet",
         content: [
             {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    { label: "Modular retail concept for cruise ship interiors: scalable across the NCL fleet", anchor: "the-brief" },
+                    { label: "Long, narrow marine retail spaces designed for passenger flow and sea motion", anchor: "naval-design" },
+                    { label: "Full design journey: loose hand sketches through to high-fidelity 3D video walkthroughs", anchor: "the-process" },
+                    { label: "Technology retail section with product-inspired display concepts", anchor: "the-spaces" },
+                    { label: "3D modelling and video production skills developed alongside senior designer Jon Webb", anchor: "the-team" },
+                    { label: "Engineering crossover: airport-grade fixture security translated to marine environment", anchor: "naval-design" }
+                ]
+            },
+            {
                 type: "gallery",
+                id: "the-brief",
+                heading: "The Brief",
                 images: [
                     "Portfolio-images_webp/Norwegian Cruise Lines/Norwegian Cruise Line Interior Experiential Design Concept (1).webp",
                     "Portfolio-images_webp/Norwegian Cruise Lines/Norwegian Cruise Line Interior Experiential Design Concept (2).webp",
@@ -860,7 +875,13 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Interior experiential design concepts for Norwegian Cruise Lines — a brand synonymous with the freedom of the open sea. The design language references Nordic craft traditions and the elemental quality of ocean light, translated into onboard spaces that feel both expansive and intimately considered."
+                body: "Norwegian Cruise Lines came to Wanda Creative for a retail concept that could work across their fleet: a modular system of interior retail spaces that could be adapted and deployed on different ships as the opportunity arose. For me, it was a project that connected directly to something I have cared about since university: naval architecture and marine engineering. Designing for a ship is a specific and wonderful kind of problem."
+            },
+            {
+                type: "text",
+                id: "naval-design",
+                heading: "Naval Design",
+                body: "Cruise ship retail spaces are long and narrow: a very different geometry to the open-plan airport environments I was most familiar with. Masterplanning a corridor-like retail space requires a different spatial logic: the passenger journey is more linear, product discovery has to happen within a tighter envelope, and every display unit has to be engineered to handle the gentle motion of a ship at sea. That last requirement turned out to be less unfamiliar than it sounds. Years of designing for airports: where fixtures are bolted down for security and safety: had already given us a rigorous approach to anchorage and structural detailing. The marine environment demanded the same discipline, applied slightly differently."
             },
             {
                 type: "gallery",
@@ -872,6 +893,18 @@ const portfolioData = [
                 ]
             },
             {
+                type: "text",
+                id: "the-spaces",
+                heading: "The Spaces",
+                body: "The brief gave us genuine creative freedom across a range of different retail environments on board. A technology section was among the most interesting to work on: we drew on the products themselves for display inspiration, letting the character of the technology category shape the visual language of the space rather than applying a generic retail aesthetic over the top of it. The result was something that felt specific and considered rather than generic."
+            },
+            {
+                type: "text",
+                id: "the-process",
+                heading: "The Process",
+                body: "This project gave me one of the most complete design journeys I have experienced on a single commission. It began with loose, exploratory hand sketches: deliberately rough, full of energy: which the client responded to warmly. From there we moved through Photoshop compositing, texturing and colour development, then into full 3D modelling and finally video walkthrough production. Each stage built on the last, and the discipline of maintaining the spirit of the original sketches all the way through to photorealistic renders is something I learned to value enormously on this project."
+            },
+            {
                 type: "gallery",
                 images: [
                     "Portfolio-images_webp/Norwegian Cruise Lines/Norwegian Cruise Line Interior Experiential Design Concept (9).webp",
@@ -881,15 +914,19 @@ const portfolioData = [
                 ]
             },
             {
-                type: "bullets",
-                heading: "Design Highlights",
-                items: [
-                    "Public realm and passenger lounge environments",
-                    "F&B outlet concept and spatial design",
-                    "Material specification for marine environment compliance",
-                    "Passenger experience and wayfinding strategy"
+                type: "text",
+                id: "the-team",
+                heading: "The Team",
+                body: "Much of the 3D modelling and video production on this project was led by <span class='highlight'>Jon Webb</span>, a senior designer whose technical skill and generosity as a collaborator made this one of the most educational projects of my time at Wanda Creative. Watching Jon work: and being given the space to learn alongside him: accelerated my understanding of 3D production and video visualisation in a way that classroom learning never could. I am grateful for his mentorship and for the quality of work the two of us were able to produce together."
+            },
+            {
+                type: "gallery",
+                images: [
+                    "Portfolio-images_webp/Norwegian Cruise Lines/Norwegian Cruise Line Interior Experiential Design Concept (14).webp",
+                    "Portfolio-images_webp/Norwegian Cruise Lines/Norwegian Cruise Line Interior Experiential Design Concept (15).webp"
                 ]
             }
+
         ]
     },
 
@@ -910,9 +947,9 @@ const portfolioData = [
                     { label: "Long-term client relationship across multiple UK airport sites", anchor: "the-brief" },
                     { label: "High-contrast black, white and bright lighting design language rolled out across formats", anchor: "the-design-language" },
                     { label: "Masterplanning of passenger flow: wide walkways, clear sightlines, no overcrowding", anchor: "masterplanning" },
-                    { label: "World of Whiskey and Gin Lounge — warm bespoke environments within the broader retail estate", anchor: "bespoke-spaces" },
+                    { label: "World of Whiskey and Gin Lounge: warm bespoke environments within the broader retail estate", anchor: "bespoke-spaces" },
                     { label: "Modular brand environments that gave personality without overwhelming the overall store", anchor: "bespoke-spaces" },
-                    { label: "New store fits built in the late 2010s and early 2020s — still open today", anchor: "the-brief" }
+                    { label: "New store fits built in the late 2010s and early 2020s: still open today", anchor: "the-brief" }
                 ]
             },
             {
@@ -928,13 +965,13 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "World Duty Free was one of Wanda Creative's most significant ongoing client relationships, and I was fortunate to work across many of the projects that came through. These were full new store fits — the old interiors stripped out and rebuilt from scratch — across airports in Heathrow, Belfast and Aberdeen, completed in the late 2010s and early 2020s. You can still visit them today."
+                body: "World Duty Free was one of Wanda Creative's most significant ongoing client relationships, and I was fortunate to work across many of the projects that came through. These were full new store fits: the old interiors stripped out and rebuilt from scratch: across airports in Heathrow, Belfast and Aberdeen, completed in the late 2010s and early 2020s. You can still visit them today."
             },
             {
                 type: "text",
                 id: "the-design-language",
                 heading: "The Design Language",
-                body: "World Duty Free had an established design language: high-contrast black and white floor tiles, crisp bright lighting, stark white surfaces, a modern and sharp retail aesthetic. My role was not to reinvent it but to help roll it out intelligently across spaces that were each different in shape, scale, and configuration. That kind of work — adapting a fixed design system to endlessly variable real-world conditions — teaches you a great deal about what makes a concept truly robust."
+                body: "World Duty Free had an established design language: high-contrast black and white floor tiles, crisp bright lighting, stark white surfaces, a modern and sharp retail aesthetic. My role was not to reinvent it but to help roll it out intelligently across spaces that were each different in shape, scale, and configuration. That kind of work: adapting a fixed design system to endlessly variable real-world conditions: teaches you a great deal about what makes a concept truly robust."
             },
             {
                 type: "gallery",
@@ -949,7 +986,7 @@ const portfolioData = [
                 type: "text",
                 id: "masterplanning",
                 heading: "Masterplanning",
-                body: "A large part of my contribution was spatial masterplanning — working out how passengers should move through each store given its unique geometry and position within the terminal. The guiding principle was clarity without sterility. Walkways were kept wide and unobstructed, the high-contrast floor pattern giving travellers an intuitive read of where to go even in a hurry. We used pattern interrupts and product moments to create interest and encourage dwell, but we never placed anything that blocked sightlines or made the exit feel uncertain. A passenger who needed to catch a flight could always see their way through. A passenger with time could explore and discover."
+                body: "A large part of my contribution was spatial masterplanning: working out how passengers should move through each store given its unique geometry and position within the terminal. The guiding principle was clarity without sterility. Walkways were kept wide and unobstructed, the high-contrast floor pattern giving travellers an intuitive read of where to go even in a hurry. We used pattern interrupts and product moments to create interest and encourage dwell, but we never placed anything that blocked sightlines or made the exit feel uncertain. A passenger who needed to catch a flight could always see their way through. A passenger with time could explore and discover."
             },
             {
                 type: "gallery",
@@ -964,17 +1001,17 @@ const portfolioData = [
                 type: "text",
                 id: "bespoke-spaces",
                 heading: "Bespoke Spaces",
-                body: "Within the broader retail environment, certain categories earned something more considered. The World of Whiskey concept — developed by my predecessors at Wanda Creative and already standing the test of time — brought warm natural timbers and rich, tactile materials into sharp contrast with the crisp white retail world surrounding it. The effect was powerful precisely because of that contrast. The Gin Lounge carried a similar sensibility. These spaces worked because they felt genuinely different without breaking the coherence of the overall store."
+                body: "Within the broader retail environment, certain categories earned something more considered. The World of Whiskey concept: developed by my predecessors at Wanda Creative and already standing the test of time: brought warm natural timbers and rich, tactile materials into sharp contrast with the crisp white retail world surrounding it. The effect was powerful precisely because of that contrast. The Gin Lounge carried a similar sensibility. These spaces worked because they felt genuinely different without breaking the coherence of the overall store."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/World Duty Free/WDF HEathrow Christian Dior/World Duty Free Christian Dior Heathrow Design Concept.webp",
-                caption: "World Duty Free x Christian Dior — Heathrow concept"
+                caption: "World Duty Free x Christian Dior: Heathrow concept"
             },
             {
                 type: "text",
                 heading: "A Stage for Brands",
-                body: "One of the things I am most proud of from this body of work is a design philosophy rather than a single decision. The World Duty Free stores were deliberately restrained — confident in their own aesthetic without trying to compete with the brands they housed. That neutrality was a considered choice. When the environment itself is calm and clear, brands can express their own personality through packaging, displays and graphics without the whole thing becoming overwhelming. I saw it encourage better packaging design and more thoughtful visual merchandising from the brands themselves. The space created the conditions for others to do their best work."
+                body: "One of the things I am most proud of from this body of work is a design philosophy rather than a single decision. The World Duty Free stores were deliberately restrained: confident in their own aesthetic without trying to compete with the brands they housed. That neutrality was a considered choice. When the environment itself is calm and clear, brands can express their own personality through packaging, displays and graphics without the whole thing becoming overwhelming. I saw it encourage better packaging design and more thoughtful visual merchandising from the brands themselves. The space created the conditions for others to do their best work."
             },
             {
                 type: "gallery",
@@ -995,7 +1032,7 @@ const portfolioData = [
         lat: 47.4581,
         lon: 8.5550,
         status: "built",
-        title: "Timebox — Dufry Zurich",
+        title: "Timebox: Dufry Zurich",
         subtitle: "Watch and Jewellery Retail Concept, Zurich Airport",
         airport: "Zurich Airport, Switzerland",
         content: [
@@ -1003,10 +1040,10 @@ const portfolioData = [
                 type: "bullets",
                 heading: "At a Glance",
                 items: [
-                    { label: "First-of-kind retail concept for Dufry — solo concept lead role", anchor: "the-opportunity" },
+                    { label: "First-of-kind retail concept for Dufry: solo concept lead role", anchor: "the-opportunity" },
                     { label: "Designed specifically for a younger, aspirational watch audience", anchor: "designing-for-a-new-audience" },
                     { label: "Teal colour palette: distinctive, rare and subtly maritime", anchor: "colour-materials" },
-                    { label: "Fingerprint ceiling in LED strip lighting — the concept of uniqueness, quietly expressed", anchor: "the-concept" },
+                    { label: "Fingerprint ceiling in LED strip lighting: the concept of uniqueness, quietly expressed", anchor: "the-concept" },
                     { label: "Topographic and fingerprint line graphics printed on feature walls", anchor: "colour-materials" },
                     { label: "Manufacturing drawings used the designer's actual fingerprint, unaltered", anchor: "the-fingerprint" }
                 ]
@@ -1024,7 +1061,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Timebox at Zurich Airport was a genuinely personal project. While it was very much a team effort — and I am grateful for every person at Wanda Creative who shaped and improved it — this was the first concept where I took a leading role as the originating designer. The colour palette, the material choices, and the central idea behind the store all came from me, developed in close collaboration with an exceptional team who helped bring it to life."
+                body: "Timebox at Zurich Airport was a genuinely personal project. While it was very much a team effort: and I am grateful for every person at Wanda Creative who shaped and improved it: this was the first concept where I took a leading role as the originating designer. The colour palette, the material choices, and the central idea behind the store all came from me, developed in close collaboration with an exceptional team who helped bring it to life."
             },
             {
                 type: "text",
@@ -1049,18 +1086,18 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "The concept started with a simple observation about watches. They are mass produced objects that become deeply personal. A metal timepiece ages with its owner, develops a patina, accumulates scratches and memories. The watch you have worn for ten years is not the same object it was when you bought it. It has become yours in a way that almost nothing else you own does. The store needed to speak to that idea of personal uniqueness — quietly, without ever stating it. The answer was a fingerprint. A ceiling installation of LED strip lighting traced in the pattern of a fingerprint — a subtle, abstract gesture that most customers would read as an interesting lighting feature without ever consciously registering its meaning."
+                body: "The concept started with a simple observation about watches. They are mass produced objects that become deeply personal. A metal timepiece ages with its owner, develops a patina, accumulates scratches and memories. The watch you have worn for ten years is not the same object it was when you bought it. It has become yours in a way that almost nothing else you own does. The store needed to speak to that idea of personal uniqueness: quietly, without ever stating it. The answer was a fingerprint. A ceiling installation of LED strip lighting traced in the pattern of a fingerprint: a subtle, abstract gesture that most customers would read as an interesting lighting feature without ever consciously registering its meaning."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/Timebox Zurich/Dufry Zurich Timebox Watch Store Travel Retail Design Plan GA.webp",
-                caption: "General arrangement plan — Timebox Zurich"
+                caption: "General arrangement plan: Timebox Zurich"
             },
             {
                 type: "text",
                 id: "colour-materials",
                 heading: "Colour & Materials",
-                body: "For the colour palette I chose teal — a colour that at the time was genuinely rare in retail environments. It was distinctive without being aggressive, and it carried a secondary resonance that felt right for the category. Many of the world's most celebrated watches are built for water: diving, sailing, maritime exploration. Combined with topographic and fingerprint line graphics printed across the feature walls, the teal gave the whole space a quality of depth, as though you were looking at something through water."
+                body: "For the colour palette I chose teal: a colour that at the time was genuinely rare in retail environments. It was distinctive without being aggressive, and it carried a secondary resonance that felt right for the category. Many of the world's most celebrated watches are built for water: diving, sailing, maritime exploration. Combined with topographic and fingerprint line graphics printed across the feature walls, the teal gave the whole space a quality of depth, as though you were looking at something through water."
             },
             {
                 type: "gallery",
@@ -1081,7 +1118,7 @@ const portfolioData = [
                 type: "text",
                 id: "the-build",
                 heading: "The Build",
-                body: "Looking back, I think there was something quietly wise in the decision to give this particular brief to a young designer. The brand team and the company were investing in a concept aimed at a younger audience, and they chose to back a younger design sensibility to match. I was grateful for that trust at the time, and I appreciate it even more now. It produced something that an older, more experienced hand might not have arrived at — and I think the space is better for it."
+                body: "Looking back, I think there was something quietly wise in the decision to give this particular brief to a young designer. The brand team and the company were investing in a concept aimed at a younger audience, and they chose to back a younger design sensibility to match. I was grateful for that trust at the time, and I appreciate it even more now. It produced something that an older, more experienced hand might not have arrived at: and I think the space is better for it."
             },
             {
                 type: "gallery",
@@ -1116,7 +1153,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A vibrant retail concept for Havaianas — the Brazilian flip-flop brand whose colour and energy are as much a product as the footwear itself. The design translates the brand's exuberant DNA into a travel retail format without losing its essential playfulness."
+                body: "A vibrant retail concept for Havaianas: the Brazilian flip-flop brand whose colour and energy are as much a product as the footwear itself. The design translates the brand's exuberant DNA into a travel retail format without losing its essential playfulness."
             },
             {
                 type: "gallery",
@@ -1146,7 +1183,7 @@ const portfolioData = [
         lat: 25.2550,
         lon: 51.6100,
         status: "concept",
-        title: "Ray-Ban — QDF Sunglasses Concept",
+        title: "Ray-Ban: QDF Sunglasses Concept",
         airport: "Hamad International Airport, Doha",
         content: [
             {
@@ -1160,7 +1197,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A travel retail concept for Ray-Ban — exploring how one of the world's most iconic eyewear brands can create a standalone retail moment within the transient, high-footfall environment of international departure halls. Developed within the Qatar Duty Free estate."
+                body: "A travel retail concept for Ray-Ban: exploring how one of the world's most iconic eyewear brands can create a standalone retail moment within the transient, high-footfall environment of international departure halls. Developed within the Qatar Duty Free estate."
             },
             {
                 type: "gallery",
@@ -1213,7 +1250,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Industrial and interior design for superyacht and marine environments — spaces that must perform at the absolute pinnacle of material quality, craftsmanship, and spatial engineering. Every surface must withstand the marine environment while delivering an experience indistinguishable from the finest private residences."
+                body: "Industrial and interior design for superyacht and marine environments: spaces that must perform at the absolute pinnacle of material quality, craftsmanship, and spatial engineering. Every surface must withstand the marine environment while delivering an experience indistinguishable from the finest private residences."
             },
             {
                 type: "gallery",
@@ -1227,7 +1264,7 @@ const portfolioData = [
             {
                 type: "image",
                 src: "Portfolio-images_webp/Superyacht and boat/Hamish Baxter_Boats project_Industrial Design Hons.webp",
-                caption: "Industrial Design Honours — boat design project"
+                caption: "Industrial Design Honours: boat design project"
             },
             {
                 type: "bullets",
@@ -1243,7 +1280,7 @@ const portfolioData = [
     },
 
     // ─────────────────────────────────────────────────────────
-    // DIGITAL PROJECTS — UX/UI Panel
+    // DIGITAL PROJECTS: UX/UI Panel
     // ─────────────────────────────────────────────────────────
 
     {
@@ -1266,12 +1303,12 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "UX/UI design for Smartly — a payroll and HR platform serving thousands of New Zealand businesses. The challenge was bringing clarity and warmth to a product category historically associated with complexity and anxiety, making compliance feel genuinely manageable."
+                body: "UX/UI design for Smartly: a payroll and HR platform serving thousands of New Zealand businesses. The challenge was bringing clarity and warmth to a product category historically associated with complexity and anxiety, making compliance feel genuinely manageable."
             },
             {
                 type: "image",
                 src: "Portfolio-images_webp/Smartly/Smartly web Iphone macbook s.webp",
-                caption: "Responsive design — mobile and desktop views"
+                caption: "Responsive design: mobile and desktop views"
             },
             {
                 type: "bullets",
@@ -1306,7 +1343,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Mobile application design for Polhill Reserve — a community environmental initiative connecting Wellington residents with local conservation efforts. The product needed to feel alive with the energy of the outdoor environment it serves, while remaining functional and accessible for a diverse user base."
+                body: "Mobile application design for Polhill Reserve: a community environmental initiative connecting Wellington residents with local conservation efforts. The product needed to feel alive with the energy of the outdoor environment it serves, while remaining functional and accessible for a diverse user base."
             },
             {
                 type: "gallery",
@@ -1350,7 +1387,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Brand and digital design concept for Spaceman Coffee — an Auckland specialty café with a character rooted in curiosity, precision, and a slightly otherworldly commitment to the craft of espresso. The digital touchpoints needed to match the brand's sense of playful seriousness."
+                body: "Brand and digital design concept for Spaceman Coffee: an Auckland specialty café with a character rooted in curiosity, precision, and a slightly otherworldly commitment to the craft of espresso. The digital touchpoints needed to match the brand's sense of playful seriousness."
             },
             {
                 type: "bullets",
@@ -1377,11 +1414,11 @@ const portfolioData = [
             {
                 type: "image",
                 src: "Portfolio-images_webp/Fuelmizas/Macbook Fuelmizas UX Web.webp",
-                caption: "Fuelmizas — web UX concept"
+                caption: "Fuelmizas: web UX concept"
             },
             {
                 type: "text",
-                body: "UX and web design concept for Fuelmizas — exploring the convergence of fuel culture, performance aesthetics, and premium digital retail. The project asked what a motorsport-inspired digital brand experience looks like when stripped of cliché and rebuilt with precision."
+                body: "UX and web design concept for Fuelmizas: exploring the convergence of fuel culture, performance aesthetics, and premium digital retail. The project asked what a motorsport-inspired digital brand experience looks like when stripped of cliché and rebuilt with precision."
             },
             {
                 type: "bullets",
@@ -1403,7 +1440,7 @@ const portfolioData = [
         lon: 0,
         status: "built",
         title: "Zespri",
-        airport: "New Zealand — Global",
+        airport: "New Zealand: Global",
         content: [
             {
                 type: "gallery",
@@ -1416,7 +1453,7 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Digital experience design for Zespri — the world's leading kiwifruit marketer. The work explored how a global agri-food brand with deep New Zealand roots could communicate its story of provenance, quality, and nutrition across digital touchpoints in international markets."
+                body: "Digital experience design for Zespri: the world's leading kiwifruit marketer. The work explored how a global agri-food brand with deep New Zealand roots could communicate its story of provenance, quality, and nutrition across digital touchpoints in international markets."
             },
             {
                 type: "gallery",
