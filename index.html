@@ -218,6 +218,11 @@
         .glance-card ul li a:hover { color: #ffffff; }
         .glance-card ul li a:hover:before { background: #ffffff; }
 
+        /* ── HERO IMAGE ── */
+        .block-hero { width: 100%; margin: 20px 0 28px 0; border-radius: 14px; overflow: hidden; background: #111; }
+        .block-hero img { width: 100%; height: auto; max-height: 460px; object-fit: cover; display: block; cursor: zoom-in; transition: transform 0.4s ease; }
+        .block-hero img:hover { transform: scale(1.02); }
+
         /* ── BLOCK SECTION HEADING ── */
         .block-section-heading {
             font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
@@ -639,155 +644,133 @@
     // ═══════════════════════════════════════════════════════
     // CONTENT BLOCK RENDERER
     // ═══════════════════════════════════════════════════════
-    function renderBlocks(blocks, containerEl) {
-        if (!blocks || !blocks.length) return;
-        containerEl.innerHTML = '';
+    // ═══════════════════════════════════════════════════════
+    // UNIFIED PROJECT RENDERER  — builds full HTML as a string
+    // ═══════════════════════════════════════════════════════
 
-        blocks.forEach(block => {
-            switch(block.type) {
-
-                case 'text': {
-                    const textWrap = document.createElement('div');
-                    if (block.id) textWrap.id = block.id;
-                    if (block.heading) {
-                        const sh = document.createElement('p');
-                        sh.className = 'block-section-heading';
-                        sh.textContent = block.heading;
-                        textWrap.appendChild(sh);
-                    }
-                    const el = document.createElement('p');
-                    el.className = 'block-text';
-                    el.innerHTML = block.body;
-                    textWrap.appendChild(el);
-                    containerEl.appendChild(textWrap);
-                    break;
-                }
-
-                case 'image': {
-                    const wrap = document.createElement('div');
-                    wrap.className = 'block-image';
-                    const img = document.createElement('img');
-                    img.src = block.src;
-                    img.alt = block.caption || '';
-                    img.loading = 'lazy';
-                    img.onclick = () => openLightbox(block.src);
-                    wrap.appendChild(img);
-                    if (block.caption) {
-                        const cap = document.createElement('p');
-                        cap.className = 'block-image-caption';
-                        cap.textContent = block.caption;
-                        wrap.appendChild(cap);
-                    }
-                    containerEl.appendChild(wrap);
-                    break;
-                }
-
-                case 'gallery': {
-                    const wrap = document.createElement('div');
-                    wrap.className = 'block-gallery';
-                    if (block.id) wrap.id = block.id;
-                    if (block.heading) {
-                        const sh = document.createElement('p');
-                        sh.className = 'block-section-heading';
-                        sh.textContent = block.heading;
-                        wrap.appendChild(sh);
-                    }
-                    const gallery = document.createElement('div');
-                    gallery.className = 'gallery-container';
-                    (block.images || []).slice(0, 6).forEach((src, i) => {
-                        const item = document.createElement('div');
-                        item.className = 'gallery-item' + (i === 0 ? ' active' : '');
-                        item.style.backgroundImage = `url('${src}')`;
-                        item.onclick = function() { selectGalleryItem(this); };
-                        gallery.appendChild(item);
-                    });
-                    wrap.appendChild(gallery);
-                    containerEl.appendChild(wrap);
-                    break;
-                }
-
-                case 'bullets': {
-                    const isGlance = block.heading === 'At a Glance';
-                    const wrap = document.createElement('div');
-                    wrap.className = isGlance ? 'glance-card' : 'block-bullets';
-                    if (block.heading) {
-                        const h = document.createElement('p');
-                        h.className = isGlance ? 'glance-card-heading' : 'block-bullets-heading';
-                        h.textContent = block.heading;
-                        wrap.appendChild(h);
-                    }
-                    const ul = document.createElement('ul');
-                    (block.items || []).forEach(item => {
-                        const li = document.createElement('li');
-                        // Support both plain strings and {label, anchor} objects
-                        if (typeof item === 'object' && item.anchor) {
-                            const a = document.createElement('a');
-                            a.textContent = item.label;
-                            a.href = '#' + item.anchor;
-                            a.addEventListener('click', function(e) {
-                                e.preventDefault();
-                                // Find the scroll container (modal or digital-main)
-                                const scrollEl = containerEl.closest('#modal-scroll-area') || containerEl.closest('.digital-main');
-                                const target = containerEl.querySelector('#' + item.anchor);
-                                if (scrollEl && target) {
-                                    const offset = target.offsetTop - scrollEl.offsetTop - 20;
-                                    scrollEl.scrollTo({ top: offset, behavior: 'smooth' });
-                                }
-                            });
-                            li.appendChild(a);
-                        } else {
-                            li.innerHTML = typeof item === 'string' ? item : item.label;
-                        }
-                        ul.appendChild(li);
-                    });
-                    wrap.appendChild(ul);
-                    containerEl.appendChild(wrap);
-                    break;
-                }
-
-                case 'divider': {
-                    const hr = document.createElement('hr');
-                    hr.className = 'block-divider';
-                    containerEl.appendChild(hr);
-                    break;
-                }
+    function buildGlanceCard(block, scrollId) {
+        if (!block) return '';
+        const items = (block.items || []).map(item => {
+            if (typeof item === 'object' && item.anchor) {
+                return `<li><a class="glance-link" data-anchor="${item.anchor}" data-scroll="${scrollId}" href="#">${item.label}</a></li>`;
             }
-        });
+            return `<li>${typeof item === 'string' ? item : item.label}</li>`;
+        }).join('');
+        return `<div class="glance-card"><p class="glance-card-heading">At a Glance</p><ul>${items}</ul></div>`;
     }
 
-    // Render page header (badge, title, subtitle, location) then content blocks
-    function renderProjectHeader(data, containerEl, badgeClass, badgeText) {
-        const header = document.createElement('div');
-        header.className = 'project-header';
+    function buildGallery(block) {
+        const idAttr  = block.id      ? ` id="${block.id}"`               : '';
+        const heading = block.heading ? `<p class="block-section-heading">${block.heading}</p>` : '';
+        const imgs = (block.images || []).slice(0, 6).map((src, i) =>
+            `<div class="gallery-item${i === 0 ? ' active' : ''}" style="background-image:url('${src}')" onclick="selectGalleryItem(this)"></div>`
+        ).join('');
+        return `<div class="block-gallery"${idAttr}>${heading}<div class="gallery-container">${imgs}</div></div>`;
+    }
 
-        // H1 title
-        const titleEl = document.createElement('h1');
-        titleEl.className = 'modal-title';
-        titleEl.textContent = data.title || 'TITLE MISSING';
-        titleEl.style.cssText = 'color:#ff0000 !important;font-size:3rem !important;display:block !important;background:rgba(255,0,0,0.1);padding:10px;margin-bottom:10px;';
-        header.appendChild(titleEl);
+    function buildHeroImage(src) {
+        return `<div class="block-hero"><img src="${src}" alt="" loading="lazy" onclick="openLightbox('${src}')" /></div>`;
+    }
 
-        // Subtitle
-        if (data.subtitle) {
-            const subEl = document.createElement('p');
-            subEl.className = 'modal-subtitle';
-            subEl.textContent = data.subtitle;
-            header.appendChild(subEl);
+    function buildTextBlock(block) {
+        const idAttr  = block.id      ? ` id="${block.id}"`               : '';
+        const heading = block.heading ? `<p class="block-section-heading">${block.heading}</p>` : '';
+        return `<div class="block-text-wrap"${idAttr}>${heading}<p class="block-text">${block.body}</p></div>`;
+    }
+
+    function buildImageBlock(block) {
+        const cap = block.caption ? `<p class="block-image-caption">${block.caption}</p>` : '';
+        return `<div class="block-image"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" onclick="openLightbox('${block.src}')" />${cap}</div>`;
+    }
+
+    function buildBulletsBlock(block) {
+        const items = (block.items || []).map(item => {
+            const label = typeof item === 'string' ? item : item.label;
+            return `<li>${label}</li>`;
+        }).join('');
+        const heading = block.heading ? `<p class="block-bullets-heading">${block.heading}</p>` : '';
+        return `<div class="block-bullets">${heading}<ul>${items}</ul></div>`;
+    }
+
+    function buildProjectHTML(data, badgeClass, badgeText, scrollContainerId) {
+        const blocks  = data.content || [];
+
+        // ── HEADER ──────────────────────────────────────────
+        const subtitle  = data.subtitle
+            ? `<p class="modal-subtitle">${data.subtitle}</p>` : '';
+        const location  = data.airport
+            ? `<div class="modal-location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg> ${data.airport}</div>` : '';
+
+        let html = `
+            <div class="project-header">
+                <h1 class="modal-title">${data.title || ''}</h1>
+                ${subtitle}
+                <div class="modal-header-meta">
+                    <div class="status-badge ${badgeClass}">${badgeText}</div>
+                    ${location}
+                </div>
+                <hr class="project-divider">
+            </div>`;
+
+        // ── AT A GLANCE (pull out first, inject early) ──────
+        const glanceBlock = blocks.find(b => b.type === 'bullets' && b.heading === 'At a Glance');
+        html += buildGlanceCard(glanceBlock, scrollContainerId);
+
+        // ── HERO IMAGE (first gallery or image block) ────────
+        const heroBlock = blocks.find(b => b.type === 'gallery' || b.type === 'image');
+        if (heroBlock) {
+            if (heroBlock.type === 'gallery' && heroBlock.images && heroBlock.images[0]) {
+                html += buildHeroImage(heroBlock.images[0]);
+            } else if (heroBlock.type === 'image') {
+                html += buildHeroImage(heroBlock.src);
+            }
         }
 
-        // Badge + location row
-        const meta = document.createElement('div');
-        meta.className = 'modal-header-meta';
-        meta.innerHTML = '<div class="status-badge ' + badgeClass + '">' + badgeText + '</div>' +
-            '<div class="modal-location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg> ' + (data.airport || '') + '</div>';
-        header.appendChild(meta);
+        // ── REMAINING BLOCKS (skip glance card, don't repeat hero) ──
+        let heroUsed = false;
+        blocks.forEach(block => {
+            // Skip the at-a-glance card
+            if (block.type === 'bullets' && block.heading === 'At a Glance') return;
 
-        // Divider
-        const hr = document.createElement('hr');
-        hr.className = 'project-divider';
-        header.appendChild(hr);
+            // First gallery/image = hero already shown above; skip once
+            if (!heroUsed && (block.type === 'gallery' || block.type === 'image')) {
+                heroUsed = true;
+                // Still render the heading/section label if it has one, then the full gallery below
+                if (block.type === 'gallery') {
+                    const idAttr  = block.id      ? ` id="${block.id}"`               : '';
+                    const heading = block.heading ? `<p class="block-section-heading">${block.heading}</p>` : '';
+                    const imgs = (block.images || []).slice(0, 6).map((src, i) =>
+                        `<div class="gallery-item${i === 0 ? ' active' : ''}" style="background-image:url('${src}')" onclick="selectGalleryItem(this)"></div>`
+                    ).join('');
+                    html += `<div class="block-gallery"${idAttr}>${heading}<div class="gallery-container">${imgs}</div></div>`;
+                }
+                return;
+            }
 
-        containerEl.appendChild(header);
+            switch (block.type) {
+                case 'text':    html += buildTextBlock(block);    break;
+                case 'image':   html += buildImageBlock(block);   break;
+                case 'gallery': html += buildGallery(block);      break;
+                case 'bullets': html += buildBulletsBlock(block); break;
+                case 'divider': html += '<hr class="block-divider">'; break;
+            }
+        });
+
+        return html;
+    }
+
+    // Wire up glance-card anchor clicks (delegated, runs after innerHTML set)
+    function bindGlanceLinks(zone, scrollEl) {
+        zone.querySelectorAll('.glance-link').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const anchor = a.dataset.anchor;
+                const target = zone.querySelector('#' + anchor);
+                if (scrollEl && target) {
+                    scrollEl.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+                }
+            });
+        });
     }
 
     function openLightbox(src) {
@@ -809,6 +792,19 @@
         element.classList.add('active');
     };
 
+    // Simple block renderer for non-project pages (about, ai)
+    function renderSimpleBlocks(blocks, el) {
+        if (!blocks || !el) return;
+        el.innerHTML = (blocks || []).map(b => {
+            if (b.type === 'text') return `<p class="block-text">${b.body}</p>`;
+            if (b.type === 'bullets') {
+                const items = (b.items || []).map(i => `<li>${typeof i === 'string' ? i : i.label}</li>`).join('');
+                return `<ul class="page-bullets">${items}</ul>`;
+            }
+            return '';
+        }).join('');
+    }
+
     // ═══════════════════════════════════════════════════════
     // APP INIT
     // ═══════════════════════════════════════════════════════
@@ -818,14 +814,14 @@
         if (aboutData) {
             document.getElementById('about-title').textContent = aboutData.title;
             document.getElementById('about-subtitle').textContent = aboutData.subtitle;
-            renderBlocks(aboutData.content, document.getElementById('about-body'));
+            renderSimpleBlocks(aboutData.content, document.getElementById('about-body'));
         }
 
         const aiData = pageData.find(p => p.id === 'ai');
         if (aiData) {
             document.getElementById('ai-title').textContent = aiData.title;
             document.getElementById('ai-subtitle').textContent = aiData.subtitle;
-            renderBlocks(aiData.content, document.getElementById('ai-body'));
+            renderSimpleBlocks(aiData.content, document.getElementById('ai-body'));
         }
 
         // Populate Digital list
@@ -857,21 +853,20 @@
     // DIGITAL PROJECT RENDERER
     // ═══════════════════════════════════════════════════════
     window.loadDigitalProject = function(index) {
-        document.querySelectorAll('.digital-list-item').forEach((el, i) => {
+        document.querySelectorAll('#digital-project-list .digital-list-item').forEach((el, i) => {
             el.classList.toggle('active', i === index);
         });
         const data = digitalProjects[index];
         if (!data) return;
 
-        const zone = document.getElementById('digital-content-zone');
-        zone.innerHTML = '';
-
+        const zone     = document.getElementById('digital-content-zone');
+        const scrollEl = document.getElementById('digital-main-content');
         const badgeClass = data.status === 'built' ? 'badge-digital' : 'badge-concept';
         const badgeText  = data.status === 'built' ? 'Live Product' : 'UX Concept';
-        renderProjectHeader(data, zone, badgeClass, badgeText);
-        renderBlocks(data.content, zone);
 
-        document.getElementById('digital-main-content').scrollTop = 0;
+        zone.innerHTML = buildProjectHTML(data, badgeClass, badgeText, 'digital-main-content');
+        bindGlanceLinks(zone, scrollEl);
+        scrollEl.scrollTop = 0;
     };
 
     // ═══════════════════════════════════════════════════════
@@ -882,17 +877,14 @@
     function openModal(data) {
         currentProjectIndex = globeProjects.findIndex(p => p.id === data.id);
         const modal    = document.getElementById('project-modal');
-        const zone     = document.getElementById('modal-content-zone');
         const scrollEl = document.getElementById('modal-scroll-area');
 
         modal.classList.remove('hidden-state');
         modal.classList.add('active');
-        scrollEl.scrollTop = 0;
-        scrollEl.style.overflow = 'hidden';
 
-        // Show skeleton
+        // Skeleton while content builds
+        const zone = document.getElementById('modal-content-zone');
         zone.innerHTML = `
-            <div class="skeleton skel-badge"></div>
             <div class="skeleton skel-title"></div>
             <div class="skeleton skel-loc"></div>
             <div class="skeleton skel-gallery"></div>
@@ -900,20 +892,17 @@
             <div class="skeleton skel-text"></div>
             <div class="skeleton skel-text short"></div>
         `;
+        scrollEl.scrollTop = 0;
 
-        // Render real content after brief delay (feels snappy, not instant)
         setTimeout(() => {
-            // Re-query to ensure live DOM reference
-            const liveZone = document.getElementById('modal-content-zone');
+            const liveZone   = document.getElementById('modal-content-zone');
             const liveScroll = document.getElementById('modal-scroll-area');
-            liveZone.innerHTML = '';
             const badgeClass = data.status === 'built' ? 'badge-built' : 'badge-concept';
             const badgeText  = data.status === 'built' ? 'Built' : 'Concept';
-            renderProjectHeader(data, liveZone, badgeClass, badgeText);
-            renderBlocks(data.content, liveZone);
+            liveZone.innerHTML = buildProjectHTML(data, badgeClass, badgeText, 'modal-scroll-area');
+            bindGlanceLinks(liveZone, liveScroll);
             liveScroll.scrollTop = 0;
-            liveScroll.style.overflow = 'auto';
-        }, 280);
+        }, 250);
     }
 
     // ═══════════════════════════════════════════════════════
