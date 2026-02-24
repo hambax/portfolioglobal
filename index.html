@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamish Baxter | Global Portfolio</title>
     
-    <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -35,10 +34,9 @@
             position: absolute; top: 0; left: 0; z-index: 1;
             transition: filter 0.8s ease-out;
         }
-
         .blurry-start { filter: blur(12px); }
 
-        /* Loading Screen for CMS */
+        /* ── LOADING ── */
         #cms-loader {
             position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
             background: #050505; z-index: 999;
@@ -50,10 +48,10 @@
             border-top: 2px solid #fff; border-radius: 50%;
             animation: spin 1s linear infinite; margin-bottom: 20px;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes spin { to { transform: rotate(360deg); } }
         #cms-loader p { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
 
-        /* Intro Overlay */
+        /* ── INTRO ── */
         #intro-overlay {
             position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -63,50 +61,49 @@
             transition: opacity 0.8s ease-in-out;
         }
         .intro-name { font-family: var(--font-display); font-size: 3rem; margin: 0 0 10px 0; font-weight: 400; }
-        .intro-sub { font-size: 0.9rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 40px; }
+        .intro-sub  { font-size: 0.9rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 40px; }
         .intro-instruction { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; }
 
-        /* Overlay UI Elements */
+        /* ── UI LAYER ── */
         #ui-layer {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 10; pointer-events: none;
             display: flex; flex-direction: column; justify-content: space-between;
             padding: 40px; box-sizing: border-box;
         }
-
         header { pointer-events: auto; }
         h1 { margin: 0; font-family: var(--font-display); font-size: 2rem; font-weight: 400; letter-spacing: 1px; }
-        p.subtitle { margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+        p.subtitle { margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; line-height: 1.9; }
+        .nav-subtitle-link { cursor: pointer; transition: color 0.2s; }
+        .nav-subtitle-link:hover { color: #ffffff; }
+        .subtitle-sep { margin: 0 6px; opacity: 0.4; }
 
-        /* Dynamic Island Top Nav */
+        /* ── NAV: vertical pill on the left, expands on hover ── */
         #dynamic-nav {
-            position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
+            position: absolute; top: 50%; left: 24px; transform: translateY(-50%);
             background: rgba(25, 25, 30, 0.6);
             backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 40px;
-            padding: 8px; display: flex; flex-direction: row; gap: 5px;
-            width: 215px; box-sizing: border-box;
-            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 32px;
+            padding: 8px; display: flex; flex-direction: column; gap: 4px;
+            width: 54px; box-sizing: border-box;
+            transition: width 0.4s cubic-bezier(0.175,0.885,0.32,1.275), background 0.3s;
             overflow: hidden; z-index: 100; pointer-events: auto;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
-        #dynamic-nav:hover { width: 731px; background: rgba(25, 25, 30, 0.85); }
-        
+        #dynamic-nav:hover { width: 210px; background: rgba(25,25,30,0.85); }
         .nav-item {
-            display: flex; align-items: center; padding: 12px; border-radius: 20px;
-            cursor: pointer; color: var(--text-muted); 
-            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, color 0.3s ease;
-            white-space: nowrap; width: 46px; box-sizing: border-box; overflow: hidden;
+            display: flex; align-items: center; padding: 10px 8px; border-radius: 24px;
+            cursor: pointer; color: var(--text-muted);
+            transition: background 0.3s, color 0.3s;
+            white-space: nowrap; overflow: hidden;
         }
-        #dynamic-nav:hover .nav-item { width: 175px; }
-        .nav-item:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
-        .nav-item.active { color: var(--text-main); background: rgba(255, 255, 255, 0.15); }
-        
-        .nav-icon { width: 22px; height: 22px; flex-shrink: 0; }
-        .nav-label { font-weight: 400; font-size: 0.9rem; letter-spacing: 0.5px; opacity: 0; margin-left: 12px; transform: translateX(-10px); transition: opacity 0.3s ease, transform 0.3s ease; }
-        #dynamic-nav:hover .nav-label { opacity: 1; transform: translateX(0); transition-delay: 0.1s; }
+        .nav-item:hover  { color: var(--text-main); background: rgba(255,255,255,0.05); }
+        .nav-item.active { color: var(--text-main); background: rgba(255,255,255,0.15); }
+        .nav-icon  { width: 22px; height: 22px; flex-shrink: 0; margin: 0 3px; }
+        .nav-label { font-weight: 400; font-size: 0.85rem; letter-spacing: 0.5px; opacity: 0; margin-left: 10px; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s; }
+        #dynamic-nav:hover .nav-label { opacity: 1; transform: translateX(0); transition-delay: 0.08s; }
 
-        /* Global Footer */
+        /* ── FOOTER ── */
         #global-footer {
             position: absolute; bottom: 40px; left: 40px; pointer-events: auto;
             display: flex; gap: 20px; align-items: center;
@@ -117,40 +114,130 @@
         #global-footer a:hover { opacity: 0.7; }
         .footer-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.2); }
 
-        /* Full Page Content Overlays */
+        /* ── PAGE OVERLAY ── */
         #page-overlay {
             position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 40; pointer-events: none; display: flex; align-items: center; justify-content: center;
             background: rgba(0,0,0,0.0); transition: background 0.5s ease;
         }
         #page-overlay.active { pointer-events: auto; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-        
-        /* Standard Static Page Style */
+
         .page-content {
             width: 60vw; max-width: 800px; max-height: 85vh;
             background: var(--glass-bg); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
             border: 1px solid var(--glass-border); border-radius: 24px; padding: 60px;
             opacity: 0; transform: translateY(20px) scale(0.98);
-            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.2,0.8,0.2,1);
             display: none; overflow-y: auto; box-sizing: border-box;
             box-shadow: 0 30px 80px rgba(0,0,0,0.8);
         }
         .page-content.active { display: block; opacity: 1; transform: translateY(0) scale(1); }
         .page-content::-webkit-scrollbar { width: 6px; }
-        .page-content::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 3px; }
-        
-        .page-title { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-top: 0; margin-bottom: 20px; letter-spacing: 0px; }
-        .page-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 400; letter-spacing: 0.5px; text-transform: uppercase; }
-        .page-text { font-size: 1.1rem; line-height: 1.8; color: #d0d0d0; margin-bottom: 25px; font-weight: 300; }
-        .highlight { color: #ffffff; font-weight: 500; }
+        .page-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
 
-        /* Split-Panel Digital UX/UI Layout */
+        .page-title    { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-top: 0; margin-bottom: 20px; }
+        .page-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 400; letter-spacing: 0.5px; text-transform: uppercase; }
+        .page-text     { font-size: 1.1rem; line-height: 1.8; color: #d0d0d0; margin-bottom: 25px; font-weight: 300; }
+        .highlight     { color: #ffffff; font-weight: 500; }
+        .inline-link   { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; opacity: 0.8; transition: opacity 0.2s; }
+        .inline-link:hover { opacity: 1; }
+
+        /* ── TOOL STACK GRID ── */
+        #page-tools { overflow-y: auto; }
+        .tools-inner { padding: 50px 60px; max-width: 1100px; margin: 0 auto; }
+        .tools-title { font-family: var(--font-display); font-size: 2.8rem; font-weight: 400; margin: 0 0 8px 0; }
+        .tools-subtitle { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin: 0 0 48px 0; }
+        .tools-section-heading { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--text-muted); margin: 40px 0 16px 0; font-weight: 600; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 12px; margin-bottom: 12px; }
+        .tool-chip {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 16px 10px; cursor: pointer;
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            transition: background 0.2s, border-color 0.2s, transform 0.15s;
+            text-align: center;
+        }
+        .tool-chip:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .tool-chip.active { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+        .tool-chip-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+        .tool-chip-name { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.8); line-height: 1.2; }
+        .tool-detail {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 28px 32px; margin-top: 32px;
+            display: none;
+        }
+        .tool-detail.active { display: block; }
+        .tool-detail-name { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; margin: 0 0 6px 0; }
+        .tool-detail-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin: 0 0 18px 0; }
+        .tool-detail-body { font-size: 0.95rem; line-height: 1.75; color: #c0c0c8; }
+
+        /* ── AI FRONTIER ── */
+        #page-aifrontier { display: none; }
+        #page-aifrontier.active { display: flex; }
+
+        /* ── TOOL STACK PAGE ── */
+        #page-tools { display: none; max-width: 100%; max-height: 85vh; overflow-y: auto; }
+        #page-tools.active { display: block; }
+        #page-tools::-webkit-scrollbar { width: 6px; }
+        #page-tools::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+
+        /* ── IFRAME DEMO ── */
+        .demo-iframe-wrap { width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: #000; margin-top: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .demo-iframe-wrap iframe { width: 100%; height: 100%; border: none; }
+        .demo-link-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; transition: background 0.2s; cursor: pointer; }
+        .demo-link-btn:hover { background: rgba(255,255,255,0.18); }
+
+        /* ── AT A GLANCE CARD ── */
+        .glance-card {
+            background: rgba(255,255,255,0.06);
+            margin-top: 4px;
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin-bottom: 28px;
+        }
+        .glance-card-heading {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--text-muted);
+            margin: 0 0 14px 0;
+        }
+        .glance-card ul {
+            margin: 0; padding: 0; list-style: none;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .glance-card ul li a {
+            font-size: 0.9rem; color: rgba(255,255,255,0.75);
+            text-decoration: none; line-height: 1.5;
+            display: flex; align-items: flex-start; gap: 10px;
+            transition: color 0.2s;
+        }
+        .glance-card ul li a:before {
+            content: ''; display: block; width: 5px; height: 5px;
+            border-radius: 50%; background: rgba(255,255,255,0.3);
+            flex-shrink: 0; margin-top: 7px;
+        }
+        .glance-card ul li a:hover { color: #ffffff; }
+        .glance-card ul li a:hover:before { background: #ffffff; }
+
+        /* ── HERO IMAGE ── */
+        .block-hero { width: 100%; margin: 20px 0 28px 0; border-radius: 14px; overflow: hidden; background: #111; }
+        .block-hero img { width: 100%; height: auto; max-height: 460px; object-fit: cover; display: block; cursor: zoom-in; transition: transform 0.4s ease; }
+        .block-hero img:hover { transform: scale(1.02); }
+
+        /* ── BLOCK SECTION HEADING ── */
+        .block-section-heading {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--text-muted);
+            margin: 28px 0 10px 0; padding-top: 4px;
+        }
+        .block-gallery .block-section-heading,
+        .block-image-wrap .block-section-heading { margin-top: 24px; }
+
+        /* ── DIGITAL SPLIT PANEL ── */
         #page-uxui {
             width: 85vw; max-width: 1300px; padding: 0; display: none; overflow: hidden;
             flex-direction: row; align-items: stretch;
         }
         #page-uxui.active { display: flex; opacity: 1; transform: translateY(0) scale(1); }
-        
         .digital-sidebar {
             width: 35%; border-right: 1px solid var(--glass-border);
             display: flex; flex-direction: column; background: rgba(0,0,0,0.2);
@@ -159,41 +246,30 @@
             padding: 35px 30px 20px; border-bottom: 1px solid var(--glass-border);
         }
         .digital-sidebar-title { font-family: var(--font-display); font-size: 1.8rem; margin: 0; font-weight: 400; }
-        
-        .digital-list {
-            flex: 1; overflow-y: auto; padding: 15px;
-        }
+        .digital-list { flex: 1; overflow-y: auto; padding: 15px; }
         .digital-list::-webkit-scrollbar { width: 4px; }
-        .digital-list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 2px; }
-        
+        .digital-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
         .digital-list-item {
             padding: 18px 20px; border-radius: 12px; cursor: pointer;
-            transition: all 0.2s ease; border: 1px solid transparent;
-            margin-bottom: 8px;
+            transition: all 0.2s; border: 1px solid transparent; margin-bottom: 8px;
         }
         .digital-list-item:hover { background: rgba(255,255,255,0.05); }
-        .digital-list-item.active { 
-            background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
-        }
+        .digital-list-item.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
         .digital-item-title { font-size: 1rem; font-weight: 500; margin-bottom: 4px; color: #fff; }
-        .digital-item-sub { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-
-        .digital-main {
-            width: 65%; padding: 40px 50px; overflow-y: auto; scroll-behavior: smooth;
-        }
+        .digital-item-sub   { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .digital-main { width: 65%; padding: 40px 50px; overflow-y: auto; scroll-behavior: smooth; }
         .digital-main::-webkit-scrollbar { width: 6px; }
-        .digital-main::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 3px; }
+        .digital-main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
 
-        /* Glassmorphic Project Modal (Architecture) */
+        /* ── ARCHITECTURE MODAL ── */
         #project-modal {
             position: absolute; top: 0; right: 0; height: 100vh; width: var(--modal-width);
             min-width: 400px; max-width: 85vw; padding: 40px; box-sizing: border-box;
             border-radius: 24px 0 0 24px; background: var(--glass-bg);
             backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border-left: 1px solid var(--glass-border); box-shadow: -20px 0 60px 0 rgba(0, 0, 0, 0.6);
+            border-left: 1px solid var(--glass-border); box-shadow: -20px 0 60px rgba(0,0,0,0.6);
             pointer-events: auto; opacity: 0; visibility: hidden;
-            transition: opacity 0.25s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: opacity 0.25s, transform 0.4s cubic-bezier(0.2,0.8,0.2,1);
             display: flex; flex-direction: column; z-index: 60;
         }
         #project-modal.active { opacity: 1; visibility: visible; transform: translateX(0); }
@@ -206,14 +282,17 @@
         #modal-resizer:hover, #modal-resizer.dragging { background: rgba(255,255,255,0.15); }
 
         #modal-scroll-area { flex: 1; overflow-y: auto; padding-right: 15px; scroll-behavior: smooth; }
+        #modal-content-zone { padding-top: 16px; }
+        #modal-content-zone .project-header { display: block !important; visibility: visible !important; opacity: 1 !important; }
+        #modal-content-zone h1.modal-title { display: block !important; color: #ffffff !important; font-size: 3rem !important; margin-bottom: 8px !important; }
+        .project-header { margin-bottom: 24px; padding-top: 4px; }
         #modal-scroll-area::-webkit-scrollbar { width: 4px; }
-        #modal-scroll-area::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 2px; }
+        #modal-scroll-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
 
-        /* Control Bar Navigation - Top Header */
         #modal-top-bar {
             display: flex; align-items: center; justify-content: space-between;
             margin-bottom: 25px; padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             z-index: 20; flex-shrink: 0;
         }
         .nav-controls { display: flex; align-items: center; gap: 6px; flex: 1; }
@@ -221,15 +300,11 @@
             background: transparent; border: none; color: var(--text-muted);
             width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
             display: flex; justify-content: center; align-items: center;
-            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-            padding: 0; outline: none;
+            transition: all 0.3s; padding: 0; outline: none;
         }
         .nav-btn svg { width: 18px; height: 18px; stroke-width: 2px; }
-        .nav-btn:hover { 
-            background: rgba(255,255,255,0.08); color: #fff; transform: scale(1.05); 
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.05);
-        }
-        
+        .nav-btn:hover { background: rgba(255,255,255,0.08); color: #fff; transform: scale(1.05); }
+
         .search-container { flex: 1; max-width: 240px; position: relative; margin-left: 10px; }
         #project-search {
             width: 100%; padding: 8px 16px; border-radius: 20px;
@@ -237,11 +312,11 @@
             color: white; font-size: 0.85rem; font-weight: 300; font-family: var(--font-body);
             outline: none; transition: all 0.3s; box-sizing: border-box;
         }
-        #project-search::placeholder { color: rgba(255, 255, 255, 0.3); }
-        #project-search:focus { border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.4); box-shadow: 0 0 8px rgba(255,255,255,0.1); }
+        #project-search::placeholder { color: rgba(255,255,255,0.3); }
+        #project-search:focus { border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.4); }
         #search-results {
             position: absolute; top: 40px; left: 0; width: 100%;
-            background: rgba(25, 25, 30, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(25,25,30,0.95); backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border); border-radius: 12px;
             max-height: 250px; overflow-y: auto; display: none; flex-direction: column;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 100;
@@ -255,129 +330,163 @@
         .search-result-item:last-child { border-bottom: none; }
 
         .modal-close {
-            position: relative; cursor: pointer; margin-left: 15px;
-            font-size: 1.2rem; color: var(--text-muted); transition: color 0.3s, text-shadow 0.3s; z-index: 10;
+            cursor: pointer; margin-left: 15px;
+            font-size: 1.2rem; color: var(--text-muted); transition: color 0.3s, text-shadow 0.3s;
             display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;
         }
         .modal-close:hover { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.4); }
 
-        /* Project Content Hierarchy */
+        /* ── STATUS BADGES ── */
         .status-badge {
             display: inline-block; padding: 4px 10px; border-radius: 12px;
             font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px;
             margin-bottom: 15px; font-weight: 600;
         }
-        .badge-built { background: rgba(77, 168, 218, 0.15); color: #6bc2f3; border: 1px solid rgba(77, 168, 218, 0.3); }
-        .badge-concept { background: rgba(168, 77, 218, 0.15); color: #d7a8f8; border: 1px solid rgba(168, 77, 218, 0.3); }
-        .badge-digital { background: rgba(77, 218, 140, 0.15); color: #6bf3a4; border: 1px solid rgba(77, 218, 140, 0.3); }
+        .badge-built   { background: rgba(77,168,218,0.15); color: #6bc2f3; border: 1px solid rgba(77,168,218,0.3); }
+        .badge-concept { background: rgba(168,77,218,0.15); color: #d7a8f8; border: 1px solid rgba(168,77,218,0.3); }
+        .badge-digital { background: rgba(77,218,140,0.15); color: #6bf3a4; border: 1px solid rgba(77,218,140,0.3); }
 
-        .modal-title { font-family: var(--font-display); margin: 0 0 10px 0; font-size: 2.2rem; font-weight: 400; letter-spacing: 0px; line-height: 1.1; }
+        /* ── PROJECT CONTENT BLOCKS ── */
+        .modal-title    { font-family: var(--font-display); margin: 0 0 8px 0; font-size: 3rem; font-weight: 400; line-height: 1.05; letter-spacing: -0.5px; color: #ffffff; display: block; }
+        .modal-subtitle { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; margin: 0 0 14px 0; }
+        .modal-header-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
         .modal-location { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; font-weight: 500; }
-        
         .project-divider { border: 0; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%); margin: 0 0 25px 0; }
-        
-        .modal-desc { font-size: 1.1rem; line-height: 1.8; color: #d4d4d4; margin-bottom: 35px; font-weight: 300; }
+        .modal-desc { font-size: 1.05rem; line-height: 1.8; color: #d4d4d4; margin-bottom: 30px; font-weight: 300; }
 
-        /* Skeleton Animations */
-        @keyframes pulse { 0% { background-color: rgba(255, 255, 255, 0.03); } 50% { background-color: rgba(255, 255, 255, 0.08); } 100% { background-color: rgba(255, 255, 255, 0.03); } }
+        /* Block: text */
+        .block-text {
+            font-size: 1.05rem; line-height: 1.85; color: #d4d4d4;
+            margin-bottom: 28px; font-weight: 300;
+        }
+
+        /* Block: image */
+        .block-image {
+            margin-bottom: 28px;
+        }
+        .block-image img {
+            width: 100%; border-radius: 12px;
+            display: block; object-fit: cover;
+            background: #111;
+        }
+        .block-image-caption {
+            font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;
+            letter-spacing: 0.5px; text-align: center; font-style: italic;
+        }
+
+        /* Block: gallery (accordion) */
+        .block-gallery { margin-bottom: 28px; }
+        .gallery-container {
+            display: flex; gap: 8px; width: 100%; height: 280px;
+        }
+        .gallery-item {
+            flex: 1; border-radius: 12px; overflow: hidden; cursor: pointer; position: relative;
+            transition: flex 0.55s cubic-bezier(0.25,1,0.3,1), filter 0.4s;
+            filter: brightness(0.55); background-color: #111;
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+        }
+        .gallery-item.active { flex: 5; filter: brightness(1); cursor: zoom-in; }
+        .gallery-item:hover:not(.active) { filter: brightness(0.8); }
+
+        /* Block: bullets */
+        .block-bullets { margin-bottom: 28px; }
+        .block-bullets-heading {
+            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--text-muted); margin-bottom: 14px; font-weight: 600;
+        }
+        .block-bullets ul {
+            margin: 0; padding: 0; list-style: none;
+            border-left: 1px solid rgba(255,255,255,0.12);
+        }
+        .block-bullets ul li {
+            padding: 8px 0 8px 20px; font-size: 0.95rem; line-height: 1.6;
+            color: #c8c8d8; font-weight: 300; position: relative;
+        }
+        .block-bullets ul li::before {
+            content: '—'; position: absolute; left: 0;
+            color: rgba(255,255,255,0.25); font-size: 0.8rem;
+        }
+
+        /* Block: section divider */
+        .block-divider {
+            border: 0; height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
+            margin: 10px 0 28px 0;
+        }
+
+        /* ── SKELETON LOADING ── */
+        @keyframes pulse {
+            0%, 100% { background-color: rgba(255,255,255,0.03); }
+            50%       { background-color: rgba(255,255,255,0.08); }
+        }
         .skeleton { animation: pulse 1.5s infinite ease-in-out; border-radius: 6px; }
         .skel-badge { width: 80px; height: 22px; margin-bottom: 15px; border-radius: 12px; }
         .skel-title { width: 80%; height: 38px; margin-bottom: 12px; }
-        .skel-loc { width: 40%; height: 16px; margin-bottom: 25px; }
-        .skel-div { width: 100%; height: 1px; margin-bottom: 25px; }
-        .skel-text { width: 100%; height: 18px; margin-bottom: 12px; }
+        .skel-loc   { width: 40%; height: 16px; margin-bottom: 25px; }
+        .skel-text  { width: 100%; height: 18px; margin-bottom: 12px; }
         .skel-text.short { width: 70%; }
+        .skel-gallery { width: 100%; height: 280px; margin-bottom: 28px; border-radius: 12px; }
 
-        /* Gallery */
-        .gallery-container { display: flex; gap: 10px; width: 100%; height: 320px; margin-bottom: 25px; margin-top: 10px; }
-        .gallery-item {
-            flex: 1; border-radius: 14px; overflow: hidden; cursor: pointer; position: relative;
-            transition: flex 0.6s cubic-bezier(0.25, 1, 0.3, 1), filter 0.4s ease;
-            filter: brightness(0.6); background-color: #111;
-            background-size: cover; background-position: center; background-repeat: no-repeat;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-        }
-        .gallery-item.active { flex: 5; filter: brightness(1); cursor: zoom-in; box-shadow: none; }
-        .gallery-item:hover:not(.active) { filter: brightness(0.85); }
-
-        /* --- MOBILE RESPONSIVENESS (Bottom Sheet) --- */
-        @media (max-width: 768px) {
-            #ui-layer { padding: 20px; }
-            #intro-overlay { padding: 0 20px; }
-            .intro-name { font-size: 2.2rem; }
-            
-            /* Lift footer slightly to prevent overlap with new mobile nav position */
-            #global-footer { bottom: 85px; left: 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
-            .footer-divider { display: none; }
-            
-            /* Dock nav to bottom center on mobile */
-            #dynamic-nav {
-                top: auto; bottom: 20px; left: 50%; transform: translateX(-50%);
-                flex-direction: row; width: auto; padding: 6px; border-radius: 30px; gap: 5px;
-            }
-            #dynamic-nav:hover { width: auto; background: rgba(25, 25, 30, 0.6); } 
-            #dynamic-nav:hover .nav-item { width: 42px; }
-            .nav-label { display: none; }
-            .nav-item { padding: 10px; width: 42px; }
-
-            .page-content { width: 90vw; padding: 30px 25px; max-height: 75vh; }
-            .page-title { font-size: 2.2rem; }
-            
-            /* Split layout becomes stacked on mobile */
-            #page-uxui { flex-direction: column; overflow-y: auto; }
-            .digital-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px; }
-            .digital-main { width: 100%; padding: 30px 0; overflow-y: visible; }
-
-            /* Bottom Sheet Transformation */
-            #project-modal {
-                top: auto; bottom: 0; left: 0; right: 0; 
-                width: 100vw; height: 85vh; max-height: 85vh; min-width: 100vw;
-                border-radius: 28px 28px 0 0; padding: 30px 25px; 
-                border-left: none; border-top: 1px solid var(--glass-border);
-            }
-            #project-modal.active { transform: translateY(0); }
-            #project-modal.hidden-state { transform: translateY(100%); }
-            
-            #modal-resizer { display: none; } /* Hide resize handle */
-            #modal-top-bar { margin-bottom: 20px; padding-bottom: 10px; }
-            .search-container { max-width: 150px; }
-            
-            .gallery-container { height: 220px; flex-direction: column; }
-            .gallery-item { flex: 1; transition: flex 0.4s ease; }
-            .gallery-item.active { flex: 6; } /* Increased real estate on mobile */
-
-            .lightbox-close { top: 15px; right: 15px; font-size: 1.5rem; }
-            #lightbox-image { width: 95vw; height: 85vh; }
-        }
-
-        /* Fullscreen Lightbox Overlay */
+        /* ── LIGHTBOX ── */
         #lightbox-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
             z-index: 9999; display: flex; justify-content: center; align-items: center;
-            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s;
         }
         #lightbox-overlay.active { opacity: 1; pointer-events: auto; }
-        
         #lightbox-image {
             width: 90vw; height: 90vh;
             background-size: contain; background-position: center; background-repeat: no-repeat;
             border-radius: 8px;
         }
-
         .lightbox-close {
             position: absolute; top: 30px; right: 40px; cursor: pointer;
             font-size: 2rem; color: rgba(255,255,255,0.6); transition: color 0.3s, transform 0.3s;
             width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
         }
         .lightbox-close:hover { color: #fff; transform: scale(1.1); }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            #ui-layer { padding: 20px; }
+            #intro-overlay { padding: 0 20px; }
+            .intro-name { font-size: 2.2rem; }
+            #global-footer { bottom: 85px; left: 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
+            .footer-divider { display: none; }
+            #dynamic-nav {
+                top: 50%; left: 10px; transform: translateY(-50%);
+                width: 46px; flex-direction: column; padding: 6px; border-radius: 28px; gap: 4px;
+            }
+            #dynamic-nav:hover { width: 46px; }
+            .nav-label { display: none; }
+            .nav-item { padding: 10px 8px; justify-content: center; }
+            .nav-icon { margin: 0; }
+            .page-content { width: 90vw; padding: 30px 25px; max-height: 75vh; }
+            .page-title { font-size: 2.2rem; }
+            #page-uxui { flex-direction: column; overflow-y: auto; }
+            .digital-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .digital-main { width: 100%; padding: 30px 0; overflow-y: visible; }
+            #project-modal {
+                top: auto; bottom: 0; left: 0; right: 0;
+                width: 100vw; height: 85vh; max-height: 85vh; min-width: 100vw;
+                border-radius: 28px 28px 0 0; padding: 30px 25px;
+                border-left: none; border-top: 1px solid var(--glass-border);
+            }
+            #project-modal.active { transform: translateY(0); }
+            #project-modal.hidden-state { transform: translateY(100%); }
+            #modal-resizer { display: none; }
+            .gallery-container { height: 200px; }
+            .lightbox-close { top: 15px; right: 15px; font-size: 1.5rem; }
+            #lightbox-image { width: 95vw; height: 85vh; }
+        }
     </style>
 </head>
 <body>
 
     <div id="cms-loader">
         <div class="loader-spinner"></div>
-        <p>Initializing Spatial Data...</p>
+        <p>Loading Portfolio...</p>
     </div>
 
     <div id="canvas-container" class="blurry-start"></div>
@@ -388,21 +497,29 @@
         <div class="intro-instruction">Drag to explore</div>
     </div>
     
-    <div id="tooltip"></div>
+    <div id="tooltip" style="position:fixed;background:rgba(0,0,0,0.7);color:#fff;padding:6px 12px;border-radius:8px;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;pointer-events:none;opacity:0;transition:opacity 0.2s;z-index:200;"></div>
 
-    <!-- Dynamic Island Navigation -->
+    <!-- Navigation -->
     <nav id="dynamic-nav">
         <div class="nav-item active" data-target="home" title="Global Architecture">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             <span class="nav-label">Global Architecture</span>
         </div>
-        <div class="nav-item" data-target="uxui" title="UX & UI Design">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+        <div class="nav-item" data-target="uxui" title="Digital Experience">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
             <span class="nav-label">Digital Experience</span>
         </div>
         <div class="nav-item" data-target="ai" title="AI & Research">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             <span class="nav-label">AI & Research</span>
+        </div>
+        <div class="nav-item" data-target="aifrontier" title="AI Frontier">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1H1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2z"></path><circle cx="7.5" cy="14.5" r="1.5"></circle><circle cx="16.5" cy="14.5" r="1.5"></circle></svg>
+            <span class="nav-label">AI Frontier</span>
+        </div>
+        <div class="nav-item" data-target="tools" title="Tool Stack">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="6" height="6" rx="1"></rect><rect x="9" y="3" width="6" height="6" rx="1"></rect><rect x="16" y="3" width="6" height="6" rx="1"></rect><rect x="2" y="10" width="6" height="6" rx="1"></rect><rect x="9" y="10" width="6" height="6" rx="1"></rect><rect x="16" y="10" width="6" height="6" rx="1"></rect><rect x="2" y="17" width="6" height="6" rx="1"></rect><rect x="9" y="17" width="6" height="6" rx="1"></rect><rect x="16" y="17" width="6" height="6" rx="1"></rect></svg>
+            <span class="nav-label">Tool Stack</span>
         </div>
         <div class="nav-item" data-target="about" title="About Hamish">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -410,51 +527,76 @@
         </div>
     </nav>
 
-    <!-- Content Pages Overlay -->
+    <!-- Page Overlays -->
     <div id="page-overlay">
         
-        <!-- CMS Populated About Page -->
         <div class="page-content" id="page-about">
-            <h2 class="page-title" id="about-title">Loading...</h2>
+            <h2 class="page-title" id="about-title"></h2>
             <p class="page-subtitle" id="about-subtitle"></p>
             <div id="about-body"></div>
         </div>
 
-        <!-- CMS Populated AI & Research Page -->
         <div class="page-content" id="page-ai">
-            <h2 class="page-title" id="ai-title">Loading...</h2>
+            <h2 class="page-title" id="ai-title"></h2>
             <p class="page-subtitle" id="ai-subtitle"></p>
             <div id="ai-body"></div>
         </div>
 
-        <!-- NEW: Split-Panel Digital UX/UI Layout -->
+        <!-- AI Frontier Split Panel -->
+        <div class="page-content" id="page-aifrontier">
+            <div class="digital-sidebar">
+                <div class="digital-sidebar-header">
+                    <h2 class="digital-sidebar-title">AI Frontier</h2>
+                </div>
+                <div class="digital-list" id="ai-project-list"></div>
+            </div>
+            <div class="digital-main" id="ai-main-content">
+                <div id="ai-content-zone"></div>
+            </div>
+        </div>
+
+        <!-- Tool Stack Page -->
+        <div class="page-content" id="page-tools">
+            <div class="tools-inner">
+                <h1 class="tools-title">Tool Stack</h1>
+                <p class="tools-subtitle">The tools I use across design, AI and development in 2026</p>
+                <div id="tools-body"></div>
+                <div class="tool-detail" id="tool-detail-panel">
+                    <div class="tool-detail-name" id="tool-detail-name"></div>
+                    <div class="tool-detail-category" id="tool-detail-category"></div>
+                    <div class="tool-detail-body" id="tool-detail-body"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Split Panel -->
         <div class="page-content" id="page-uxui">
-            <!-- Left Sidebar (List) -->
             <div class="digital-sidebar">
                 <div class="digital-sidebar-header">
                     <h2 class="digital-sidebar-title">Digital Experience</h2>
                 </div>
-                <div class="digital-list" id="digital-project-list">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="digital-list" id="digital-project-list"></div>
             </div>
-            
-            <!-- Right Content Area -->
             <div class="digital-main" id="digital-main-content">
-                <div id="digital-header-zone"></div>
-                <div id="digital-desc-zone"></div>
-                <div id="digital-gallery-zone"></div>
+                <div id="digital-content-zone"></div>
             </div>
         </div>
     </div>
 
-    <!-- UI Overlay for Globe -->
+    <!-- UI Layer for Globe -->
     <div id="ui-layer">
         <header>
             <h1>Hamish Baxter</h1>
-            <p class="subtitle">Design Leadership • Spatial & Digital Architecture</p>
+            <p class="subtitle">
+                <span class="nav-subtitle-link" onclick="showPage('about')">Design Leadership</span>
+                <span class="subtitle-sep">·</span>
+                <span class="nav-subtitle-link" onclick="showPage('about')">Architectural Design</span>
+                <span class="subtitle-sep">·</span>
+                <span class="nav-subtitle-link" onclick="showPage('about')">Digital Experience Design</span>
+            </p>
         </header>
 
+        <!-- Architecture Modal -->
         <div id="project-modal" class="hidden-state">
             <div id="modal-resizer"></div>
             
@@ -475,587 +617,892 @@
             </div>
 
             <div id="modal-scroll-area">
-                <div id="modal-header-zone"></div>
-                <div id="modal-desc-zone"></div>
-                <div id="modal-gallery-zone"></div>
+                <div id="modal-content-zone"></div>
             </div>
         </div>
 
-        <!-- Footer -->
         <footer id="global-footer">
-            <span id="project-count">0 Projects Indexed</span>
+            <span id="project-count">Loading...</span>
             <div class="footer-divider"></div>
-            <a href="mailto:hello@example.com">Contact Me</a>
+            <a href="mailto:hello@hamishbaxter.com">Contact</a>
         </footer>
     </div>
 
-    <!-- Lightbox Element -->
+    <!-- Lightbox -->
     <div id="lightbox-overlay">
         <div class="lightbox-close">✕</div>
         <div id="lightbox-image"></div>
     </div>
 
+    <!-- Data & Libraries -->
+    <script src="data.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
 
     <script>
-        // CMS Setup - ADDED COLUMN: 'type' (index 8) 
-        // 1. id, 2. lat, 3. lon, 4. status, 5. title, 6. airport, 7. desc, 8. images, 9. type
-        const GOOGLE_SHEET_ID = 'YOUR_SHEET_ID_HERE'; 
-        const SHEET_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json`;
+    // ═══════════════════════════════════════════════════════
+    // CONTENT BLOCK RENDERER
+    // ═══════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
+    // UNIFIED PROJECT RENDERER  — builds full HTML as a string
+    // ═══════════════════════════════════════════════════════
 
-        // Gradients
-        const gConcrete = "linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%)";
-        const gBronze = "linear-gradient(135deg, #4a3f35 0%, #2a2015 100%)";
-        const gSlate = "linear-gradient(135deg, #2c3e50 0%, #000000 100%)";
-        const gGlass = "linear-gradient(135deg, #1f2f3f 0%, #0d141e 100%)";
-        const gVibrant1 = "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)";
-        const gVibrant2 = "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)";
-        const gVibrant3 = "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)";
-        const gVibrant4 = "linear-gradient(135deg, #f6d365 0%, #fda085 100%)";
-        const gVibrant5 = "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)";
-        const gVibrant6 = "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)";
-
-        const defaultPortfolioData = [
-            // --- PAGE DATA (type: 'page') ---
-            // 'airport' is repurposed as the page subtitle.
-            { id: "about", type: "page", title: "Hamish Baxter", airport: "Design Leader • Interior Architecture • Digital Strategy", desc: "My work spans the intersection of complex digital ecosystems and high-volume physical architecture. I specialize in the environments where the world intersects: international transit hubs, premium retail concourses, and global brand flagships.<br><br>I currently direct multidisciplinary teams, fostering a culture of rigorous critique, cross-functional collaboration, and strategic alignment with the C-suite. My mandate is to translate spatial vision into measurable business value.<br><br>I believe that the best design is invisible. It guides millions of tired travelers seamlessly toward moments of delight, commerce, and calm." },
-            { id: "ai", type: "page", title: "AI & Research", airport: "Pioneering the next era of architectural workflows.", desc: "I do not view Artificial Intelligence merely as a rendering tool; I view it as a <span class='highlight'>computational partner</span>. By integrating AI-driven generative tools into the early phases of spatial strategy, my teams can iterate through hundreds of conceptual retail footprints in the time it previously took to draft three.<br><br>Furthermore, as an early adopter of LLM-assisted coding architectures, I custom-build internal tools (like the Google Sheets CMS powering this very portfolio) to automate repetitive data mapping, bridging the gap between raw spatial data and immersive digital experiences.<br><br>My approach ensures that AI adoption scales <span class='highlight'>design velocity without sacrificing architectural rigor</span> or brand consistency." },
-
-            // --- GLOBE ARCHITECTURE (type: 'architecture') ---
-            { id: 1, type: "architecture", lat: 51.4700, lon: -0.4543, status: "built", title: "LHR T5 Luxury Concourse", airport: "London Heathrow", desc: "A sweeping, modern retail plaza integrating curved architectural glass and bespoke lighting designed to guide passenger flow seamlessly into premium retail zones.", images: `${gConcrete},${gBronze},${gGlass}` },
-            { id: 2, type: "architecture", lat: 51.4994, lon: -0.1632, status: "concept", title: "Harrods Aviation Concept", airport: "Central London", desc: "Translating the iconic Knightsbridge shopping experience into a high-throughput transit environment using dark oak paneling and custom brass shelving.", images: `${gBronze},${gSlate},${gConcrete}` },
-            { id: 3, type: "architecture", lat: 25.2532, lon: 55.3657, status: "built", title: "Duty Free Experience Zone", airport: "DXB - Dubai International", desc: "An expansive, opulent retail environment featuring high-end material finishes and integrated digital displays. Scaled to handle over 10,000 transactions daily.", images: `${gGlass},${gConcrete},${gBronze}` },
-
-            // --- DIGITAL UX/UI PROJECTS (type: 'digital') ---
-            { id: 11, type: "digital", lat: 0, lon: 0, status: "built", title: "Digital Wayfinding System", airport: "Auckland Airport", desc: "A frictionless, responsive digital wayfinding application. The UX prioritizes stressed, time-poor travelers with high-contrast UI and predictive gate mapping.", images: `${gVibrant1},${gVibrant3},${gVibrant5}` },
-            { id: 12, type: "digital", lat: 0, lon: 0, status: "built", title: "Air NZ Kiosk Interface", airport: "Auckland Airport", desc: "Redesign of the self-service check-in kiosk UI. Reduced average check-in time by 22% through simplified task flows and larger, accessible touch targets.", images: `${gVibrant2},${gVibrant4},${gVibrant6}` },
-            { id: 13, type: "digital", lat: 0, lon: 0, status: "concept", title: "Transport Hub App", airport: "Britomart, Auckland", desc: "A unified transit app concept bringing train, bus, and ferry schedules into a single, elegant interface with real-time crowd-density heatmaps.", images: `${gVibrant5},${gVibrant1},${gVibrant3}` }
-        ];
-
-        let portfolioData = [];
-        let globeProjects = [];
-        let digitalProjects = [];
-
-        async function initApp() {
-            try {
-                if (GOOGLE_SHEET_ID !== 'YOUR_SHEET_ID_HERE') {
-                    const response = await fetch(SHEET_URL);
-                    const text = await response.text();
-                    const jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
-                    const json = JSON.parse(jsonString);
-                    
-                    portfolioData = json.table.rows.map(row => {
-                        return {
-                            id: row.c[0] ? row.c[0].v : Math.random(),
-                            lat: row.c[1] ? parseFloat(row.c[1].v) : 0,
-                            lon: row.c[2] ? parseFloat(row.c[2].v) : 0,
-                            status: row.c[3] ? row.c[3].v.toLowerCase() : "built",
-                            title: row.c[4] ? row.c[4].v : "Untitled Project",
-                            airport: row.c[5] ? row.c[5].v : "Unknown Location",
-                            desc: row.c[6] ? row.c[6].v : "",
-                            images: row.c[7] ? row.c[7].v : "",
-                            type: row.c[8] ? row.c[8].v.toLowerCase() : "architecture" // Default to globe pin if blank
-                        };
-                    });
-                } else {
-                    portfolioData = defaultPortfolioData;
-                }
-            } catch (error) {
-                portfolioData = defaultPortfolioData;
+    function buildGlanceCard(block, scrollId) {
+        if (!block) return '';
+        const items = (block.items || []).map(item => {
+            if (typeof item === 'object' && item.anchor) {
+                return `<li><a class="glance-link" data-anchor="${item.anchor}" data-scroll="${scrollId}" href="#">${item.label}</a></li>`;
             }
+            return `<li>${typeof item === 'string' ? item : item.label}</li>`;
+        }).join('');
+        return `<div class="glance-card"><p class="glance-card-heading">At a Glance</p><ul>${items}</ul></div>`;
+    }
 
-            // Categorize Data
-            globeProjects = portfolioData.filter(p => p.type === 'architecture');
-            digitalProjects = portfolioData.filter(p => p.type === 'digital');
-            
-            // Populate Static Pages
-            const aboutData = portfolioData.find(p => p.id === 'about');
-            if (aboutData) {
-                document.getElementById('about-title').innerText = aboutData.title;
-                document.getElementById('about-subtitle').innerText = aboutData.airport;
-                document.getElementById('about-body').innerHTML = `<p class="page-text">${aboutData.desc}</p>`;
-            }
+    function buildGallery(block) {
+        const idAttr  = block.id      ? ` id="${block.id}"`               : '';
+        const heading = block.heading ? `<p class="block-section-heading">${block.heading}</p>` : '';
+        const imgs = (block.images || []).slice(0, 6).map((src, i) =>
+            `<div class="gallery-item${i === 0 ? ' active' : ''}" style="background-image:url('${src}')" onclick="selectGalleryItem(this)"></div>`
+        ).join('');
+        return `<div class="block-gallery"${idAttr}>${heading}<div class="gallery-container">${imgs}</div></div>`;
+    }
 
-            const aiData = portfolioData.find(p => p.id === 'ai');
-            if (aiData) {
-                document.getElementById('ai-title').innerText = aiData.title;
-                document.getElementById('ai-subtitle').innerText = aiData.airport;
-                document.getElementById('ai-body').innerHTML = `<p class="page-text">${aiData.desc}</p>`;
-            }
+    function buildHeroImage(src) {
+        return `<div class="block-hero"><img src="${src}" alt="" loading="lazy" onclick="openLightbox('${src}')" /></div>`;
+    }
 
-            // Populate Digital Projects List (UX/UI Panel)
-            const digitalList = document.getElementById('digital-project-list');
-            digitalList.innerHTML = digitalProjects.map((p, index) => {
-                return `
-                    <div class="digital-list-item" onclick="loadDigitalProject(${index})">
-                        <div class="digital-item-title">${p.title}</div>
-                        <div class="digital-item-sub">${p.airport}</div>
-                    </div>
-                `;
-            }).join('');
-            
-            // Load the first digital project automatically if it exists
-            if(digitalProjects.length > 0) loadDigitalProject(0);
+    function buildTextBlock(block) {
+        const idAttr  = block.id      ? ` id="${block.id}"`               : '';
+        const heading = block.heading ? `<p class="block-section-heading">${block.heading}</p>` : '';
+        return `<div class="block-text-wrap"${idAttr}>${heading}<p class="block-text">${block.body}</p></div>`;
+    }
 
-            // Update footer count (Only counting architecture + digital, ignoring pages)
-            document.getElementById('project-count').innerText = `${globeProjects.length + digitalProjects.length} Projects Indexed`;
+    function buildImageBlock(block) {
+        const cap = block.caption ? `<p class="block-image-caption">${block.caption}</p>` : '';
+        return `<div class="block-image"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" onclick="openLightbox('${block.src}')" />${cap}</div>`;
+    }
 
-            // Hide loader and start Engine
-            document.getElementById('cms-loader').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('cms-loader').style.display = 'none';
-                initThreeJSEngine();
-            }, 800);
-        }
+    function buildBulletsBlock(block) {
+        const items = (block.items || []).map(item => {
+            const label = typeof item === 'string' ? item : item.label;
+            return `<li>${label}</li>`;
+        }).join('');
+        const heading = block.heading ? `<p class="block-bullets-heading">${block.heading}</p>` : '';
+        return `<div class="block-bullets">${heading}<ul>${items}</ul></div>`;
+    }
 
-        // --- SPLIT-PANEL RENDER LOGIC ---
-        function loadDigitalProject(index) {
-            // Update Active State in List
-            const listItems = document.querySelectorAll('.digital-list-item');
-            listItems.forEach(item => item.classList.remove('active'));
-            if(listItems[index]) listItems[index].classList.add('active');
+    function buildProjectHTML(data, badgeClass, badgeText, scrollContainerId) {
+        const blocks  = data.content || [];
 
-            const data = digitalProjects[index];
-            if(!data) return;
+        // ── HEADER ──────────────────────────────────────────
+        const subtitle  = data.subtitle
+            ? `<p class="modal-subtitle">${data.subtitle}</p>` : '';
+        const location  = data.airport
+            ? `<div class="modal-location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg> ${data.airport}</div>` : '';
 
-            const badgeClass = data.status === "built" ? "badge-digital" : "badge-concept";
-            const badgeText = data.status === "built" ? "Live Product" : "UX Concept";
-
-            document.getElementById('digital-header-zone').innerHTML = `
-                <div class="status-badge ${badgeClass}">${badgeText}</div>
-                <h2 class="modal-title">${data.title}</h2>
-                <div class="modal-location">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
-                    ${data.airport}
+        let html = `
+            <div class="project-header">
+                <h1 class="modal-title">${data.title || ''}</h1>
+                ${subtitle}
+                <div class="modal-header-meta">
+                    <div class="status-badge ${badgeClass}">${badgeText}</div>
+                    ${location}
                 </div>
                 <hr class="project-divider">
-            `;
-            
-            document.getElementById('digital-desc-zone').innerHTML = `<p class="modal-desc">${data.desc}</p>`;
+            </div>`;
 
-            let imgArray = data.images && data.images.trim() !== "" ? data.images.split(',').map(s => s.trim()) : [gVibrant1, gVibrant2, gVibrant3, gVibrant4];
-            const chunks = [];
-            for (let i = 0; i < imgArray.length; i += 4) { chunks.push(imgArray.slice(i, i + 4)); }
+        // ── AT A GLANCE (pull out first, inject early) ──────
+        const glanceBlock = blocks.find(b => b.type === 'bullets' && b.heading === 'At a Glance');
+        html += buildGlanceCard(glanceBlock, scrollContainerId);
 
-            document.getElementById('digital-gallery-zone').innerHTML = chunks.map(chunk => {
-                return `<div class="gallery-container">` + chunk.map((imgSrc, i) => {
-                    const isActive = i === 0 ? 'active' : '';
-                    const bgStyle = imgSrc.startsWith('linear-gradient') ? `background: ${imgSrc};` : `background-image: url('${imgSrc}');`;
-                    return `<div class="gallery-item ${isActive}" onclick="selectGalleryItem(this)" style="${bgStyle}"></div>`;
-                }).join('') + `</div>`;
-            }).join('');
-            
-            document.getElementById('digital-main-content').scrollTop = 0;
-        }
-
-        // --- 2. THREE.JS SCENE SETUP ---
-        let scene, camera, renderer, controls, globeGroup, markers = [], clusters = [];
-        let starSystems = [], mouseLight, lineUniforms;
-        const GLOBE_RADIUS = 1;
-
-        function initThreeJSEngine() {
-            lineUniforms = { uMousePos: { value: new THREE.Vector3(0, 0, 0) }, uHoverRadius: { value: 0.35 }, uGlowColor: { value: new THREE.Color(0x4facfe) } };
-            const container = document.getElementById('canvas-container');
-            scene = new THREE.Scene();
-            scene.fog = new THREE.FogExp2(0x050505, 0.08);
-
-            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.set(0, 0, 4.5); 
-
-            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            container.appendChild(renderer.domElement);
-
-            controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true; controls.dampingFactor = 0.05;
-            controls.enablePan = false; controls.minDistance = 1.5; controls.maxDistance = 6.0;
-            controls.autoRotate = false; controls.autoRotateSpeed = 0.4;
-
-            scene.add(new THREE.AmbientLight(0xffffff, 0.4)); 
-            const sunLight = new THREE.DirectionalLight(0xffffff, 1.2); sunLight.position.set(5, 3, 5); scene.add(sunLight);
-            const rimLight = new THREE.DirectionalLight(0x88aaff, 0.8); rimLight.position.set(-5, 0, -5); scene.add(rimLight);
-
-            globeGroup = new THREE.Group();
-            globeGroup.rotation.y = -Math.PI / 2;
-            scene.add(globeGroup);
-
-            const baseGlobe = new THREE.Mesh(new THREE.SphereGeometry(GLOBE_RADIUS * 0.99, 64, 64), new THREE.MeshBasicMaterial({ color: 0x050505 }));
-            globeGroup.add(baseGlobe);
-
-            const atmosGeo = new THREE.SphereGeometry(GLOBE_RADIUS * 1.15, 64, 64);
-            const atmosMat = new THREE.ShaderMaterial({
-                vertexShader: `varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
-                fragmentShader: `varying vec3 vNormal; void main() { float intensity = pow(0.55 - dot(vNormal, vec3(0, 0, 1.0)), 3.0); gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity * 1.2; }`,
-                blending: THREE.AdditiveBlending, side: THREE.BackSide, transparent: true, depthWrite: false
-            });
-            scene.add(new THREE.Mesh(atmosGeo, atmosMat));
-
-            const lineMatBase = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.25 });
-            const interactiveLineMaterial = new THREE.ShaderMaterial({
-                uniforms: lineUniforms,
-                vertexShader: `varying vec3 vWorldPosition; void main() { vec4 worldPosition = modelMatrix * vec4(position, 1.0); vWorldPosition = worldPosition.xyz; gl_Position = projectionMatrix * viewMatrix * worldPosition; }`,
-                fragmentShader: `uniform vec3 uMousePos; uniform float uHoverRadius; uniform vec3 uGlowColor; varying vec3 vWorldPosition; void main() { float dist = distance(vWorldPosition, uMousePos); float intensity = pow(max(0.0, 1.0 - (dist / uHoverRadius)), 2.0); gl_FragColor = vec4(uGlowColor * intensity * 1.5, intensity * 0.9); }`,
-                transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
-            });
-            
-            fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
-                .then(res => res.json())
-                .then(countries => {
-                    function createLineGeom(coords, radiusMultiplier) {
-                        const points = coords.map(coord => convertLatLngToVector3(coord[1], coord[0], GLOBE_RADIUS * radiusMultiplier));
-                        return new THREE.BufferGeometry().setFromPoints(points);
-                    }
-                    countries.features.forEach(feature => {
-                        const processRings = (rings) => { rings.forEach(ring => { globeGroup.add(new THREE.Line(createLineGeom(ring, 1.0), lineMatBase)); globeGroup.add(new THREE.Line(createLineGeom(ring, 1.002), interactiveLineMaterial)); }); };
-                        if (feature.geometry.type === 'Polygon') processRings(feature.geometry.coordinates);
-                        else if (feature.geometry.type === 'MultiPolygon') feature.geometry.coordinates.forEach(poly => processRings(poly));
-                    });
-                });
-
-            for (let j = 0; j < 3; j++) {
-                const starGeometry = new THREE.BufferGeometry();
-                const posArray = new Float32Array(1000 * 3); 
-                for(let i = 0; i < 1000; i++) {
-                    const radius = 150 + Math.random() * 150;
-                    const u = Math.random(), v = Math.random(), theta = u * 2.0 * Math.PI, phi = Math.acos(2.0 * v - 1.0);
-                    posArray[i*3] = radius * Math.sin(phi) * Math.cos(theta); posArray[i*3+1] = radius * Math.cos(phi); posArray[i*3+2] = radius * Math.sin(phi) * Math.sin(theta);
-                }
-                starGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-                const starMaterial = new THREE.PointsMaterial({ size: 1.0 + (Math.random() * 1.0), color: 0xffffff, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
-                const starSystem = new THREE.Points(starGeometry, starMaterial);
-                scene.add(starSystem);
-                starSystems.push({ mesh: starSystem, speed: 0.001 + (Math.random() * 0.002), baseOpacity: 0.4 + Math.random() * 0.3 });
+        // ── HERO IMAGE (first gallery or image block) ────────
+        const heroBlock = blocks.find(b => b.type === 'gallery' || b.type === 'image');
+        if (heroBlock) {
+            if (heroBlock.type === 'gallery' && heroBlock.images && heroBlock.images[0]) {
+                html += buildHeroImage(heroBlock.images[0]);
+            } else if (heroBlock.type === 'image') {
+                html += buildHeroImage(heroBlock.src);
             }
-
-            buildMarkers();
-            setupInteractivity(baseGlobe);
-            
-            requestAnimationFrame(animate);
-            setTimeout(() => { container.classList.remove('blurry-start'); controls.autoRotate = true; }, 500);
-            setTimeout(() => { document.getElementById('intro-overlay').style.opacity = "0"; }, 1500);
         }
 
-        // --- 3. MARKERS & CLUSTERING ---
-        function createMinimalistMarker() {
-            const canvas = document.createElement('canvas'); canvas.width = 128; canvas.height = 128; const ctx = canvas.getContext('2d');
-            ctx.beginPath(); ctx.arc(64, 64, 36, 0, 2 * Math.PI); ctx.fillStyle = '#ffffff'; ctx.fill();
-            ctx.lineWidth = 10; ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'; ctx.stroke(); return new THREE.CanvasTexture(canvas);
-        }
-        function createClusterMarker(count) {
-            const canvas = document.createElement('canvas'); canvas.width = 128; canvas.height = 128; const ctx = canvas.getContext('2d');
-            ctx.beginPath(); ctx.arc(64, 64, 44, 0, 2 * Math.PI); ctx.fillStyle = '#ffffff'; ctx.fill();
-            ctx.lineWidth = 10; ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.stroke();
-            ctx.fillStyle = '#050505'; ctx.font = 'bold 44px Inter, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-            ctx.fillText(count, 64, 67); return new THREE.CanvasTexture(canvas);
-        }
+        // ── REMAINING BLOCKS (skip glance card, don't repeat hero) ──
+        let heroUsed = false;
+        blocks.forEach(block => {
+            // Skip the at-a-glance card
+            if (block.type === 'bullets' && block.heading === 'At a Glance') return;
 
-        function convertLatLngToVector3(lat, lon, radius) {
-            const phi = (90 - lat) * (Math.PI / 180), theta = (lon + 180) * (Math.PI / 180);
-            return new THREE.Vector3(-(radius * Math.sin(phi) * Math.cos(theta)), radius * Math.cos(phi), radius * Math.sin(phi) * Math.sin(theta));
-        }
-
-        function buildMarkers() {
-            const markerMaterial = new THREE.SpriteMaterial({ map: createMinimalistMarker(), sizeAttenuation: true, depthWrite: false });
-            
-            // NOTE: We only cluster and map projects of type "architecture"
-            globeProjects.forEach(project => {
-                const pos = convertLatLngToVector3(project.lat, project.lon, GLOBE_RADIUS + 0.05);
-                let addedToCluster = false;
-                for (let c of clusters) {
-                    if (c.center.distanceTo(pos) < 0.25) { c.projects.push(project); addedToCluster = true; break; }
+            // First gallery/image = hero already shown above; skip once
+            if (!heroUsed && (block.type === 'gallery' || block.type === 'image')) {
+                heroUsed = true;
+                // Still render the heading/section label if it has one, then the full gallery below
+                if (block.type === 'gallery') {
+                    const idAttr  = block.id      ? ` id="${block.id}"`               : '';
+                    const heading = block.heading ? `<p class="block-section-heading">${block.heading}</p>` : '';
+                    const imgs = (block.images || []).slice(0, 6).map((src, i) =>
+                        `<div class="gallery-item${i === 0 ? ' active' : ''}" style="background-image:url('${src}')" onclick="selectGalleryItem(this)"></div>`
+                    ).join('');
+                    html += `<div class="block-gallery"${idAttr}>${heading}<div class="gallery-container">${imgs}</div></div>`;
                 }
-                if (!addedToCluster) clusters.push({ center: pos, centerLat: project.lat, centerLon: project.lon, projects: [project] });
-            });
-
-            clusters.forEach(cluster => {
-                if (cluster.projects.length === 1) {
-                    const sprite = new THREE.Sprite(markerMaterial); sprite.position.copy(cluster.center); sprite.scale.set(0.04, 0.04, 0.04);
-                    sprite.userData = { isCluster: false, data: cluster.projects[0] }; globeGroup.add(sprite); markers.push(sprite);
-                    cluster.projects[0].scenePosition = cluster.center.clone(); 
-                } else {
-                    const clusterSprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: createClusterMarker(cluster.projects.length), sizeAttenuation: true, depthWrite: false }));
-                    clusterSprite.position.copy(cluster.center); clusterSprite.scale.set(0.05, 0.05, 0.05);
-                    clusterSprite.userData = { isCluster: true, count: cluster.projects.length }; globeGroup.add(clusterSprite); markers.push(clusterSprite);
-                    
-                    cluster.clusterSprite = clusterSprite; cluster.individualSprites = [];
-                    const spreadAngle = (Math.PI * 2) / cluster.projects.length;
-                    const radiusOffset = 1.0 + (cluster.projects.length * 0.15); 
-                    const lonScale = 1 / Math.cos(cluster.centerLat * (Math.PI / 180));
-                    
-                    cluster.projects.forEach((proj, index) => {
-                        const angle = index * spreadAngle;
-                        const spreadPos = convertLatLngToVector3(cluster.centerLat + (Math.cos(angle) * radiusOffset), cluster.centerLon + (Math.sin(angle) * radiusOffset * lonScale), GLOBE_RADIUS + 0.05);
-                        const sprite = new THREE.Sprite(markerMaterial); sprite.position.copy(spreadPos); sprite.scale.set(0.035, 0.035, 0.035); 
-                        sprite.userData = { isCluster: false, data: proj }; sprite.visible = false; 
-                        globeGroup.add(sprite); markers.push(sprite);
-                        proj.scenePosition = spreadPos.clone(); cluster.individualSprites.push(sprite);
-                    });
-                }
-            });
-        }
-
-        // --- 4. INTERACTIVITY & UI ---
-        const raycaster = new THREE.Raycaster(); const mouse = new THREE.Vector2();
-        let hoveredSprite = null, isAnimatingCamera = false, isPageOpen = false;
-        let currentProjectIndex = -1; let globeMeshRef = null;
-        
-        function flyTo(targetVector, callback, targetZoom = 2.2) {
-            isAnimatingCamera = true; controls.autoRotate = false; controls.enabled = false;
-            const worldTarget = targetVector.clone().applyMatrix4(globeGroup.matrixWorld);
-            const targetSpherical = new THREE.Spherical().setFromVector3(worldTarget.clone().normalize().multiplyScalar(targetZoom));
-            
-            const thetaOffset = window.innerWidth <= 768 ? 0 : Math.PI / 7.5; 
-            targetSpherical.theta += thetaOffset; 
-
-            const currentSpherical = new THREE.Spherical().setFromVector3(camera.position);
-            let thetaDiff = targetSpherical.theta - currentSpherical.theta;
-            if (thetaDiff > Math.PI) targetSpherical.theta -= 2 * Math.PI;
-            if (thetaDiff < -Math.PI) targetSpherical.theta += 2 * Math.PI;
-
-            new TWEEN.Tween(currentSpherical).to({ radius: targetSpherical.radius, phi: targetSpherical.phi, theta: targetSpherical.theta }, 650)
-                .easing(TWEEN.Easing.Cubic.InOut).onUpdate(() => { camera.position.setFromSpherical(currentSpherical); camera.lookAt(0, 0, 0); })
-                .onComplete(() => { controls.enabled = true; isAnimatingCamera = false; if(callback) callback(); }).start();
-        }
-
-        window.selectGalleryItem = function(element) {
-            if (element.classList.contains('active')) {
-                const bgStyle = element.style.backgroundImage || element.style.background;
-                const lightboxImg = document.getElementById('lightbox-image');
-                lightboxImg.style.background = bgStyle;
-                if(bgStyle.includes('url')) {
-                    lightboxImg.style.backgroundSize = 'contain'; lightboxImg.style.backgroundPosition = 'center'; lightboxImg.style.backgroundRepeat = 'no-repeat';
-                }
-                document.getElementById('lightbox-overlay').classList.add('active');
                 return;
             }
-            Array.from(element.parentNode.children).forEach(el => el.classList.remove('active')); element.classList.add('active');
-        };
 
-        function openModal(data) {
-            // Note: the globe uses `globeProjects` array for looping
-            currentProjectIndex = globeProjects.findIndex(p => p.id === data.id);
-            const modal = document.getElementById('project-modal');
-            const zoneHeader = document.getElementById('modal-header-zone');
-            const zoneDesc = document.getElementById('modal-desc-zone');
-            const zoneGallery = document.getElementById('modal-gallery-zone');
-            
-            modal.classList.remove('hidden-state'); modal.classList.add('active');
-            document.getElementById('modal-scroll-area').scrollTop = 0;
+            switch (block.type) {
+                case 'text':    html += buildTextBlock(block);    break;
+                case 'image':   html += buildImageBlock(block);   break;
+                case 'gallery': html += buildGallery(block);      break;
+                case 'bullets': html += buildBulletsBlock(block); break;
+                case 'divider': html += '<hr class="block-divider">'; break;
+            }
+        });
 
-            zoneHeader.innerHTML = `<div class="skeleton skel-badge"></div><div class="skeleton skel-title"></div><div class="skeleton skel-loc"></div><div class="skeleton skel-div"></div>`;
-            zoneDesc.innerHTML = `<div class="skeleton skel-text"></div><div class="skeleton skel-text"></div><div class="skeleton skel-text short"></div>`;
-            zoneGallery.innerHTML = `<div class="gallery-container"><div class="skeleton gallery-item active"></div><div class="skeleton gallery-item"></div><div class="skeleton gallery-item"></div></div>`;
+        return html;
+    }
 
-            const badgeClass = data.status === "built" ? "badge-built" : "badge-concept";
-            const badgeText = data.status === "built" ? "Built" : "Concept";
+    // Wire up glance-card anchor clicks (delegated, runs after innerHTML set)
+    function bindGlanceLinks(zone, scrollEl) {
+        zone.querySelectorAll('.glance-link').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const anchor = a.dataset.anchor;
+                const target = zone.querySelector('#' + anchor);
+                if (scrollEl && target) {
+                    scrollEl.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+                }
+            });
+        });
+    }
 
-            setTimeout(() => {
-                zoneHeader.innerHTML = `
-                    <div class="status-badge ${badgeClass}">${badgeText}</div>
-                    <h2 class="modal-title">${data.title}</h2>
-                    <div class="modal-location">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
-                        ${data.airport}
-                    </div>
-                    <hr class="project-divider">
-                `;
-            }, 150);
+    function openLightbox(src) {
+        const lightboxImg = document.getElementById('lightbox-image');
+        lightboxImg.style.backgroundImage = `url('${src}')`;
+        lightboxImg.style.backgroundSize = 'contain';
+        lightboxImg.style.backgroundPosition = 'center';
+        lightboxImg.style.backgroundRepeat = 'no-repeat';
+        document.getElementById('lightbox-overlay').classList.add('active');
+    }
 
-            setTimeout(() => {
-                zoneDesc.innerHTML = `<p class="modal-desc">${data.desc}</p>`;
-                
-                let imgArray = data.images && data.images.trim() !== "" ? data.images.split(',').map(s => s.trim()) : [gConcrete, gBronze, gSlate, gGlass];
-                const chunks = [];
-                for (let i = 0; i < imgArray.length; i += 4) { chunks.push(imgArray.slice(i, i + 4)); }
+    window.selectGalleryItem = function(element) {
+        if (element.classList.contains('active')) {
+            const src = element.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
+            openLightbox(src);
+            return;
+        }
+        Array.from(element.parentNode.children).forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+    };
 
-                zoneGallery.innerHTML = chunks.map(chunk => {
-                    return `<div class="gallery-container">` + chunk.map((imgSrc, index) => {
-                        const isActive = index === 0 ? 'active' : '';
-                        const bgStyle = imgSrc.startsWith('linear-gradient') ? `background: ${imgSrc};` : `background-image: url('${imgSrc}');`;
-                        return `<div class="gallery-item ${isActive}" onclick="selectGalleryItem(this)" style="${bgStyle}"></div>`;
-                    }).join('') + `</div>`;
-                }).join('');
-            }, 400);
+    // Simple block renderer for non-project pages (about, ai)
+    function renderSimpleBlocks(blocks, el) {
+        if (!blocks || !el) return;
+        el.innerHTML = (blocks || []).map(b => {
+            if (b.type === 'text') return `<p class="block-text">${b.body}</p>`;
+            if (b.type === 'bullets') {
+                const items = (b.items || []).map(i => `<li>${typeof i === 'string' ? i : i.label}</li>`).join('');
+                return `<ul class="page-bullets">${items}</ul>`;
+            }
+            return '';
+        }).join('');
+    }
+
+    // ═══════════════════════════════════════════════════════
+    // APP INIT
+    // ═══════════════════════════════════════════════════════
+    function initApp() {
+        // Populate static pages from data.js
+        const aboutData = pageData.find(p => p.id === 'about');
+        if (aboutData) {
+            document.getElementById('about-title').textContent = aboutData.title;
+            document.getElementById('about-subtitle').textContent = aboutData.subtitle;
+            renderSimpleBlocks(aboutData.content, document.getElementById('about-body'));
         }
 
-        function setupInteractivity(baseGlobeMesh) {
-            globeMeshRef = baseGlobeMesh;
-            const modal = document.getElementById('project-modal');
-            const resizer = document.getElementById('modal-resizer');
-            let isResizing = false;
+        const aiData = pageData.find(p => p.id === 'ai');
+        if (aiData) {
+            document.getElementById('ai-title').textContent = aiData.title;
+            document.getElementById('ai-subtitle').textContent = aiData.subtitle;
+            renderSimpleBlocks(aiData.content, document.getElementById('ai-body'));
+        }
 
-            // Nav Logic
-            const navItems = document.querySelectorAll('.nav-item');
-            const pageOverlay = document.getElementById('page-overlay');
-            const pages = document.querySelectorAll('.page-content');
+        // Populate Digital list
+        const digitalList = document.getElementById('digital-project-list');
+        digitalList.innerHTML = digitalProjects.map((p, i) => `
+            <div class="digital-list-item" onclick="loadDigitalProject(${i})">
+                <div class="digital-item-title">${p.title}</div>
+                <div class="digital-item-sub">${p.airport}</div>
+            </div>
+        `).join('');
+        if (digitalProjects.length > 0) loadDigitalProject(0);
 
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const target = item.getAttribute('data-target');
-                    navItems.forEach(n => n.classList.remove('active')); item.classList.add('active');
+        document.getElementById('project-count').textContent = `${globeProjects.length + digitalProjects.length} Projects Indexed`;
 
-                    if (target === 'home') {
-                        pageOverlay.classList.remove('active'); pages.forEach(p => p.classList.remove('active'));
-                        isPageOpen = false; controls.enabled = true; controls.autoRotate = true;
-                    } else {
-                        modal.classList.remove('active'); modal.classList.add('hidden-state');
-                        pageOverlay.classList.add('active'); pages.forEach(p => p.classList.remove('active'));
-                        document.getElementById(`page-${target}`).classList.add('active');
-                        isPageOpen = true; controls.enabled = false; controls.autoRotate = true;
-                    }
+        // ── AI FRONTIER ──
+        initAIFrontier();
+
+        // ── TOOL STACK ──
+        initToolStack();
+
+        document.getElementById('cms-loader').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('cms-loader').style.display = 'none';
+            initThreeJSEngine();
+        }, 800);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    // DIGITAL PROJECT RENDERER
+    // ═══════════════════════════════════════════════════════
+    window.loadDigitalProject = function(index) {
+        document.querySelectorAll('#digital-project-list .digital-list-item').forEach((el, i) => {
+            el.classList.toggle('active', i === index);
+        });
+        const data = digitalProjects[index];
+        if (!data) return;
+
+        const zone     = document.getElementById('digital-content-zone');
+        const scrollEl = document.getElementById('digital-main-content');
+        const badgeClass = data.status === 'built' ? 'badge-digital' : 'badge-concept';
+        const badgeText  = data.status === 'built' ? 'Live Product' : 'UX Concept';
+
+        zone.innerHTML = buildProjectHTML(data, badgeClass, badgeText, 'digital-main-content');
+        bindGlanceLinks(zone, scrollEl);
+        scrollEl.scrollTop = 0;
+    };
+
+    // ═══════════════════════════════════════════════════════
+    // ARCHITECTURE MODAL RENDERER
+    // ═══════════════════════════════════════════════════════
+    let currentProjectIndex = -1;
+
+    function openModal(data) {
+        currentProjectIndex = globeProjects.findIndex(p => p.id === data.id);
+        const modal    = document.getElementById('project-modal');
+        const scrollEl = document.getElementById('modal-scroll-area');
+
+        modal.classList.remove('hidden-state');
+        modal.classList.add('active');
+
+        // Skeleton while content builds
+        const zone = document.getElementById('modal-content-zone');
+        zone.innerHTML = `
+            <div class="skeleton skel-title"></div>
+            <div class="skeleton skel-loc"></div>
+            <div class="skeleton skel-gallery"></div>
+            <div class="skeleton skel-text"></div>
+            <div class="skeleton skel-text"></div>
+            <div class="skeleton skel-text short"></div>
+        `;
+        scrollEl.scrollTop = 0;
+
+        setTimeout(() => {
+            const liveZone   = document.getElementById('modal-content-zone');
+            const liveScroll = document.getElementById('modal-scroll-area');
+            const badgeClass = data.status === 'built' ? 'badge-built' : 'badge-concept';
+            const badgeText  = data.status === 'built' ? 'Built' : 'Concept';
+            liveZone.innerHTML = buildProjectHTML(data, badgeClass, badgeText, 'modal-scroll-area');
+            bindGlanceLinks(liveZone, liveScroll);
+            liveScroll.scrollTop = 0;
+        }, 250);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    // AI FRONTIER
+    // ═══════════════════════════════════════════════════════
+    const aiProjects = [
+        {
+            id: 'surf',
+            title: 'Surf Conditions App',
+            sub: 'Real-time swell and forecast',
+            status: 'live',
+            description: 'A progressive web app that pulls live buoy and forecast data to give surfers a simple, readable conditions summary for their local break. Built with Claude and deployed via Vercel. Combines weather APIs, AI summarisation and a clean mobile-first UI.',
+            tags: ['Claude', 'Vercel', 'Weather API', 'PWA'],
+            link: null
+        },
+        {
+            id: 'stars',
+            title: 'Star Tracker',
+            sub: 'Device-orientation sky map',
+            status: 'live',
+            description: 'A browser-based star tracking app that uses device orientation and GPS to render a real-time sky map. Point your phone at the sky and identify constellations, planets and satellites. Built entirely with AI assistance using Three.js and astronomy calculation libraries.',
+            tags: ['Claude', 'Three.js', 'GPS API', 'Device Orientation'],
+            link: null
+        },
+        {
+            id: 'palette',
+            title: 'AI Colour Palette Generator',
+            sub: 'Mood-to-palette in seconds',
+            status: 'concept',
+            description: 'Describe a feeling, a place, or a material and get back a curated colour palette with hex codes, usage notes and accessibility ratings. An experiment in using language models to bridge the gap between a design brief and a visual starting point.',
+            tags: ['Claude API', 'React', 'Design Tools'],
+            link: null
+        },
+        {
+            id: 'tide',
+            title: 'Tide Clock',
+            sub: 'Ambient tidal awareness',
+            status: 'concept',
+            description: 'A minimal ambient display that shows current tide state, next high and low, and a gentle animation reflecting the rhythm of the ocean. Designed for coastal people who live by the water. An exercise in restraint and meaningful data visualisation.',
+            tags: ['Claude', 'NOAA API', 'Canvas API'],
+            link: null
+        },
+        {
+            id: 'retail',
+            title: 'Retail Brief Generator',
+            sub: 'AI-assisted design briefs',
+            status: 'concept',
+            description: 'A tool that takes a few inputs about a brand, location, and customer type and generates a structured retail design brief with spatial recommendations, material directions and reference imagery prompts. Built from years of writing briefs the hard way.',
+            tags: ['Claude API', 'Next.js', 'Retail Design'],
+            link: null
+        },
+        {
+            id: 'wayfind',
+            title: 'Wayfinding Simulator',
+            sub: 'Test navigation before you build',
+            status: 'concept',
+            description: 'An interactive tool that lets you sketch a floor plan and then simulate how different types of visitors would navigate through the space. Uses AI to evaluate sightlines, decision points and egress routes. Born from years of masterplanning airport retail.',
+            tags: ['Claude', 'Canvas API', 'Spatial Design'],
+            link: null
+        },
+        {
+            id: 'watch',
+            title: 'Watch Finder',
+            sub: 'Natural language watch discovery',
+            status: 'concept',
+            description: 'Describe a watch in plain language and get matched to real timepieces that fit. An experiment in semantic search and product discovery, inspired by the Timebox Zurich project and the idea that people express themselves through what they wear on their wrist.',
+            tags: ['Claude API', 'Semantic Search', 'Product Design'],
+            link: null
+        }
+    ];
+
+    function initAIFrontier() {
+        const list = document.getElementById('ai-project-list');
+        list.innerHTML = aiProjects.map((p, i) => `
+            <div class="digital-list-item" onclick="loadAIProject(${i})">
+                <div class="digital-item-title">${p.title}</div>
+                <div class="digital-item-sub">${p.sub}</div>
+            </div>
+        `).join('');
+        if (aiProjects.length > 0) loadAIProject(0);
+    }
+
+    window.loadAIProject = function(index) {
+        document.querySelectorAll('#ai-project-list .digital-list-item').forEach((el, i) => {
+            el.classList.toggle('active', i === index);
+        });
+        const p = aiProjects[index];
+        if (!p) return;
+        const zone = document.getElementById('ai-content-zone');
+        zone.innerHTML = '';
+
+        const badgeClass = p.status === 'live' ? 'badge-built' : 'badge-concept';
+        const badgeText  = p.status === 'live' ? 'Live Demo' : 'Concept';
+
+        const header = document.createElement('div');
+        header.className = 'project-header';
+        const titleEl = document.createElement('h1');
+        titleEl.className = 'modal-title';
+        titleEl.style.fontSize = '2.2rem';
+        titleEl.textContent = p.title;
+        header.appendChild(titleEl);
+        const subEl = document.createElement('p');
+        subEl.className = 'modal-subtitle';
+        subEl.textContent = p.sub;
+        header.appendChild(subEl);
+        const meta = document.createElement('div');
+        meta.className = 'modal-header-meta';
+        meta.innerHTML = '<div class="status-badge ' + badgeClass + '">' + badgeText + '</div>';
+        header.appendChild(meta);
+        const hr = document.createElement('hr');
+        hr.className = 'project-divider';
+        header.appendChild(hr);
+        zone.appendChild(header);
+
+        const desc = document.createElement('p');
+        desc.className = 'block-text';
+        desc.textContent = p.description;
+        zone.appendChild(desc);
+
+        if (p.tags && p.tags.length) {
+            const tagWrap = document.createElement('div');
+            tagWrap.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;';
+            p.tags.forEach(tag => {
+                const t = document.createElement('span');
+                t.style.cssText = 'font-size:0.75rem;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);letter-spacing:0.5px;';
+                t.textContent = tag;
+                tagWrap.appendChild(t);
+            });
+            zone.appendChild(tagWrap);
+        }
+
+        if (p.link) {
+            const btn = document.createElement('a');
+            btn.href = p.link;
+            btn.target = '_blank';
+            btn.className = 'demo-link-btn';
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg> Open Live Demo';
+            zone.appendChild(btn);
+        } else {
+            const note = document.createElement('p');
+            note.style.cssText = 'font-size:0.8rem;color:var(--text-muted);margin-top:24px;letter-spacing:0.5px;';
+            note.textContent = 'Demo link coming soon.';
+            zone.appendChild(note);
+        }
+
+        document.getElementById('ai-main-content').scrollTop = 0;
+    };
+
+    // ═══════════════════════════════════════════════════════
+    // TOOL STACK
+    // ═══════════════════════════════════════════════════════
+    const toolSections = [
+        {
+            heading: 'AI Models',
+            tools: [
+                { name: 'Claude', icon: '🤖', color: '#D97706', desc: 'Primary AI partner for writing, coding, design thinking and this portfolio.', category: 'AI Model' },
+                { name: 'ChatGPT', icon: '💬', color: '#10A37F', desc: 'Secondary model used for comparison, image generation via DALL-E and broad research.', category: 'AI Model' },
+                { name: 'Gemini', icon: '✦', color: '#4285F4', desc: 'Google Gemini used for multimodal tasks and integration with Google Workspace.', category: 'AI Model' },
+                { name: 'Midjourney', icon: '🎨', color: '#7B68EE', desc: 'Image generation for concept art, mood boards and visual exploration.', category: 'AI Model' },
+                { name: 'Runway', icon: '🎬', color: '#FF4D6D', desc: 'AI video generation for motion concepts and design storytelling.', category: 'AI Model' }
+            ]
+        },
+        {
+            heading: 'Design Tools',
+            tools: [
+                { name: 'Figma', icon: '◈', color: '#F24E1E', desc: 'Primary UI and UX design tool for all digital product work.', category: 'Design' },
+                { name: 'Photoshop', icon: '⬡', color: '#31A8FF', desc: 'Used since my Wanda Creative days for compositing, rendering and image manipulation.', category: 'Design' },
+                { name: 'Illustrator', icon: '⬡', color: '#FF9A00', desc: 'Vector work, brand assets, floor plan graphics and technical illustration.', category: 'Design' },
+                { name: 'Cinema 4D', icon: '◉', color: '#011A6A', desc: '3D modelling for architectural visualisation and retail renders.', category: '3D' },
+                { name: 'After Effects', icon: '▶', color: '#9999FF', desc: 'Motion graphics and presentation animation.', category: 'Motion' }
+            ]
+        },
+        {
+            heading: 'Development',
+            tools: [
+                { name: 'VS Code', icon: '{}', color: '#007ACC', desc: 'Primary code editor for all web and scripting work.', category: 'Development' },
+                { name: 'GitHub', icon: '⎔', color: '#6E40C9', desc: 'Version control and project hosting including this portfolio.', category: 'Development' },
+                { name: 'Vercel', icon: '▲', color: '#ffffff', desc: 'Deployment platform for web apps and AI experiments.', category: 'Development' },
+                { name: 'Cursor', icon: '▷', color: '#6C6C6C', desc: 'AI-assisted code editor used for rapid prototyping with Claude integration.', category: 'Development' },
+                { name: 'Claude.ai', icon: '◎', color: '#D97706', desc: 'Used daily for code generation, debugging, copywriting and design problem solving.', category: 'Development' }
+            ]
+        },
+        {
+            heading: 'Research and Thinking',
+            tools: [
+                { name: 'Notion', icon: '◻', color: '#ffffff', desc: 'Project documentation, research notes and knowledge management.', category: 'Productivity' },
+                { name: 'Perplexity', icon: '⊕', color: '#20B2AA', desc: 'AI-powered research tool for fast, cited answers to complex questions.', category: 'Research' },
+                { name: 'Are.na', icon: '⊞', color: '#333333', desc: 'Visual bookmarking and mood boarding for design research and inspiration.', category: 'Research' },
+                { name: 'Readwise', icon: '◈', color: '#FF6B35', desc: 'Spaced repetition for design and technology reading highlights.', category: 'Research' }
+            ]
+        }
+    ];
+
+    let activeToolId = null;
+
+    function initToolStack() {
+        const body = document.getElementById('tools-body');
+        body.innerHTML = '';
+
+        toolSections.forEach(section => {
+            const sh = document.createElement('p');
+            sh.className = 'tools-section-heading';
+            sh.textContent = section.heading;
+            body.appendChild(sh);
+
+            const grid = document.createElement('div');
+            grid.className = 'tools-grid';
+
+            section.tools.forEach((tool, i) => {
+                const chip = document.createElement('div');
+                chip.className = 'tool-chip';
+                chip.id = 'tool-' + tool.name.replace(/\s/g, '-').toLowerCase();
+                chip.innerHTML = '<div class="tool-chip-icon" style="background:' + tool.color + '22;color:' + tool.color + '">' + tool.icon + '</div><div class="tool-chip-name">' + tool.name + '</div>';
+                chip.addEventListener('click', () => selectTool(tool, chip));
+                grid.appendChild(chip);
+            });
+            body.appendChild(grid);
+        });
+    }
+
+    function selectTool(tool, chipEl) {
+        document.querySelectorAll('.tool-chip').forEach(c => c.classList.remove('active'));
+        chipEl.classList.add('active');
+
+        const panel = document.getElementById('tool-detail-panel');
+        document.getElementById('tool-detail-name').textContent = tool.name;
+        document.getElementById('tool-detail-category').textContent = tool.category;
+        document.getElementById('tool-detail-body').textContent = tool.desc;
+        panel.classList.add('active');
+
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // ═══════════════════════════════════════════════════════
+    // THREE.JS GLOBE ENGINE
+    // ═══════════════════════════════════════════════════════
+    let scene, camera, renderer, controls, globeGroup;
+    let markers = [], clusters = [], starSystems = [], lineUniforms;
+    let hoveredSprite = null, isAnimatingCamera = false, isPageOpen = false;
+    let globeMeshRef = null;
+    const GLOBE_RADIUS = 1;
+    const mouse = new THREE.Vector2();
+
+    function initThreeJSEngine() {
+        lineUniforms = {
+            uMousePos: { value: new THREE.Vector3(0,0,0) },
+            uHoverRadius: { value: 0.35 },
+            uGlowColor: { value: new THREE.Color(0x4facfe) }
+        };
+
+        const container = document.getElementById('canvas-container');
+        scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050505, 0.08);
+
+        camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 0, 4.5);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; controls.dampingFactor = 0.05;
+        controls.enablePan = false; controls.minDistance = 1.5; controls.maxDistance = 6.0;
+        controls.autoRotate = false; controls.autoRotateSpeed = 0.4;
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+        const sunLight = new THREE.DirectionalLight(0xffffff, 1.2); sunLight.position.set(5,3,5); scene.add(sunLight);
+        const rimLight = new THREE.DirectionalLight(0x88aaff, 0.8); rimLight.position.set(-5,0,-5); scene.add(rimLight);
+
+        globeGroup = new THREE.Group();
+        globeGroup.rotation.y = -Math.PI / 2;
+        scene.add(globeGroup);
+
+        const baseGlobe = new THREE.Mesh(
+            new THREE.SphereGeometry(GLOBE_RADIUS * 0.99, 64, 64),
+            new THREE.MeshBasicMaterial({ color: 0x050505 })
+        );
+        globeGroup.add(baseGlobe);
+        globeMeshRef = baseGlobe;
+
+        // Atmosphere
+        const atmosMat = new THREE.ShaderMaterial({
+            vertexShader: `varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+            fragmentShader: `varying vec3 vNormal; void main() { float intensity = pow(0.55 - dot(vNormal, vec3(0,0,1.0)), 3.0); gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity * 1.2; }`,
+            blending: THREE.AdditiveBlending, side: THREE.BackSide, transparent: true, depthWrite: false
+        });
+        scene.add(new THREE.Mesh(new THREE.SphereGeometry(GLOBE_RADIUS * 1.15, 64, 64), atmosMat));
+
+        // Country outlines
+        const lineMatBase = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.25 });
+        const interactiveLineMat = new THREE.ShaderMaterial({
+            uniforms: lineUniforms,
+            vertexShader: `varying vec3 vWorldPosition; void main() { vec4 wp = modelMatrix * vec4(position, 1.0); vWorldPosition = wp.xyz; gl_Position = projectionMatrix * viewMatrix * wp; }`,
+            fragmentShader: `uniform vec3 uMousePos; uniform float uHoverRadius; uniform vec3 uGlowColor; varying vec3 vWorldPosition; void main() { float dist = distance(vWorldPosition, uMousePos); float intensity = pow(max(0.0, 1.0 - (dist / uHoverRadius)), 2.0); gl_FragColor = vec4(uGlowColor * intensity * 1.5, intensity * 0.9); }`,
+            transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+        });
+
+        fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
+            .then(res => res.json())
+            .then(data => {
+                function makeLineGeom(coords, r) {
+                    return new THREE.BufferGeometry().setFromPoints(
+                        coords.map(c => latLngToVec3(c[1], c[0], GLOBE_RADIUS * r))
+                    );
+                }
+                data.features.forEach(f => {
+                    const process = rings => rings.forEach(ring => {
+                        globeGroup.add(new THREE.Line(makeLineGeom(ring, 1.0), lineMatBase));
+                        globeGroup.add(new THREE.Line(makeLineGeom(ring, 1.002), interactiveLineMat));
+                    });
+                    if (f.geometry.type === 'Polygon') process(f.geometry.coordinates);
+                    else if (f.geometry.type === 'MultiPolygon') f.geometry.coordinates.forEach(p => process(p));
                 });
             });
 
-            // Resizer
-            resizer.addEventListener('mousedown', () => { isResizing = true; document.body.style.cursor = 'ew-resize'; resizer.classList.add('dragging'); });
-            window.addEventListener('mousemove', (e) => {
-                if(!isResizing) {
-                    mouse.x = (e.clientX / window.innerWidth) * 2 - 1; mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-                    return;
-                }
-                e.preventDefault();
-                document.documentElement.style.setProperty('--modal-width', `${window.innerWidth - e.clientX}px`);
-            });
-            window.addEventListener('mouseup', () => { isResizing = false; document.body.style.cursor = 'default'; resizer.classList.remove('dragging'); });
-
-            // Close Modals
-            document.getElementById('close-modal').addEventListener('click', (e) => {
-                e.stopPropagation(); modal.classList.remove('active'); modal.classList.add('hidden-state'); controls.autoRotate = true;
-            });
-            modal.addEventListener('click', (e) => e.stopPropagation());
-
-            const lightbox = document.getElementById('lightbox-overlay');
-            lightbox.addEventListener('click', (e) => { e.stopPropagation(); lightbox.classList.remove('active'); });
-
-            // Left / Right Flight Controls (Globe Projects Only)
-            document.getElementById('btn-prev').addEventListener('click', () => navigateToProject(currentProjectIndex - 1));
-            document.getElementById('btn-next').addEventListener('click', () => navigateToProject(currentProjectIndex + 1));
-
-            // Predictive Search logic (Searches Globe Projects only)
-            const searchInput = document.getElementById('project-search');
-            const searchResults = document.getElementById('search-results');
-
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase();
-                if(!query) { searchResults.classList.remove('active'); return; }
-                
-                const matches = globeProjects.filter(p => p.title.toLowerCase().includes(query) || p.airport.toLowerCase().includes(query));
-                
-                searchResults.innerHTML = matches.map(m => {
-                    const idx = globeProjects.findIndex(p => p.id === m.id);
-                    return `<div class="search-result-item" onclick="selectSearchResult(${idx})">
-                        <strong>${m.title}</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">${m.airport}</span>
-                    </div>`;
-                }).join('');
-                
-                if(matches.length > 0) searchResults.classList.add('active'); else searchResults.classList.remove('active');
-            });
-
-            window.selectSearchResult = function(index) {
-                searchResults.classList.remove('active'); searchInput.value = ''; navigateToProject(index);
-            };
-
-            document.addEventListener('click', (e) => { if(!e.target.closest('.search-container')) searchResults.classList.remove('active'); });
-
-            // Click Map
-            window.addEventListener('click', () => {
-                if(isAnimatingCamera || isResizing || isPageOpen) return;
-                if(hoveredSprite && hoveredSprite.userData) {
-                    const projectData = hoveredSprite.userData.data;
-                    const isCluster = hoveredSprite.userData.isCluster;
-                    if (isCluster) flyTo(hoveredSprite.position, null, 1.6);
-                    else if (projectData) flyTo(hoveredSprite.position, () => openModal(projectData), 2.2);
-                } else {
-                    modal.classList.remove('active'); modal.classList.add('hidden-state'); controls.autoRotate = true;
-                }
-            });
-
-            // Mobile Touch
-            window.addEventListener('touchstart', (e) => {
-                if(e.touches.length > 0 && !modal.contains(e.target)) {
-                    mouse.x = (e.touches[0].clientX / window.innerWidth) * 2 - 1; mouse.y = -(e.touches[0].clientY / window.innerHeight) * 2 + 1;
-                }
-            }, {passive: false});
-            
-            window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
-        }
-
-        function navigateToProject(index) {
-            if(globeProjects.length === 0) return;
-            currentProjectIndex = (index + globeProjects.length) % globeProjects.length;
-            const targetProject = globeProjects[currentProjectIndex];
-            
-            if (targetProject.scenePosition) flyTo(targetProject.scenePosition, () => openModal(targetProject), 2.2);
-            else {
-                const targetPos = convertLatLngToVector3(targetProject.lat, targetProject.lon, GLOBE_RADIUS + 0.05);
-                flyTo(targetPos, () => openModal(targetProject), 2.2);
+        // Stars
+        for (let j = 0; j < 3; j++) {
+            const geo = new THREE.BufferGeometry();
+            const pos = new Float32Array(1000 * 3);
+            for (let i = 0; i < 1000; i++) {
+                const r = 150 + Math.random() * 150, u = Math.random(), v = Math.random();
+                const th = u * 2 * Math.PI, ph = Math.acos(2*v - 1);
+                pos[i*3]   = r * Math.sin(ph) * Math.cos(th);
+                pos[i*3+1] = r * Math.cos(ph);
+                pos[i*3+2] = r * Math.sin(ph) * Math.sin(th);
             }
+            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            const mat = new THREE.PointsMaterial({ size: 1+Math.random(), color: 0xffffff, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
+            const sys = new THREE.Points(geo, mat);
+            scene.add(sys);
+            starSystems.push({ mesh: sys, speed: 0.001 + Math.random() * 0.002, baseOpacity: 0.4 + Math.random() * 0.3 });
         }
 
-        function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time); controls.update();
+        buildMarkers();
+        setupInteractivity();
 
-            const now = Date.now();
-            starSystems.forEach(system => { system.mesh.material.opacity = system.baseOpacity + Math.sin(now * system.speed) * 0.2; });
+        requestAnimationFrame(animate);
+        setTimeout(() => { container.classList.remove('blurry-start'); controls.autoRotate = true; }, 500);
+        setTimeout(() => { document.getElementById('intro-overlay').style.opacity = '0'; }, 1500);
+    }
 
-            const cameraDistance = camera.position.length();
-            const isZoomedIn = cameraDistance < 2.8; 
+    function latLngToVec3(lat, lon, r) {
+        const phi = (90 - lat) * (Math.PI / 180), theta = (lon + 180) * (Math.PI / 180);
+        return new THREE.Vector3(-(r * Math.sin(phi) * Math.cos(theta)), r * Math.cos(phi), r * Math.sin(phi) * Math.sin(theta));
+    }
 
-            clusters.forEach(c => {
-                if(c.projects.length > 1) {
-                    if (c.clusterSprite.visible === isZoomedIn) { 
-                        c.clusterSprite.visible = !isZoomedIn;
-                        c.individualSprites.forEach(s => s.visible = isZoomedIn);
-                    }
+    function makeMarkerTexture() {
+        const c = document.createElement('canvas'); c.width = c.height = 128; const ctx = c.getContext('2d');
+        ctx.beginPath(); ctx.arc(64,64,36,0,2*Math.PI); ctx.fillStyle = '#ffffff'; ctx.fill();
+        ctx.lineWidth = 10; ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.stroke();
+        return new THREE.CanvasTexture(c);
+    }
+    function makeClusterTexture(count) {
+        const c = document.createElement('canvas'); c.width = c.height = 128; const ctx = c.getContext('2d');
+        ctx.beginPath(); ctx.arc(64,64,44,0,2*Math.PI); ctx.fillStyle = '#ffffff'; ctx.fill();
+        ctx.lineWidth = 10; ctx.strokeStyle = 'rgba(255,255,255,0.4)'; ctx.stroke();
+        ctx.fillStyle = '#050505'; ctx.font = 'bold 44px Inter, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(count, 64, 67);
+        return new THREE.CanvasTexture(c);
+    }
+
+    function buildMarkers() {
+        const markerMat = new THREE.SpriteMaterial({ map: makeMarkerTexture(), sizeAttenuation: true, depthWrite: false });
+        const clusterData = [];
+
+        globeProjects.forEach(project => {
+            const pos = latLngToVec3(project.lat, project.lon, GLOBE_RADIUS + 0.05);
+            let added = false;
+            for (let c of clusterData) {
+                if (c.center.distanceTo(pos) < 0.25) { c.projects.push(project); added = true; break; }
+            }
+            if (!added) clusterData.push({ center: pos, centerLat: project.lat, centerLon: project.lon, projects: [project] });
+        });
+
+        clusterData.forEach(cluster => {
+            if (cluster.projects.length === 1) {
+                const sprite = new THREE.Sprite(markerMat);
+                sprite.position.copy(cluster.center); sprite.scale.set(0.04,0.04,0.04);
+                sprite.userData = { isCluster: false, data: cluster.projects[0] };
+                globeGroup.add(sprite); markers.push(sprite);
+                cluster.projects[0].scenePosition = cluster.center.clone();
+            } else {
+                const clSprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeClusterTexture(cluster.projects.length), sizeAttenuation: true, depthWrite: false }));
+                clSprite.position.copy(cluster.center); clSprite.scale.set(0.05,0.05,0.05);
+                clSprite.userData = { isCluster: true, count: cluster.projects.length };
+                globeGroup.add(clSprite); markers.push(clSprite);
+                cluster.clusterSprite = clSprite; cluster.individualSprites = [];
+
+                const spreadAngle = (Math.PI * 2) / cluster.projects.length;
+                const radiusOffset = 1.0 + (cluster.projects.length * 0.15);
+                const lonScale = 1 / Math.cos(cluster.centerLat * (Math.PI / 180));
+
+                cluster.projects.forEach((proj, index) => {
+                    const angle = index * spreadAngle;
+                    const spreadPos = latLngToVec3(
+                        cluster.centerLat + Math.cos(angle) * radiusOffset,
+                        cluster.centerLon + Math.sin(angle) * radiusOffset * lonScale,
+                        GLOBE_RADIUS + 0.05
+                    );
+                    const sprite = new THREE.Sprite(markerMat);
+                    sprite.position.copy(spreadPos); sprite.scale.set(0.035,0.035,0.035);
+                    sprite.userData = { isCluster: false, data: proj }; sprite.visible = false;
+                    globeGroup.add(sprite); markers.push(sprite);
+                    proj.scenePosition = spreadPos.clone(); cluster.individualSprites.push(sprite);
+                });
+
+                clusters.push(cluster);
+            }
+        });
+    }
+
+    function flyTo(targetVector, callback, targetZoom = 2.2) {
+        isAnimatingCamera = true; controls.autoRotate = false; controls.enabled = false;
+        const worldTarget = targetVector.clone().applyMatrix4(globeGroup.matrixWorld);
+        const targetSpherical = new THREE.Spherical().setFromVector3(worldTarget.clone().normalize().multiplyScalar(targetZoom));
+        const thetaOffset = window.innerWidth <= 768 ? 0 : Math.PI / 7.5;
+        targetSpherical.theta += thetaOffset;
+        const currentSpherical = new THREE.Spherical().setFromVector3(camera.position);
+        let diff = targetSpherical.theta - currentSpherical.theta;
+        if (diff > Math.PI) targetSpherical.theta -= 2*Math.PI;
+        if (diff < -Math.PI) targetSpherical.theta += 2*Math.PI;
+
+        new TWEEN.Tween(currentSpherical).to({
+            radius: targetSpherical.radius, phi: targetSpherical.phi, theta: targetSpherical.theta
+        }, 650).easing(TWEEN.Easing.Cubic.InOut)
+        .onUpdate(() => { camera.position.setFromSpherical(currentSpherical); camera.lookAt(0,0,0); })
+        .onComplete(() => { controls.enabled = true; isAnimatingCamera = false; if(callback) callback(); })
+        .start();
+    }
+
+    function setupInteractivity() {
+        const modal = document.getElementById('project-modal');
+        const resizer = document.getElementById('modal-resizer');
+        const navItems = document.querySelectorAll('.nav-item');
+        const pageOverlay = document.getElementById('page-overlay');
+        const pages = document.querySelectorAll('.page-content');
+        let isResizing = false;
+
+        // Nav
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const target = item.getAttribute('data-target');
+                navItems.forEach(n => n.classList.remove('active')); item.classList.add('active');
+                if (target === 'home') {
+                    pageOverlay.classList.remove('active'); pages.forEach(p => p.classList.remove('active'));
+                    isPageOpen = false; controls.enabled = true; controls.autoRotate = true;
+                } else {
+                    modal.classList.remove('active'); modal.classList.add('hidden-state');
+                    pageOverlay.classList.add('active'); pages.forEach(p => p.classList.remove('active'));
+                    document.getElementById(`page-${target}`).classList.add('active');
+                    isPageOpen = true; controls.enabled = false; controls.autoRotate = true;
                 }
             });
+        });
 
-            if (!isPageOpen && !isAnimatingCamera) {
-                raycaster.setFromCamera(mouse, camera);
-                
-                if(globeMeshRef) {
-                    const intersectsGlobe = raycaster.intersectObject(globeMeshRef);
-                    if(intersectsGlobe.length > 0) lineUniforms.uMousePos.value.copy(intersectsGlobe[0].point);
-                    else lineUniforms.uMousePos.value.set(0, 0, 0); 
-                }
+        // Resizer
+        resizer.addEventListener('mousedown', () => { isResizing = true; document.body.style.cursor = 'ew-resize'; resizer.classList.add('dragging'); });
+        window.addEventListener('mousemove', e => {
+            if (!isResizing) { mouse.x = (e.clientX/window.innerWidth)*2-1; mouse.y = -(e.clientY/window.innerHeight)*2+1; return; }
+            e.preventDefault();
+            document.documentElement.style.setProperty('--modal-width', `${window.innerWidth - e.clientX}px`);
+        });
+        window.addEventListener('mouseup', () => { isResizing = false; document.body.style.cursor = 'default'; resizer.classList.remove('dragging'); });
 
-                const visibleMarkers = markers.filter(m => m.visible);
-                const intersects = raycaster.intersectObjects(visibleMarkers);
+        // Close
+        document.getElementById('close-modal').addEventListener('click', e => {
+            e.stopPropagation(); modal.classList.remove('active'); modal.classList.add('hidden-state'); controls.autoRotate = true;
+        });
+        modal.addEventListener('click', e => e.stopPropagation());
 
-                if (intersects.length > 0) {
-                    if(hoveredSprite !== intersects[0].object) {
-                        hoveredSprite = intersects[0].object; 
-                        hoveredSprite.scale.set(0.08, 0.08, 0.08); 
-                        document.body.style.cursor = 'pointer'; controls.autoRotateSpeed = 0.05;
-                        const tooltip = document.getElementById('tooltip');
-                        if (hoveredSprite && hoveredSprite.userData) {
-                             tooltip.innerText = hoveredSprite.userData.isCluster ? `${hoveredSprite.userData.count} Projects (Expand)` : (hoveredSprite.userData.data ? hoveredSprite.userData.data.airport : '');
-                             tooltip.style.left = (window.innerWidth / 2 + (mouse.x * window.innerWidth / 2) + 15) + 'px';
-                             tooltip.style.top = (window.innerHeight / 2 - (mouse.y * window.innerHeight / 2) + 15) + 'px';
-                        }
-                        tooltip.style.opacity = 1;
+        // Lightbox
+        const lightbox = document.getElementById('lightbox-overlay');
+        lightbox.addEventListener('click', e => { e.stopPropagation(); lightbox.classList.remove('active'); });
+        lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
+
+        // Prev / Next
+        document.getElementById('btn-prev').addEventListener('click', () => navigateToProject(currentProjectIndex - 1));
+        document.getElementById('btn-next').addEventListener('click', () => navigateToProject(currentProjectIndex + 1));
+
+        // Search
+        const searchInput = document.getElementById('project-search');
+        const searchResults = document.getElementById('search-results');
+        searchInput.addEventListener('input', e => {
+            const q = e.target.value.toLowerCase();
+            if (!q) { searchResults.classList.remove('active'); return; }
+            const matches = globeProjects.filter(p => p.title.toLowerCase().includes(q) || p.airport.toLowerCase().includes(q));
+            searchResults.innerHTML = matches.map(m => {
+                const idx = globeProjects.findIndex(p => p.id === m.id);
+                return `<div class="search-result-item" onclick="selectSearchResult(${idx})">
+                    <strong>${m.title}</strong><br>
+                    <span style="font-size:0.75rem;color:var(--text-muted)">${m.airport}</span>
+                </div>`;
+            }).join('');
+            searchResults.classList.toggle('active', matches.length > 0);
+        });
+        window.selectSearchResult = function(index) { searchResults.classList.remove('active'); searchInput.value = ''; navigateToProject(index); };
+        document.addEventListener('click', e => { if (!e.target.closest('.search-container')) searchResults.classList.remove('active'); });
+
+        // Globe click
+        window.addEventListener('click', () => {
+            if (isAnimatingCamera || isResizing || isPageOpen) return;
+            if (hoveredSprite?.userData) {
+                if (hoveredSprite.userData.isCluster) flyTo(hoveredSprite.position, null, 1.6);
+                else if (hoveredSprite.userData.data) flyTo(hoveredSprite.position, () => openModal(hoveredSprite.userData.data), 2.2);
+            } else {
+                modal.classList.remove('active'); modal.classList.add('hidden-state'); controls.autoRotate = true;
+            }
+        });
+
+        // Touch
+        window.addEventListener('touchstart', e => {
+            if (e.touches.length > 0 && !modal.contains(e.target)) {
+                mouse.x = (e.touches[0].clientX/window.innerWidth)*2-1;
+                mouse.y = -(e.touches[0].clientY/window.innerHeight)*2+1;
+            }
+        }, { passive: false });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth/window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    }
+
+    function navigateToProject(index) {
+        if (!globeProjects.length) return;
+        currentProjectIndex = (index + globeProjects.length) % globeProjects.length;
+        const p = globeProjects[currentProjectIndex];
+        const pos = p.scenePosition || latLngToVec3(p.lat, p.lon, GLOBE_RADIUS + 0.05);
+        flyTo(pos, () => openModal(p), 2.2);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    // ANIMATION LOOP
+    // ═══════════════════════════════════════════════════════
+    const raycaster = new THREE.Raycaster();
+
+    function animate(time) {
+        requestAnimationFrame(animate);
+        TWEEN.update(time); controls.update();
+
+        const now = Date.now();
+        starSystems.forEach(s => { s.mesh.material.opacity = s.baseOpacity + Math.sin(now * s.speed) * 0.2; });
+
+        const isZoomedIn = camera.position.length() < 2.8;
+        clusters.forEach(c => {
+            if (c.clusterSprite.visible === isZoomedIn) {
+                c.clusterSprite.visible = !isZoomedIn;
+                c.individualSprites.forEach(s => s.visible = isZoomedIn);
+            }
+        });
+
+        if (!isPageOpen && !isAnimatingCamera) {
+            raycaster.setFromCamera(mouse, camera);
+            if (globeMeshRef) {
+                const hits = raycaster.intersectObject(globeMeshRef);
+                if (hits.length) lineUniforms.uMousePos.value.copy(hits[0].point);
+                else lineUniforms.uMousePos.value.set(0,0,0);
+            }
+            const visibleMarkers = markers.filter(m => m.visible);
+            const hits = raycaster.intersectObjects(visibleMarkers);
+            if (hits.length) {
+                if (hoveredSprite !== hits[0].object) {
+                    if (hoveredSprite) {
+                        const def = hoveredSprite.userData.isCluster ? 0.05 : 0.04;
+                        hoveredSprite.scale.set(def,def,def);
                     }
-                } else {
-                    if(hoveredSprite) {
-                        const defaultScale = (hoveredSprite.userData && hoveredSprite.userData.isCluster) ? 0.05 : 0.04;
-                        hoveredSprite.scale.set(defaultScale, defaultScale, defaultScale); 
-                        document.body.style.cursor = 'default'; controls.autoRotateSpeed = 0.4;
-                        document.getElementById('tooltip').style.opacity = 0; hoveredSprite = null;
-                    }
+                    hoveredSprite = hits[0].object;
+                    hoveredSprite.scale.set(0.08,0.08,0.08);
+                    document.body.style.cursor = 'pointer';
+                    controls.autoRotateSpeed = 0.05;
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.textContent = hoveredSprite.userData.isCluster
+                        ? `${hoveredSprite.userData.count} Projects`
+                        : (hoveredSprite.userData.data?.airport || '');
+                    tooltip.style.left = (window.innerWidth/2 + mouse.x * window.innerWidth/2 + 15) + 'px';
+                    tooltip.style.top  = (window.innerHeight/2 - mouse.y * window.innerHeight/2 + 15) + 'px';
+                    tooltip.style.opacity = 1;
                 }
             } else {
-                document.getElementById('tooltip').style.opacity = 0;
-                lineUniforms.uMousePos.value.set(0, 0, 0);
+                if (hoveredSprite) {
+                    const def = hoveredSprite.userData.isCluster ? 0.05 : 0.04;
+                    hoveredSprite.scale.set(def,def,def);
+                    document.body.style.cursor = 'default';
+                    controls.autoRotateSpeed = 0.4;
+                    document.getElementById('tooltip').style.opacity = 0;
+                    hoveredSprite = null;
+                }
             }
-            
-            renderer.render(scene, camera);
+        } else {
+            document.getElementById('tooltip').style.opacity = 0;
+            lineUniforms.uMousePos.value.set(0,0,0);
         }
 
-        window.onload = initApp;
+        renderer.render(scene, camera);
+    }
+
+    window.onload = initApp;
     </script>
 </body>
 </html>
