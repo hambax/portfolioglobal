@@ -101,16 +101,24 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A premium retail environment at one of the world's busiest transit hubs. The brief called for a concourse experience that could guide high-volume passenger flow seamlessly into luxury retail zones without sacrificing dwell quality."
+                body: "In 2018, We Know Group were doing something genuinely different at Heathrow. Part concierge agency, part luxury travel operator, they offered premium clients arriving into Terminal 5 something the airport itself could not: a single point of contact with deep knowledge of London's hotels, events, and experiences, and a fleet of Jaguar I-PACE electric vehicles waiting to take them there in style."
+            },
+            {
+                type: "text",
+                body: "The brief was to design a kiosk for the arrivals hall at Heathrow T5: a physical presence for the brand at the exact moment a premium traveller steps off a long-haul flight and needs to feel looked after. The design took its cues directly from the I-PACE: Jaguar's first fully electric vehicle, and at the time one of the most forward-thinking cars on the road. Clean lines, dark surfaces, a sense of quiet confidence and technological precision without ostentation."
+            },
+            {
+                type: "text",
+                body: "Arrivals is a different design problem to departures. There is no dwell time built in, no gate to wait for. The kiosk needed to earn attention in seconds, communicate trust immediately, and create enough of a pause in a tired traveller's momentum to start a conversation. That compression of the customer journey into a single environmental moment is one of the more interesting spatial challenges in transit design."
             },
             {
                 type: "bullets",
-                heading: "Key Deliverables",
+                heading: "Project Details",
                 items: [
-                    "Spatial strategy and retail footprint planning",
-                    "Material specification and finish schedules",
-                    "Lighting design and passenger flow modelling",
-                    "Contractor documentation and site oversight"
+                    "Kiosk concept and spatial design for Heathrow T5 arrivals",
+                    "Design language derived from the Jaguar I-PACE fleet vehicle",
+                    "Brand environment for a luxury concierge and ground transport operator",
+                    "Built 2018; concept realised in partnership with Jaguar"
                 ]
             }
         ]
@@ -525,7 +533,15 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A flagship retail interior for one of the world's most beloved toy brands. Working within the Regent Street flagship required balancing the theatrical, experience-driven expectations of families with the operational rigour of a high-volume retail machine."
+                body: "Hamleys on Regent Street is one of the most visited retail destinations in London: a seven-floor immersive world of noise, colour, and theatre designed to delight children and overwhelm adults in the best possible way. This project asked a different question entirely. What does Hamleys look like when it comes to the airport?"
+            },
+            {
+                type: "text",
+                body: "The primary customer here is not a child. It is a parent, grandparent, or family friend boarding a flight to visit someone they love, realising at the departure gate that they want to arrive with something in their hands. That shift in audience changes everything. The Regent Street flagship earns its maximalism because it is the destination. An airport format needed to be the opposite: calm enough to browse without anxiety, clear enough to find the right thing quickly, and warm enough to feel like a considered choice rather than a last resort."
+            },
+            {
+                type: "text",
+                body: "We leaned into Hamleys' signature red throughout, but built a deliberately light and neutral world around it. Toy packaging is some of the most visually aggressive graphic design in retail: primaries, gradients, bold type, competing for attention across every shelf. If the environment fights back with equal intensity, the result is exhausting. By keeping the architecture clean and restrained, the products could do their own work without the space collapsing into visual noise."
             },
             {
                 type: "image",
@@ -533,13 +549,17 @@ const portfolioData = [
                 caption: "Developed concept: experiential zone detail"
             },
             {
+                type: "text",
+                body: "Lighting was used to do the spatial work that colour and graphics were deliberately held back from. Different product categories were given their own lighting character: warmer and softer for infant and toddler ranges, brighter and more energetic for older children's play, more focused and precise for collectables and premium lines. The effect was of distinct neighbourhoods within a coherent whole: a shopper could navigate by feel as much as by signage."
+            },
+            {
                 type: "bullets",
-                heading: "Design Focus",
+                heading: "My Contribution",
                 items: [
-                    "Multi-floor spatial wayfinding and narrative flow",
-                    "Experiential zone design and category architecture",
-                    "Material specification for high-traffic durability",
-                    "Seasonal transformation framework"
+                    "Initial concept sketches and design language development",
+                    "3D modelling, visualisation and photorealistic rendering",
+                    "Technical detail drawings for shopfit production",
+                    "Airport retail rollout concept: first-cut interior architecture"
                 ]
             }
         ]
@@ -668,7 +688,15 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "A food and beverage environment that captures the energy of London's most iconic market district within the controlled environment of a transit concourse. The challenge was infusing genuine character into a format often stripped of it by the demands of airport certification and operator uniformity."
+                body: "Camden Food Co. operates across multiple locations but didn't want to feel like it. The brief was straightforward and genuinely worthwhile: create a café environment that feels fresh, independent, and considered: somewhere a commuter actually wants to stop, rather than somewhere they settle for."
+            },
+            {
+                type: "text",
+                body: "The design language drew from high street and urban vernacular rather than the polished neutrality of airport retail. Exposed brick, subway tiles, steel-framed signage, and a restrained palette anchored by mint green: a colour that earns its place in a food environment without having to explain itself. Fresh, clean, slightly gritty in the best sense. It would feel at home in a Manchester train station or Grand Central Terminal in equal measure."
+            },
+            {
+                type: "text",
+                body: "Small footprints are their own discipline. With limited floor area, every square metre of counter space, equipment, and customer-facing display has to be accounted for. Part of my work on this project was planning the operational layout: where the coffee machines sit, how the refrigeration works within the flow, where prep happens without crossing the customer journey. Food and beverage service operations have a logic of their own, and learning to design within that logic rather than around it produced a better and more honest result."
             },
             {
                 type: "gallery",
@@ -681,10 +709,10 @@ const portfolioData = [
                 type: "bullets",
                 heading: "Approach",
                 items: [
-                    "Brand environment strategy and spatial concept",
-                    "Material and finish specification with market authenticity",
-                    "Menu display and digital integration",
-                    "Queuing flow and counter ergonomics"
+                    "Brand environment concept: high street urban aesthetic within transit constraints",
+                    "Operational layout planning: equipment, refrigeration and counter flow",
+                    "Material palette: brick, subway tile, steel frames and mint green accents",
+                    "Compact footprint design for efficient commuter service"
                 ]
             }
         ]
@@ -1302,8 +1330,22 @@ const portfolioData = [
                 ]
             },
             {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    { label: "Sole UX designer across web, iOS and Android", anchor: "the-challenge" },
+                    { label: "100+ user interviews conducted before a single screen was designed", anchor: "research" },
+                    { label: "Design system migrated from Sketch to Figma and rebuilt from scratch", anchor: "design-system" },
+                    { label: "Three parallel development teams supported simultaneously", anchor: "collaboration" },
+                    { label: "4x user growth in the six months following launch", anchor: "impact" },
+                    { label: "Design system still in active use four years after delivery", anchor: "impact" }
+                ]
+            },
+            {
                 type: "text",
-                body: "UX/UI design for Smartly: a payroll and HR platform serving thousands of New Zealand businesses. The challenge was bringing clarity and warmth to a product category historically associated with complexity and anxiety, making compliance feel genuinely manageable."
+                id: "the-challenge",
+                heading: "The Challenge",
+                body: "When Smart Payroll rebranded as Smartly, it wasn't just a new name. It was a strategic decision to rebuild a legacy payroll system that had grown unwieldy through years of patching, and to do it properly: from research through to a scalable design system across web and mobile. I was brought in as the sole designer. New Zealand employment law is genuinely complex — leave entitlements, KiwiSaver contributions, evolving tax codes — and a single payroll error can mean compliance failures, incorrect payments, and damaged employee trust. The product had to make that complexity feel manageable. For the small business owner wearing five hats at once, confidence and clarity were the product."
             },
             {
                 type: "image",
@@ -1311,14 +1353,33 @@ const portfolioData = [
                 caption: "Responsive design: mobile and desktop views"
             },
             {
-                type: "bullets",
-                heading: "Design Focus",
-                items: [
-                    "End-to-end product UX audit and redesign strategy",
-                    "Dashboard and reporting interface design",
-                    "Onboarding flow simplification",
-                    "Accessible, WCAG-compliant component system"
-                ]
+                type: "text",
+                id: "research",
+                heading: "Research",
+                body: "Before touching a screen, I conducted over a hundred interviews across the user base. Payroll administrators, employees, and managers each had a different relationship with the product and a different definition of what going wrong looked like. What emerged was a consistent pattern: people didn't fear payroll, they feared what they didn't understand. Confidence dropped at review stages when figures appeared without explanation. Errors happened at edge cases no one had anticipated. Mobile wasn't a nice-to-have — employees needed to submit time wherever they were working. Every research insight was translated directly into a design principle, and every new feature was user-tested before build. In the pre-AI era, a well-constructed Figma prototype was the closest thing to magic available to a designer. We used them constantly."
+            },
+            {
+                type: "text",
+                id: "design-system",
+                heading: "Design System",
+                body: "With three development teams building features simultaneously, a robust design system wasn't optional — it was the only way the product could stay coherent. I built it in Figma, taking full advantage of its component system, variables, and design tokens. The timing was complicated: our parent company Datacom was mid-migration from Sketch, which meant a significant legacy system needed to be rebuilt rather than ported. I chose to treat that as an opportunity rather than a setback. Rebuilding from scratch meant we could make systematic improvements and design something that actually matched how the developers needed to consume it. Dev mode changed how I communicated with engineering teams, and it was my first real step toward designing in a way that thinks in code. I am an early adopter of new tools by instinct, and I actively encourage that ethos in the people I work with."
+            },
+            {
+                type: "text",
+                heading: "The Product",
+                body: "The desktop application for payroll admins was built around a single goal: making people feel competent and protected. Payroll processing was restructured into clear guided phases — checkpoints with contextual guidance before problems could become errors. Rather than hiding the complexity of NZ employment law, we surfaced it in digestible form: any figure could be drilled into, any calculation explained in plain language. Error prevention patterns — smart defaults, inline validation, confirmation screens flagging unusual entries — were designed from direct analysis of support tickets. The basics, done properly, turned out to be enough. The mobile applications for employees and managers extended the product's value proposition beyond the payroll admin entirely. Timesheet submission optimised for one-handed use. Manager approvals with push notifications so nothing sat waiting. And as a side effect: payroll admins stopped having to chase people for missing timesheets."
+            },
+            {
+                type: "text",
+                id: "collaboration",
+                heading: "Collaboration",
+                body: "Operating as the sole designer across three product teams required systems as much as skill. Weekly design reviews with each PM, shared roadmap visibility, tiered deliverables that gave teams enough to start building while I refined in parallel. Constant prioritisation, constant communication about trade-offs. The most valuable thing I learned from this operating model came from Smartly's mobile developers: exceptional engineers who pushed me to understand how my designs would interact with database architecture, API constraints, and sync logic. I learned to ask better questions. How does this data flow between devices? What's the failure state when the API doesn't respond? How do we handle this edge case in the data model? That technical fluency meant my designs were implementable as specified, and it built a quality of trust with engineering teams that I have carried into every product role since."
+            },
+            {
+                type: "text",
+                id: "impact",
+                heading: "Impact",
+                body: "In the six months following launch, user numbers grew fourfold — though I am careful about claiming that. The marketing team went hard on storytelling, advertising, and the rebrand, and they deserve the credit for the growth. What I can point to is a design system still in active use four years after delivery, patterns for compliance communication that measurably reduced user anxiety, and a product that successfully launched across web, iOS, and Android simultaneously. This project shaped my understanding of what design leadership actually means. Setting research-led strategic direction. Building systems that multiply your impact beyond what any individual can deliver alone. Earning cross-functional trust by learning to speak the language of engineering and product. And learning that deciding what not to design yet is as important a skill as anything else."
             }
         ]
     },
@@ -1343,7 +1404,11 @@ const portfolioData = [
             },
             {
                 type: "text",
-                body: "Mobile application design for Polhill Reserve: a community environmental initiative connecting Wellington residents with local conservation efforts. The product needed to feel alive with the energy of the outdoor environment it serves, while remaining functional and accessible for a diverse user base."
+                body: "A university project developed collaboratively with a team of visual communication designers. The brief explored how digital tools could support ecological conservation in the Wellington region: specifically around native birds and wildlife in the Polhill Reserve, a regenerating forest reserve on the edge of the city."
+            },
+            {
+                type: "text",
+                body: "The project gave me an early grounding in designing for community participation: how you make a product feel genuinely useful to people who care deeply about a place, rather than a generic app skin applied to a conservation context. The challenge of connecting residents to local environmental effort through a mobile interface is one that scales well beyond Wellington, and the thinking developed here informed how I approach community-facing digital products."
             },
             {
                 type: "gallery",
@@ -1358,9 +1423,9 @@ const portfolioData = [
                 type: "bullets",
                 heading: "Key Features Designed",
                 items: [
-                    "Trail navigation and mapping interface",
-                    "Community contribution and reporting flows",
-                    "Volunteer coordination and event management",
+                    "Trail navigation and species identification interface",
+                    "Community contribution and wildlife reporting flows",
+                    "Volunteer coordination and conservation event management",
                     "Environmental impact tracking and visualisation"
                 ]
             }
@@ -1414,20 +1479,28 @@ const portfolioData = [
             {
                 type: "image",
                 src: "Portfolio-images_webp/Fuelmizas/Macbook Fuelmizas UX Web.webp",
-                caption: "Fuelmizas: web UX concept"
+                caption: "Fuelmizas: web design and implementation"
             },
             {
                 type: "text",
-                body: "UX and web design concept for Fuelmizas: exploring the convergence of fuel culture, performance aesthetics, and premium digital retail. The project asked what a motorsport-inspired digital brand experience looks like when stripped of cliché and rebuilt with precision."
+                body: "Fuelmizas imports and sells premium fireplaces across the UK and European market. The project was end-to-end: design, build, and deployment of a new e-commerce website, with one specific brief condition that shaped every decision made. The owner needed to be able to run it themselves."
+            },
+            {
+                type: "text",
+                body: "That requirement pointed clearly toward a well-supported website builder platform rather than a bespoke build: the right tool for the job, and one that could be handed over with training and confidence rather than a dependency on a developer for every update. Getting that decision right at the start saved the client significant time and money in the long run."
+            },
+            {
+                type: "text",
+                body: "Fuelmizas had one significant asset that made the design work straightforward in the best sense: exceptional product photography. Premium fireplaces are inherently beautiful objects, and the brand already understood that. The design system was built around giving those images the space and staging they deserved. A minimal black palette, clean typography, and subtle parallax scrolling effects kept the presentation feeling considered and premium without competing with the products themselves."
             },
             {
                 type: "bullets",
-                heading: "Concept Areas",
+                heading: "Deliverables",
                 items: [
-                    "Brand identity and web concept",
-                    "UX and visual design",
-                    "Customer journey mapping",
-                    "Operator presentation and feasibility"
+                    "Website design, build and deployment",
+                    "E-commerce integration for UK and European market",
+                    "CMS training and handover for owner self-management",
+                    "Minimal black design system built around product photography"
                 ]
             }
         ]
@@ -1452,8 +1525,28 @@ const portfolioData = [
                 ]
             },
             {
+                type: "bullets",
+                heading: "At a Glance",
+                items: [
+                    { label: "Sole designer on the redesign of Canopy: Zespri's proprietary grower knowledge platform", anchor: "the-platform" },
+                    { label: "Over 2,000 PDF documents migrated to a searchable, modular CMS", anchor: "the-platform" },
+                    { label: "Thousands of industry users: growers, packhouse managers, scientists, content authors", anchor: "the-users" },
+                    { label: "Extensive user interviews and workshops to rebuild the information architecture from scratch", anchor: "research-and-ia" },
+                    { label: "Mobile designed for farms: large touch targets for rubber gloves and fat farmer fingers", anchor: "accessibility" },
+                    { label: "AI search capability integrated in 2024: made possible by the underlying IA laid years earlier", anchor: "ai-and-legacy" }
+                ]
+            },
+            {
                 type: "text",
-                body: "Digital experience design for Zespri: the world's leading kiwifruit marketer. The work explored how a global agri-food brand with deep New Zealand roots could communicate its story of provenance, quality, and nutrition across digital touchpoints in international markets."
+                id: "the-platform",
+                heading: "The Platform",
+                body: "Canopy is Zespri's proprietary knowledge platform: a protected system containing everything a kiwifruit grower, packhouse manager, or industry professional needs to know about growing, harvesting, complying, and reporting. Spray diaries, pest and disease advice, compliance documentation, crop management guidance built up over decades of New Zealand agricultural science. Over two thousand documents, contributed by scientists and content specialists, accessed by thousands of people across the industry. The problem was that almost none of it could be found. The existing system was old, the search was poor, and the information architecture had grown organically in the way that systems do when no one is responsible for the whole. I was brought in as the sole designer to fix it."
+            },
+            {
+                type: "text",
+                id: "the-users",
+                heading: "The Users",
+                body: "What made this project genuinely interesting was the range of people it had to serve. Growers on farms checking spray requirements in the middle of a working day. Packhouse managers looking up compliance documentation before an audit. Scientists publishing new research through the CMS. Marketing teams communicating policy changes to the network. Each group had a different relationship with the platform, a different level of technical confidence, and a different definition of what finding something quickly actually meant. Understanding all of them required time, and I spent a significant portion of the early project in workshops and user interviews before touching a screen."
             },
             {
                 type: "gallery",
@@ -1464,14 +1557,27 @@ const portfolioData = [
                 ]
             },
             {
-                type: "bullets",
-                heading: "Deliverables",
-                items: [
-                    "Web and mobile UX design across core journeys",
-                    "Seasonal content and campaign framework",
-                    "Events and guided journey interfaces",
-                    "Global market adaptation and localisation strategy"
-                ]
+                type: "text",
+                id: "research-and-ia",
+                heading: "Research & Information Architecture",
+                body: "This was before AI-assisted synthesis was part of the design toolkit, which meant the research work was done the slow way: manual synthesis of interview notes, card sorting sessions, workshop facilitation, iterative testing of navigation structures with real users. It took longer. It also produced a rigorous understanding of how people in the kiwifruit industry actually think about information: what they call things, how they group problems, where their confidence drops. The information architecture we built from that process was not theoretical. It was grounded in the mental models of the people who had to use it every day. That foundation turned out to matter more than we anticipated."
+            },
+            {
+                type: "text",
+                id: "accessibility",
+                heading: "Accessibility",
+                body: "Accessibility testing on this project had a particular character. The standard WCAG compliance work applied throughout, but the most memorable design constraint came from the growers themselves. Fat farmer fingers was how one user described it during testing: the reality of trying to navigate a mobile interface while wearing rubber gloves in a working orchard. Every mobile screen was designed with touch targets sized for exactly that scenario. It is a small thing in one sense, and a significant one in another. The value of Canopy to a grower is highest at the moment they are standing in a crop and need an answer quickly. If the interface fails them at that moment because a button is two millimetres too small, the whole system has failed."
+            },
+            {
+                type: "text",
+                id: "ai-and-legacy",
+                heading: "AI & Legacy",
+                body: "In 2024, an AI-powered search capability was integrated into Canopy, allowing users to ask plain-language questions of the entire knowledge base and receive specific answers rather than a list of documents to hunt through. The integration was relatively straightforward. That was not an accident. The information architecture we had built years earlier, with clear taxonomy, consistent metadata, and a modular content structure designed for Adobe Experience Manager, gave the AI something coherent to work with. Good foundations make future change possible. This was a satisfying proof of that principle."
+            },
+            {
+                type: "text",
+                heading: "What It Meant",
+                body: "I am proud of this project for reasons that go beyond the design work itself. Canopy makes essential agricultural knowledge genuinely accessible to the people who need it: on farms, in packhouses, in the field. Better access to compliance and regulatory information has a measurable effect on sustainability outcomes across the New Zealand kiwifruit industry. And a faster, more reliable communication channel between Zespri as a corporate entity and the growers on the land has improved relationships that matter to both sides. It is the kind of project that reminds you why getting the details right is worth the effort."
             }
         ]
     },
