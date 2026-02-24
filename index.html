@@ -142,6 +142,50 @@
         .inline-link   { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; opacity: 0.8; transition: opacity 0.2s; }
         .inline-link:hover { opacity: 1; }
 
+        /* ── TOOL STACK GRID ── */
+        #page-tools { overflow-y: auto; }
+        .tools-inner { padding: 50px 60px; max-width: 1100px; margin: 0 auto; }
+        .tools-title { font-family: var(--font-display); font-size: 2.8rem; font-weight: 400; margin: 0 0 8px 0; }
+        .tools-subtitle { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin: 0 0 48px 0; }
+        .tools-section-heading { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--text-muted); margin: 40px 0 16px 0; font-weight: 600; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 12px; margin-bottom: 12px; }
+        .tool-chip {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 16px 10px; cursor: pointer;
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            transition: background 0.2s, border-color 0.2s, transform 0.15s;
+            text-align: center;
+        }
+        .tool-chip:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .tool-chip.active { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+        .tool-chip-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+        .tool-chip-name { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.8); line-height: 1.2; }
+        .tool-detail {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 28px 32px; margin-top: 32px;
+            display: none;
+        }
+        .tool-detail.active { display: block; }
+        .tool-detail-name { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; margin: 0 0 6px 0; }
+        .tool-detail-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin: 0 0 18px 0; }
+        .tool-detail-body { font-size: 0.95rem; line-height: 1.75; color: #c0c0c8; }
+
+        /* ── AI FRONTIER ── */
+        #page-aifrontier { display: none; }
+        #page-aifrontier.active { display: flex; }
+
+        /* ── TOOL STACK PAGE ── */
+        #page-tools { display: none; max-width: 100%; max-height: 85vh; overflow-y: auto; }
+        #page-tools.active { display: block; }
+        #page-tools::-webkit-scrollbar { width: 6px; }
+        #page-tools::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+
+        /* ── IFRAME DEMO ── */
+        .demo-iframe-wrap { width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: #000; margin-top: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .demo-iframe-wrap iframe { width: 100%; height: 100%; border: none; }
+        .demo-link-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; transition: background 0.2s; cursor: pointer; }
+        .demo-link-btn:hover { background: rgba(255,255,255,0.18); }
+
         /* ── AT A GLANCE CARD ── */
         .glance-card {
             background: rgba(255,255,255,0.06);
@@ -295,7 +339,7 @@
         .badge-digital { background: rgba(77,218,140,0.15); color: #6bf3a4; border: 1px solid rgba(77,218,140,0.3); }
 
         /* ── PROJECT CONTENT BLOCKS ── */
-        .modal-title    { font-family: var(--font-display); margin: 0 0 8px 0; font-size: 3rem; font-weight: 400; line-height: 1.05; letter-spacing: -0.5px; }
+        .modal-title    { font-family: var(--font-display); margin: 0 0 8px 0; font-size: 3rem; font-weight: 400; line-height: 1.05; letter-spacing: -0.5px; color: #ffffff; display: block; }
         .modal-subtitle { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; margin: 0 0 14px 0; }
         .modal-header-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
         .modal-location { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; font-weight: 500; }
@@ -461,6 +505,14 @@
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             <span class="nav-label">AI & Research</span>
         </div>
+        <div class="nav-item" data-target="aifrontier" title="AI Frontier">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1H1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2z"></path><circle cx="7.5" cy="14.5" r="1.5"></circle><circle cx="16.5" cy="14.5" r="1.5"></circle></svg>
+            <span class="nav-label">AI Frontier</span>
+        </div>
+        <div class="nav-item" data-target="tools" title="Tool Stack">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="6" height="6" rx="1"></rect><rect x="9" y="3" width="6" height="6" rx="1"></rect><rect x="16" y="3" width="6" height="6" rx="1"></rect><rect x="2" y="10" width="6" height="6" rx="1"></rect><rect x="9" y="10" width="6" height="6" rx="1"></rect><rect x="16" y="10" width="6" height="6" rx="1"></rect><rect x="2" y="17" width="6" height="6" rx="1"></rect><rect x="9" y="17" width="6" height="6" rx="1"></rect><rect x="16" y="17" width="6" height="6" rx="1"></rect></svg>
+            <span class="nav-label">Tool Stack</span>
+        </div>
         <div class="nav-item" data-target="about" title="About Hamish">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             <span class="nav-label">About Hamish</span>
@@ -480,6 +532,33 @@
             <h2 class="page-title" id="ai-title"></h2>
             <p class="page-subtitle" id="ai-subtitle"></p>
             <div id="ai-body"></div>
+        </div>
+
+        <!-- AI Frontier Split Panel -->
+        <div class="page-content" id="page-aifrontier">
+            <div class="digital-sidebar">
+                <div class="digital-sidebar-header">
+                    <h2 class="digital-sidebar-title">AI Frontier</h2>
+                </div>
+                <div class="digital-list" id="ai-project-list"></div>
+            </div>
+            <div class="digital-main" id="ai-main-content">
+                <div id="ai-content-zone"></div>
+            </div>
+        </div>
+
+        <!-- Tool Stack Page -->
+        <div class="page-content" id="page-tools">
+            <div class="tools-inner">
+                <h1 class="tools-title">Tool Stack</h1>
+                <p class="tools-subtitle">The tools I use across design, AI and development in 2026</p>
+                <div id="tools-body"></div>
+                <div class="tool-detail" id="tool-detail-panel">
+                    <div class="tool-detail-name" id="tool-detail-name"></div>
+                    <div class="tool-detail-category" id="tool-detail-category"></div>
+                    <div class="tool-detail-body" id="tool-detail-body"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Digital Split Panel -->
@@ -675,23 +754,35 @@
 
     // Render page header (badge, title, subtitle, location) then content blocks
     function renderProjectHeader(data, containerEl, badgeClass, badgeText) {
-        const subtitleHtml = data.subtitle
-            ? `<p class="modal-subtitle">${data.subtitle}</p>`
-            : '';
         const header = document.createElement('div');
         header.className = 'project-header';
-        header.innerHTML = `
-            <h1 class="modal-title">${data.title}</h1>
-            ${subtitleHtml}
-            <div class="modal-header-meta">
-                <div class="status-badge ${badgeClass}">${badgeText}</div>
-                <div class="modal-location">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
-                    ${data.airport}
-                </div>
-            </div>
-            <hr class="project-divider">
-        `;
+
+        // H1 title
+        const titleEl = document.createElement('h1');
+        titleEl.className = 'modal-title';
+        titleEl.textContent = data.title;
+        header.appendChild(titleEl);
+
+        // Subtitle
+        if (data.subtitle) {
+            const subEl = document.createElement('p');
+            subEl.className = 'modal-subtitle';
+            subEl.textContent = data.subtitle;
+            header.appendChild(subEl);
+        }
+
+        // Badge + location row
+        const meta = document.createElement('div');
+        meta.className = 'modal-header-meta';
+        meta.innerHTML = '<div class="status-badge ' + badgeClass + '">' + badgeText + '</div>' +
+            '<div class="modal-location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"></circle><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg> ' + (data.airport || '') + '</div>';
+        header.appendChild(meta);
+
+        // Divider
+        const hr = document.createElement('hr');
+        hr.className = 'project-divider';
+        header.appendChild(hr);
+
         containerEl.appendChild(header);
     }
 
@@ -744,6 +835,12 @@
         if (digitalProjects.length > 0) loadDigitalProject(0);
 
         document.getElementById('project-count').textContent = `${globeProjects.length + digitalProjects.length} Projects Indexed`;
+
+        // ── AI FRONTIER ──
+        initAIFrontier();
+
+        // ── TOOL STACK ──
+        initToolStack();
 
         document.getElementById('cms-loader').style.opacity = '0';
         setTimeout(() => {
@@ -809,6 +906,237 @@
             // Reset scroll after content paint
             requestAnimationFrame(() => { scrollEl.scrollTop = 0; });
         }, 280);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    // AI FRONTIER
+    // ═══════════════════════════════════════════════════════
+    const aiProjects = [
+        {
+            id: 'surf',
+            title: 'Surf Conditions App',
+            sub: 'Real-time swell and forecast',
+            status: 'live',
+            description: 'A progressive web app that pulls live buoy and forecast data to give surfers a simple, readable conditions summary for their local break. Built with Claude and deployed via Vercel. Combines weather APIs, AI summarisation and a clean mobile-first UI.',
+            tags: ['Claude', 'Vercel', 'Weather API', 'PWA'],
+            link: null
+        },
+        {
+            id: 'stars',
+            title: 'Star Tracker',
+            sub: 'Device-orientation sky map',
+            status: 'live',
+            description: 'A browser-based star tracking app that uses device orientation and GPS to render a real-time sky map. Point your phone at the sky and identify constellations, planets and satellites. Built entirely with AI assistance using Three.js and astronomy calculation libraries.',
+            tags: ['Claude', 'Three.js', 'GPS API', 'Device Orientation'],
+            link: null
+        },
+        {
+            id: 'palette',
+            title: 'AI Colour Palette Generator',
+            sub: 'Mood-to-palette in seconds',
+            status: 'concept',
+            description: 'Describe a feeling, a place, or a material and get back a curated colour palette with hex codes, usage notes and accessibility ratings. An experiment in using language models to bridge the gap between a design brief and a visual starting point.',
+            tags: ['Claude API', 'React', 'Design Tools'],
+            link: null
+        },
+        {
+            id: 'tide',
+            title: 'Tide Clock',
+            sub: 'Ambient tidal awareness',
+            status: 'concept',
+            description: 'A minimal ambient display that shows current tide state, next high and low, and a gentle animation reflecting the rhythm of the ocean. Designed for coastal people who live by the water. An exercise in restraint and meaningful data visualisation.',
+            tags: ['Claude', 'NOAA API', 'Canvas API'],
+            link: null
+        },
+        {
+            id: 'retail',
+            title: 'Retail Brief Generator',
+            sub: 'AI-assisted design briefs',
+            status: 'concept',
+            description: 'A tool that takes a few inputs about a brand, location, and customer type and generates a structured retail design brief with spatial recommendations, material directions and reference imagery prompts. Built from years of writing briefs the hard way.',
+            tags: ['Claude API', 'Next.js', 'Retail Design'],
+            link: null
+        },
+        {
+            id: 'wayfind',
+            title: 'Wayfinding Simulator',
+            sub: 'Test navigation before you build',
+            status: 'concept',
+            description: 'An interactive tool that lets you sketch a floor plan and then simulate how different types of visitors would navigate through the space. Uses AI to evaluate sightlines, decision points and egress routes. Born from years of masterplanning airport retail.',
+            tags: ['Claude', 'Canvas API', 'Spatial Design'],
+            link: null
+        },
+        {
+            id: 'watch',
+            title: 'Watch Finder',
+            sub: 'Natural language watch discovery',
+            status: 'concept',
+            description: 'Describe a watch in plain language and get matched to real timepieces that fit. An experiment in semantic search and product discovery, inspired by the Timebox Zurich project and the idea that people express themselves through what they wear on their wrist.',
+            tags: ['Claude API', 'Semantic Search', 'Product Design'],
+            link: null
+        }
+    ];
+
+    function initAIFrontier() {
+        const list = document.getElementById('ai-project-list');
+        list.innerHTML = aiProjects.map((p, i) => `
+            <div class="digital-list-item" onclick="loadAIProject(${i})">
+                <div class="digital-item-title">${p.title}</div>
+                <div class="digital-item-sub">${p.sub}</div>
+            </div>
+        `).join('');
+        if (aiProjects.length > 0) loadAIProject(0);
+    }
+
+    window.loadAIProject = function(index) {
+        document.querySelectorAll('#ai-project-list .digital-list-item').forEach((el, i) => {
+            el.classList.toggle('active', i === index);
+        });
+        const p = aiProjects[index];
+        if (!p) return;
+        const zone = document.getElementById('ai-content-zone');
+        zone.innerHTML = '';
+
+        const badgeClass = p.status === 'live' ? 'badge-built' : 'badge-concept';
+        const badgeText  = p.status === 'live' ? 'Live Demo' : 'Concept';
+
+        const header = document.createElement('div');
+        header.className = 'project-header';
+        const titleEl = document.createElement('h1');
+        titleEl.className = 'modal-title';
+        titleEl.style.fontSize = '2.2rem';
+        titleEl.textContent = p.title;
+        header.appendChild(titleEl);
+        const subEl = document.createElement('p');
+        subEl.className = 'modal-subtitle';
+        subEl.textContent = p.sub;
+        header.appendChild(subEl);
+        const meta = document.createElement('div');
+        meta.className = 'modal-header-meta';
+        meta.innerHTML = '<div class="status-badge ' + badgeClass + '">' + badgeText + '</div>';
+        header.appendChild(meta);
+        const hr = document.createElement('hr');
+        hr.className = 'project-divider';
+        header.appendChild(hr);
+        zone.appendChild(header);
+
+        const desc = document.createElement('p');
+        desc.className = 'block-text';
+        desc.textContent = p.description;
+        zone.appendChild(desc);
+
+        if (p.tags && p.tags.length) {
+            const tagWrap = document.createElement('div');
+            tagWrap.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;';
+            p.tags.forEach(tag => {
+                const t = document.createElement('span');
+                t.style.cssText = 'font-size:0.75rem;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);letter-spacing:0.5px;';
+                t.textContent = tag;
+                tagWrap.appendChild(t);
+            });
+            zone.appendChild(tagWrap);
+        }
+
+        if (p.link) {
+            const btn = document.createElement('a');
+            btn.href = p.link;
+            btn.target = '_blank';
+            btn.className = 'demo-link-btn';
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg> Open Live Demo';
+            zone.appendChild(btn);
+        } else {
+            const note = document.createElement('p');
+            note.style.cssText = 'font-size:0.8rem;color:var(--text-muted);margin-top:24px;letter-spacing:0.5px;';
+            note.textContent = 'Demo link coming soon.';
+            zone.appendChild(note);
+        }
+
+        document.getElementById('ai-main-content').scrollTop = 0;
+    };
+
+    // ═══════════════════════════════════════════════════════
+    // TOOL STACK
+    // ═══════════════════════════════════════════════════════
+    const toolSections = [
+        {
+            heading: 'AI Models',
+            tools: [
+                { name: 'Claude', icon: '🤖', color: '#D97706', desc: 'Primary AI partner for writing, coding, design thinking and this portfolio.', category: 'AI Model' },
+                { name: 'ChatGPT', icon: '💬', color: '#10A37F', desc: 'Secondary model used for comparison, image generation via DALL-E and broad research.', category: 'AI Model' },
+                { name: 'Gemini', icon: '✦', color: '#4285F4', desc: 'Google Gemini used for multimodal tasks and integration with Google Workspace.', category: 'AI Model' },
+                { name: 'Midjourney', icon: '🎨', color: '#7B68EE', desc: 'Image generation for concept art, mood boards and visual exploration.', category: 'AI Model' },
+                { name: 'Runway', icon: '🎬', color: '#FF4D6D', desc: 'AI video generation for motion concepts and design storytelling.', category: 'AI Model' }
+            ]
+        },
+        {
+            heading: 'Design Tools',
+            tools: [
+                { name: 'Figma', icon: '◈', color: '#F24E1E', desc: 'Primary UI and UX design tool for all digital product work.', category: 'Design' },
+                { name: 'Photoshop', icon: '⬡', color: '#31A8FF', desc: 'Used since my Wanda Creative days for compositing, rendering and image manipulation.', category: 'Design' },
+                { name: 'Illustrator', icon: '⬡', color: '#FF9A00', desc: 'Vector work, brand assets, floor plan graphics and technical illustration.', category: 'Design' },
+                { name: 'Cinema 4D', icon: '◉', color: '#011A6A', desc: '3D modelling for architectural visualisation and retail renders.', category: '3D' },
+                { name: 'After Effects', icon: '▶', color: '#9999FF', desc: 'Motion graphics and presentation animation.', category: 'Motion' }
+            ]
+        },
+        {
+            heading: 'Development',
+            tools: [
+                { name: 'VS Code', icon: '{}', color: '#007ACC', desc: 'Primary code editor for all web and scripting work.', category: 'Development' },
+                { name: 'GitHub', icon: '⎔', color: '#6E40C9', desc: 'Version control and project hosting including this portfolio.', category: 'Development' },
+                { name: 'Vercel', icon: '▲', color: '#ffffff', desc: 'Deployment platform for web apps and AI experiments.', category: 'Development' },
+                { name: 'Cursor', icon: '▷', color: '#6C6C6C', desc: 'AI-assisted code editor used for rapid prototyping with Claude integration.', category: 'Development' },
+                { name: 'Claude.ai', icon: '◎', color: '#D97706', desc: 'Used daily for code generation, debugging, copywriting and design problem solving.', category: 'Development' }
+            ]
+        },
+        {
+            heading: 'Research and Thinking',
+            tools: [
+                { name: 'Notion', icon: '◻', color: '#ffffff', desc: 'Project documentation, research notes and knowledge management.', category: 'Productivity' },
+                { name: 'Perplexity', icon: '⊕', color: '#20B2AA', desc: 'AI-powered research tool for fast, cited answers to complex questions.', category: 'Research' },
+                { name: 'Are.na', icon: '⊞', color: '#333333', desc: 'Visual bookmarking and mood boarding for design research and inspiration.', category: 'Research' },
+                { name: 'Readwise', icon: '◈', color: '#FF6B35', desc: 'Spaced repetition for design and technology reading highlights.', category: 'Research' }
+            ]
+        }
+    ];
+
+    let activeToolId = null;
+
+    function initToolStack() {
+        const body = document.getElementById('tools-body');
+        body.innerHTML = '';
+
+        toolSections.forEach(section => {
+            const sh = document.createElement('p');
+            sh.className = 'tools-section-heading';
+            sh.textContent = section.heading;
+            body.appendChild(sh);
+
+            const grid = document.createElement('div');
+            grid.className = 'tools-grid';
+
+            section.tools.forEach((tool, i) => {
+                const chip = document.createElement('div');
+                chip.className = 'tool-chip';
+                chip.id = 'tool-' + tool.name.replace(/\s/g, '-').toLowerCase();
+                chip.innerHTML = '<div class="tool-chip-icon" style="background:' + tool.color + '22;color:' + tool.color + '">' + tool.icon + '</div><div class="tool-chip-name">' + tool.name + '</div>';
+                chip.addEventListener('click', () => selectTool(tool, chip));
+                grid.appendChild(chip);
+            });
+            body.appendChild(grid);
+        });
+    }
+
+    function selectTool(tool, chipEl) {
+        document.querySelectorAll('.tool-chip').forEach(c => c.classList.remove('active'));
+        chipEl.classList.add('active');
+
+        const panel = document.getElementById('tool-detail-panel');
+        document.getElementById('tool-detail-name').textContent = tool.name;
+        document.getElementById('tool-detail-category').textContent = tool.category;
+        document.getElementById('tool-detail-body').textContent = tool.desc;
+        panel.classList.add('active');
+
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     // ═══════════════════════════════════════════════════════
